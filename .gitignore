@@ -1,0 +1,9 @@
+.bsp
+target
+project/project
+.jvm
+.native
+.js
+.bloop
+.metals
+.idea
