@@ -8,6 +8,7 @@ import fs2.io.net.tls.TLSContext
 import org.http4s.client.middleware.{Retry, RetryPolicy}
 import org.http4s.ember.client.EmberClientBuilder
 import org.typelevel.log4cats.LoggerFactory
+import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
 import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
 
@@ -30,7 +31,20 @@ object Main extends IOApp {
       val webhooks = DiscordWebhooks.create(client)
       val redisq   = RedisQ.create(client, "andi-local-test")
       val engine   = RulesEngine.fromStaticConfig(webhooks, staticConfig)
-      redisq.stream.repeat.through(engine).compile.drain
+      staticConfig.routes.traverse { route =>
+        webhooks.activate(
+          route.webhook,
+          WebhookPayload(
+            show"""Starting up with the following filter:
+               |
+               |```lisp
+               |${route.filter}
+               |```
+               |""".stripMargin,
+            Some(route.name)
+          )
+        )
+      } *> redisq.stream.repeat.through(engine).compile.drain
     }
 
   def loadConfig[F[_]: Async: Files](cli: CLI): F[StaticConfig] =
