@@ -47,5 +47,5 @@ lazy val root = (project in file("."))
 val stageBinary = taskKey[Unit]("Copy the binary to the top level")
 
 stageBinary := {
-  IO.copyFile((Compile / nativeLink).value, file("bot"))
+  IO.copyFile((Compile / nativeLink).value, file("router"))
 }
