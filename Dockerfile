@@ -9,9 +9,12 @@ COPY . /src
 ENV DOCKER_BUILD=1
 RUN sbt "nativeLink;stageBinary"
 
-#FROM scratch
-RUN cp /src/router /router
+FROM sbtscala/scala-sbt:eclipse-temurin-jammy-21.0.2_13_1.9.9_3.4.0 as runner
+RUN apt update && apt install -y libstdc++-12-dev libgc-dev libutf8proc-dev libssl-dev
+COPY --from=build /src/router /router
+COPY --from=build /usr/lib64/libs2n.so /usr/lib/libs2n.so
+COPY --from=build /usr/lib64/libs2n.a /usr/lib/libs2n.a
+WORKDIR /
 ENV S2N_DONT_MLOCK=1
 ENV LOGLEVEL=Info
-ENV LD_LIBRARY_PATH=/usr/lib64
-ENTRYPOINT ["/router", "config.yml"]
+ENTRYPOINT ["/router", "/config.yml"]

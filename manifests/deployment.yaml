@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: killmail-router 
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: killmail-router
+  template:
+    metadata:
+      labels:
+        component: killmail-router
+    spec:
+      volumes:
+      - name: config
+        configMap:
+          name: killmail-router-config
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: killmail-router-config
+        image: andimiller/killmail-router:0.3
+        imagePullPolicy: Always
+        name: killmail-router
+        resources:
+          requests:
+            memory: "300Mi"
+          limits:
+            memory: "300Mi"
+        volumeMounts:
+        - name: config
+          mountPath: /config.yml
+          subPath: config.yml
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+
