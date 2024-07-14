@@ -35,15 +35,24 @@ trait ExprInstances {
   )
 
   given Arbitrary[PathOperation] = Arbitrary(
-    Gen.oneOf(
-      Gen.alphaStr.map(PathOperation.DownField.apply),
-      Gen.chooseNum(0, 10).map(PathOperation.DownIndex.apply)
+    Gen.resize(
+      5,
+      Gen.recursive { recurse =>
+        Gen.sized { depth =>
+          inline def safeRecurse = Gen.resize(depth - 1, recurse)
+          Gen.oneOf(
+            Gen.alphaStr.map(PathOperation.DownField.apply),
+            Gen.chooseNum(0, 10).map(PathOperation.DownIndex.apply),
+            pathGen.map(PathOperation.MapArray.apply)
+          )
+        }
+      }
     )
   )
 
   private inline def pathGen: Gen[List[PathOperation]] = Gen.listOf(gen[PathOperation])
 
-  given arbBasicExpr: Arbitrary[Expr] = Arbitrary(
+  val basicExpr: Arbitrary[Expr] = Arbitrary(
     Gen.oneOf[Expr](
       // basics
       gen[Boolean].map(Expr.Pure.apply),
@@ -62,8 +71,37 @@ trait ExprInstances {
       yield Expr.LessThan(path, JsonNumber.fromDecimalStringUnsafe(value.toString)),
       for
         path  <- pathGen
-        value <- Gen.alphaStr
-      yield Expr.ContainsSubstring(path, value)
+        value <- Gen.oneOf(
+                   Gen.alphaStr.map(Json.fromString),
+                   Gen.chooseNum(0, 10).map(Json.fromInt)
+                 )
+      yield Expr.Contains(path, value)
+    )
+  )
+
+  given fullExpr: Arbitrary[Expr] = Arbitrary(
+    Gen.resize(
+      5,
+      Gen.recursive { recurse =>
+        Gen.sized {
+          case depth if depth > 0 =>
+            inline def safeRecurse = Gen.resize(depth - 1, recurse)
+            Gen.oneOf[Expr](
+              basicExpr.arbitrary,
+              safeRecurse.map(Expr.Not.apply),
+              for
+                l <- safeRecurse
+                r <- safeRecurse
+              yield Expr.And(l, r),
+              for
+                l <- safeRecurse
+                r <- safeRecurse
+              yield Expr.Or(l, r)
+            )
+          case 0                  =>
+            basicExpr.arbitrary
+        }
+      }
     )
   )
 }

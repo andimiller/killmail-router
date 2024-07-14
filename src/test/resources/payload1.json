@@ -1,0 +1,169 @@
+{
+  "package": {
+    "killID": 119455394,
+    "killmail": {
+      "attackers": [
+        {
+          "alliance_id": 99012982,
+          "character_id": 96120524,
+          "corporation_id": 98469412,
+          "damage_done": 2434,
+          "final_blow": true,
+          "security_status": 5,
+          "ship_type_id": 11200,
+          "weapon_type_id": 3178
+        }
+      ],
+      "killmail_id": 119455394,
+      "killmail_time": "2024-07-14T15:49:53Z",
+      "solar_system_id": 30004859,
+      "victim": {
+        "alliance_id": 1727758877,
+        "character_id": 96246402,
+        "corporation_id": 98450869,
+        "damage_taken": 2434,
+        "items": [
+          {
+            "flag": 20,
+            "item_type_id": 5973,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 11,
+            "item_type_id": 22291,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 21,
+            "item_type_id": 19814,
+            "quantity_destroyed": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 31,
+            "item_type_id": 27339,
+            "quantity_destroyed": 51,
+            "singleton": 0
+          },
+          {
+            "flag": 13,
+            "item_type_id": 22291,
+            "quantity_destroyed": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 12,
+            "item_type_id": 3888,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 27,
+            "item_type_id": 27339,
+            "quantity_dropped": 51,
+            "singleton": 0
+          },
+          {
+            "flag": 31,
+            "item_type_id": 34294,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 92,
+            "item_type_id": 31592,
+            "quantity_destroyed": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 28,
+            "item_type_id": 11578,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 27,
+            "item_type_id": 34294,
+            "quantity_destroyed": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 30,
+            "item_type_id": 27914,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 93,
+            "item_type_id": 31598,
+            "quantity_destroyed": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 29,
+            "item_type_id": 27339,
+            "quantity_dropped": 51,
+            "singleton": 0
+          },
+          {
+            "flag": 19,
+            "item_type_id": 380,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 5,
+            "item_type_id": 28668,
+            "quantity_dropped": 200,
+            "singleton": 0
+          },
+          {
+            "flag": 5,
+            "item_type_id": 24523,
+            "quantity_destroyed": 229,
+            "singleton": 0
+          },
+          {
+            "flag": 29,
+            "item_type_id": 34294,
+            "quantity_dropped": 1,
+            "singleton": 0
+          },
+          {
+            "flag": 5,
+            "item_type_id": 27339,
+            "quantity_destroyed": 320,
+            "singleton": 0
+          }
+        ],
+        "position": {
+          "x": 80105725608.0609,
+          "y": -11577006695.5187,
+          "z": 2607330164562.11
+        },
+        "ship_type_id": 12038
+      }
+    },
+    "zkb": {
+      "locationID": 40307608,
+      "hash": "d2913bf8250db18456601a8ae061441e89ccadf3",
+      "fittedValue": 135467010.89,
+      "droppedValue": 78785071.78,
+      "destroyedValue": 63787922.14,
+      "totalValue": 142572993.92,
+      "points": 22,
+      "npc": false,
+      "solo": true,
+      "awox": false,
+      "labels": [
+        "cat:6",
+        "solo",
+        "pvp",
+        "loc:nullsec"
+      ],
+      "href": "https://esi.evetech.net/v1/killmails/119455394/d2913bf8250db18456601a8ae061441e89ccadf3/"
+    }
+  }
+}
