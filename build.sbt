@@ -4,8 +4,6 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "3.4.2"
 
-lazy val inDocker = sys.env.contains("DOCKER_BUILD")
-
 lazy val root = (project in file("."))
   .enablePlugins(ScalaNativePlugin)
   .settings(
@@ -36,8 +34,6 @@ lazy val root = (project in file("."))
       "org.typelevel"  %%% "discipline-munit"        % "2.0.0-M3"  % Test,
       "org.scalameta"  %%% "munit-scalacheck"        % "1.0.0-M11" % Test
     ),
-    nativeLinkingOptions ++= List("-static").filter(_ => inDocker),
-    nativeCompileOptions ++= List("-static").filter(_ => inDocker),
     scalacOptions ++= Seq(
       "-deprecation",
       "-source:future"

@@ -30,7 +30,7 @@ object Main extends IOApp {
       val webhooks = DiscordWebhooks.create(client)
       val redisq   = RedisQ.create(client, "andi-local-test")
       val engine   = RulesEngine.fromStaticConfig(webhooks, staticConfig)
-      redisq.stream.repeatN(10).through(engine).compile.drain
+      redisq.stream.repeat.through(engine).compile.drain
     }
 
   def loadConfig[F[_]: Async: Files](cli: CLI): F[StaticConfig] =
