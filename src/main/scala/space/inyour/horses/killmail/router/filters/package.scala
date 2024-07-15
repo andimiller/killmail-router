@@ -16,13 +16,50 @@ import space.inyour.horses.killmail.router.filters.PathOperation.MapArray
 
 package object filters:
 
+  opaque type PrettyExpr = Expr
+  extension (p: PrettyExpr) def expr: Expr = p
+
+  object PrettyExpr:
+    private def indentString(spaces: Int)(s: String) = s.linesIterator.map(line => (" " * spaces) + line).mkString("\n")
+
+    trait IndentedShow[T] extends Show[T] {
+      def show(indent: Int, t: T): String
+
+      def show(t: T): String = show(0, t)
+    }
+
+    import Expr.given_Show_JsonNumber
+    import Expr.showListPathOperation
+    given IndentedShow[PrettyExpr] with
+      def show(indent: Int, t: Expr): String = indentString(indent)(t match
+        case Expr.Pure(result)             => result.toString
+        case Expr.Equals(path, value)      => show"(== $path $value)".stripMargin
+        case Expr.GreaterThan(path, value) => show"(> $path $value)"
+        case Expr.LessThan(path, value)    => show"(< $path $value)"
+        case Expr.Contains(path, value)    => show"(contains $path ${value.noSpaces})"
+        case Expr.Not(expr)                => show"(not $expr)"
+        case Expr.And(left, right)         => show"""(and
+                                            |${show(indent + 2, left)}
+                                            |${show(indent + 2, right)}
+                                            |)
+                                            |""".stripMargin
+        case Expr.Or(left, right)          => show"""(or
+                                           |${show(indent + 2, left)}
+                                           |${show(indent + 2, right)}
+                                           |)
+                                           |""".stripMargin
+      )
+
+    given Encoder[PrettyExpr] = Encoder[String].contramap(_.show)
+    given Decoder[PrettyExpr] = Decoder[String].emap(Expr.codec.parser.parseAll(_).leftMap(_.show))
+
   enum PathOperation:
     case DownField(name: String)
     case DownIndex(idx: Int)
     case MapArray(subpath: List[PathOperation])
 
   enum Expr:
-    def spaces2: String = Expr.prettyShow.show(this)
+    def pretty: PrettyExpr = this
 
     // pure
     case Pure(result: Boolean)
@@ -77,32 +114,8 @@ package object filters:
         case Expr.And(left, right)         => show"(and $left $right)"
         case Expr.Or(left, right)          => show"(or $left $right)"
 
-    private def indentString(spaces: Int)(s: String) = s.linesIterator.map(line => (" " * spaces) + line).mkString("\n")
-
-    trait IndentedShow[T] {
-      def show(indent: Int, t: T): String
-      def show(t: T): String = show(0, t)
-    }
-
-    lazy val prettyShow: IndentedShow[Expr] = new IndentedShow[Expr]:
-      def show(indent: Int, t: Expr): String = indentString(indent)(t match
-        case Expr.Pure(result)             => result.toString
-        case Expr.Equals(path, value)      => show"(== $path $value)".stripMargin
-        case Expr.GreaterThan(path, value) => show"(> $path $value)"
-        case Expr.LessThan(path, value)    => show"(< $path $value)"
-        case Expr.Contains(path, value)    => show"(contains $path ${value.noSpaces})"
-        case Expr.Not(expr)                => show"(not $expr)"
-        case Expr.And(left, right)         => show"""(and
-                                                 |${show(indent + 2, left)}
-                                                 |${show(indent + 2, right)}
-                                                 |)
-                                                 |""".stripMargin
-        case Expr.Or(left, right)          => show"""(or
-                                            |${show(indent + 2, left)}
-                                            |${show(indent + 2, right)}
-                                            |)
-                                            |""".stripMargin
-      )
+    private inline def whitespace: Parser[Unit]   = Parser.charsWhile(_.isWhitespace).void
+    private inline def whitespace0: Parser0[Unit] = Parser.charsWhile0(_.isWhitespace).void
 
     given Parser[Expr]  = Parser.recursive { recurse =>
       val int = Numbers.digits.map(JsonNumber.fromDecimalStringUnsafe)
@@ -115,8 +128,24 @@ package object filters:
           p"(< $pathParser $int)".map(Expr.LessThan.apply),
           p"(contains $pathParser $jsonParser)".map(Expr.Contains.apply),
           p"(not $recurse)".map(Expr.Not.apply),
-          p"(and $recurse $recurse)".map(Expr.And.apply),
-          p"(or $recurse $recurse)".map(Expr.Or.apply)
+          for
+            _ <- p"(and"
+            _ <- whitespace
+            l <- recurse
+            _ <- whitespace
+            r <- recurse
+            _ <- whitespace0
+            _ <- p")"
+          yield Expr.And(l, r),
+          for
+            _ <- p"(or"
+            _ <- whitespace
+            l <- recurse
+            _ <- whitespace
+            r <- recurse
+            _ <- whitespace0
+            _ <- p")"
+          yield Expr.Or(l, r)
         )
       )
     }

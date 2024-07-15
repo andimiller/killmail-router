@@ -9,6 +9,8 @@ import fs2.io.net.tls.TLSContext
 import org.http4s.client.middleware.{Retry, RetryPolicy}
 import org.http4s.ember.client.EmberClientBuilder
 import org.typelevel.log4cats.LoggerFactory
+import io.circe.syntax.*
+import io.circe.scalayaml.syntax.*
 import space.inyour.horses.killmail.router.enrichers.Enricher
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
@@ -53,7 +55,7 @@ object Main extends IOApp {
                           show"""Starting up with the following filter:
                   |
                   |```lisp
-                  |${route.filter.spaces2}
+                  |${route.filter.pretty}
                   |```
                   |""".stripMargin,
                           Some(route.name)
@@ -64,20 +66,30 @@ object Main extends IOApp {
       yield ()
     }
 
-  def loadConfig[F[_]: Async: Files](cli: CLI): F[StaticConfig] =
+  def loadConfig[F[_]: Async: Files](path: Path): F[StaticConfig] =
     for
-      str          <- Files[F].readAll(cli.configFile).through(fs2.text.utf8.decode).compile.string
+      str          <- Files[F].readAll(path).through(fs2.text.utf8.decode).compile.string
       yml          <- Async[F].fromEither(io.circe.scalayaml.parser.parse(str))
-      staticConfig <- Async[F].fromEither(yml.as[StaticConfig])
+      rewritten     = yml.foldWith(StaticConfig.permissiveFilterRewriter)
+      staticConfig <- Async[F].fromEither(rewritten.as[StaticConfig])
     yield staticConfig
 
   override def run(args: List[String]): IO[ExitCode] =
     CLI.command.parse(args, sys.env) match
       case Left(value) => IO.println(value).as(ExitCode.Error)
       case Right(cli)  =>
-        for
-          staticConfig           <- loadConfig[IO](cli)
-          given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](cli.loglevel)
-          _                      <- program[IO](staticConfig)
-        yield ExitCode.Success
+        cli match
+          case CLI.Run(configFile, loglevel) =>
+            for
+              staticConfig           <- loadConfig[IO](configFile)
+              given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
+              _                      <- program[IO](staticConfig)
+            yield ExitCode.Success
+          case CLI.Format(configFile)        =>
+            for
+              cfg <- loadConfig[IO](configFile)
+              p    = cfg.pretty
+              _   <- IO.println(p.asJson.asYaml)
+            yield ExitCode.Success
+
 }

@@ -46,6 +46,14 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
     }
   }
 
+  property("parser/printer roundtrip with multiline") {
+    forAll { (expr: Expr) =>
+      Expr.codec.parser.parseAll(
+        expr.pretty.show
+      ) == Right(expr)
+    }
+  }
+
   test("Manual test") {
     val Right(expr) = Expr.codec.parser.parseAll("(== root 1234)"): @unchecked
     assertEquals(
@@ -75,7 +83,7 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
       "(and (or (== root.killmail.victim.is_capital true) (contains root.killmail.attackers|{root.is_capital} true)) (== root.killmail.wormhole_class 6))"
     ): @unchecked
     assertEquals(
-      expr.spaces2,
+      expr.pretty.show,
       """(and
         |  (or
         |      (== root.killmail.victim.is_capital true)

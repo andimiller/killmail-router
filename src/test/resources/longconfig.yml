@@ -1,0 +1,13 @@
+routes:
+  - name: hkrab
+    filter: (or (== root.killmail.victim.alliance_id 99005065) (contains root.killmail.attackers|{root.alliance_id} 99005065))
+    webhook: https://discord.com/api/webhooks
+  - name: c6-caps
+    filter: (and (or (== root.killmail.victim.is_capital true) (contains root.killmail.attackers|{root.is_capital} true)) (== root.killmail.wormhole_class 6))
+    webhook: https://discord.com/api/webhooks
+  - name: c5-caps
+    filter: (and (or (== root.killmail.victim.is_capital true) (contains root.killmail.attackers|{root.is_capital} true)) (== root.killmail.wormhole_class 5))
+    webhook: https://discord.com/api/webhooks
+  - name: lowclass-caps
+    filter: (and (or (== root.killmail.victim.is_capital true) (contains root.killmail.attackers|{root.is_capital} true)) (< root.killmail.wormhole_class 5))
+    webhook: https://discord.com/api/webhooks
