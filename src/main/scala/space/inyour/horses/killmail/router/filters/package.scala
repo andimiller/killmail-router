@@ -22,6 +22,8 @@ package object filters:
     case MapArray(subpath: List[PathOperation])
 
   enum Expr:
+    def spaces2: String = Expr.prettyShow.show(this)
+
     // pure
     case Pure(result: Boolean)
     // comparisons
@@ -74,6 +76,33 @@ package object filters:
         case Expr.Not(expr)                => show"(not $expr)"
         case Expr.And(left, right)         => show"(and $left $right)"
         case Expr.Or(left, right)          => show"(or $left $right)"
+
+    private def indentString(spaces: Int)(s: String) = s.linesIterator.map(line => (" " * spaces) + line).mkString("\n")
+
+    trait IndentedShow[T] {
+      def show(indent: Int, t: T): String
+      def show(t: T): String = show(0, t)
+    }
+
+    lazy val prettyShow: IndentedShow[Expr] = new IndentedShow[Expr]:
+      def show(indent: Int, t: Expr): String = indentString(indent)(t match
+        case Expr.Pure(result)             => result.toString
+        case Expr.Equals(path, value)      => show"(== $path $value)".stripMargin
+        case Expr.GreaterThan(path, value) => show"(> $path $value)"
+        case Expr.LessThan(path, value)    => show"(< $path $value)"
+        case Expr.Contains(path, value)    => show"(contains $path ${value.noSpaces})"
+        case Expr.Not(expr)                => show"(not $expr)"
+        case Expr.And(left, right)         => show"""(and
+                                                 |${show(indent + 2, left)}
+                                                 |${show(indent + 2, right)}
+                                                 |)
+                                                 |""".stripMargin
+        case Expr.Or(left, right)          => show"""(or
+                                            |${show(indent + 2, left)}
+                                            |${show(indent + 2, right)}
+                                            |)
+                                            |""".stripMargin
+      )
 
     given Parser[Expr]  = Parser.recursive { recurse =>
       val int = Numbers.digits.map(JsonNumber.fromDecimalStringUnsafe)

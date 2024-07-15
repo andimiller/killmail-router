@@ -53,7 +53,7 @@ object Main extends IOApp {
                           show"""Starting up with the following filter:
                   |
                   |```lisp
-                  |${route.filter}
+                  |${route.filter.spaces2}
                   |```
                   |""".stripMargin,
                           Some(route.name)

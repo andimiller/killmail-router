@@ -58,4 +58,32 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
     )
   }
 
+  test("Manual test with bool literals") {
+    val Right(expr) = Expr.codec.parser.parseAll("(== root true)"): @unchecked
+    assertEquals(
+      Expr.run(expr)(Json.fromBoolean(true)).value,
+      true
+    )
+    assertEquals(
+      Expr.run(expr)(Json.fromBoolean(false)).value,
+      false
+    )
+  }
+
+  test("Pretty printing") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      "(and (or (== root.killmail.victim.is_capital true) (contains root.killmail.attackers|{root.is_capital} true)) (== root.killmail.wormhole_class 6))"
+    ): @unchecked
+    assertEquals(
+      expr.spaces2,
+      """(and
+        |  (or
+        |      (== root.killmail.victim.is_capital true)
+        |      (contains root.killmail.attackers|{root.is_capital} true)
+        |  )
+        |  (== root.killmail.wormhole_class 6)
+        |)""".replace("\r\n", "\n").stripMargin
+    )
+  }
+
 }
