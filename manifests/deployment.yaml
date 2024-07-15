@@ -21,7 +21,7 @@ spec:
       - envFrom:
         - configMapRef:
             name: killmail-router-config
-        image: andimiller/killmail-router:0.3
+        image: andimiller/killmail-router:0.5
         imagePullPolicy: Always
         name: killmail-router
         resources:
