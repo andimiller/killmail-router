@@ -1,0 +1,1506 @@
+{"typeID": 582, "typeName": "Bantam", "size": 1.0}
+{"typeID": 583, "typeName": "Condor", "size": 1.0}
+{"typeID": 584, "typeName": "Griffin", "size": 1.0}
+{"typeID": 585, "typeName": "Slasher", "size": 1.0}
+{"typeID": 586, "typeName": "Probe", "size": 1.0}
+{"typeID": 587, "typeName": "Rifter", "size": 1.0}
+{"typeID": 589, "typeName": "Executioner", "size": 1.0}
+{"typeID": 590, "typeName": "Inquisitor", "size": 1.0}
+{"typeID": 591, "typeName": "Tormentor", "size": 1.0}
+{"typeID": 592, "typeName": "Navitas", "size": 1.0}
+{"typeID": 593, "typeName": "Tristan", "size": 1.0}
+{"typeID": 594, "typeName": "Incursus", "size": 1.0}
+{"typeID": 595, "typeName": "Gallente Police Ship", "size": 1.0}
+{"typeID": 597, "typeName": "Punisher", "size": 1.0}
+{"typeID": 598, "typeName": "Breacher", "size": 1.0}
+{"typeID": 599, "typeName": "Burst", "size": 1.0}
+{"typeID": 600, "typeName": "Minmatar Peacekeeper Ship", "size": 1.0}
+{"typeID": 602, "typeName": "Kestrel", "size": 1.0}
+{"typeID": 603, "typeName": "Merlin", "size": 1.0}
+{"typeID": 605, "typeName": "Heron", "size": 1.0}
+{"typeID": 607, "typeName": "Imicus", "size": 1.0}
+{"typeID": 608, "typeName": "Atron", "size": 1.0}
+{"typeID": 609, "typeName": "Maulus", "size": 1.0}
+{"typeID": 613, "typeName": "Devourer", "size": 1.0}
+{"typeID": 614, "typeName": "Fury", "size": 1.0}
+{"typeID": 616, "typeName": "Medusa", "size": 1.0}
+{"typeID": 618, "typeName": "Lynx", "size": 1.0}
+{"typeID": 619, "typeName": "Swordspine", "size": 1.0}
+{"typeID": 620, "typeName": "Osprey", "size": 2.0}
+{"typeID": 621, "typeName": "Caracal", "size": 2.0}
+{"typeID": 622, "typeName": "Stabber", "size": 2.0}
+{"typeID": 623, "typeName": "Moa", "size": 2.0}
+{"typeID": 624, "typeName": "Maller", "size": 2.0}
+{"typeID": 625, "typeName": "Augoror", "size": 2.0}
+{"typeID": 626, "typeName": "Vexor", "size": 2.0}
+{"typeID": 627, "typeName": "Thorax", "size": 2.0}
+{"typeID": 628, "typeName": "Arbitrator", "size": 2.0}
+{"typeID": 629, "typeName": "Rupture", "size": 2.0}
+{"typeID": 630, "typeName": "Bellicose", "size": 2.0}
+{"typeID": 631, "typeName": "Scythe", "size": 2.0}
+{"typeID": 632, "typeName": "Blackbird", "size": 2.0}
+{"typeID": 633, "typeName": "Celestis", "size": 2.0}
+{"typeID": 634, "typeName": "Exequror", "size": 2.0}
+{"typeID": 635, "typeName": "Opux Luxury Yacht", "size": 2.0}
+{"typeID": 638, "typeName": "Raven", "size": 3.0}
+{"typeID": 639, "typeName": "Tempest", "size": 3.0}
+{"typeID": 640, "typeName": "Scorpion", "size": 3.0}
+{"typeID": 641, "typeName": "Megathron", "size": 3.0}
+{"typeID": 642, "typeName": "Apocalypse", "size": 3.0}
+{"typeID": 643, "typeName": "Armageddon", "size": 3.0}
+{"typeID": 644, "typeName": "Typhoon", "size": 3.0}
+{"typeID": 645, "typeName": "Dominix", "size": 3.0}
+{"typeID": 648, "typeName": "Badger", "size": 2.0}
+{"typeID": 649, "typeName": "Tayra", "size": 2.0}
+{"typeID": 650, "typeName": "Nereus", "size": 2.0}
+{"typeID": 651, "typeName": "Hoarder", "size": 2.0}
+{"typeID": 652, "typeName": "Mammoth", "size": 2.0}
+{"typeID": 653, "typeName": "Wreathe", "size": 2.0}
+{"typeID": 654, "typeName": "Kryos", "size": 2.0}
+{"typeID": 655, "typeName": "Epithal", "size": 2.0}
+{"typeID": 656, "typeName": "Miasmos", "size": 2.0}
+{"typeID": 657, "typeName": "Iteron Mark V", "size": 2.0}
+{"typeID": 671, "typeName": "Erebus", "size": 4.0}
+{"typeID": 1233, "typeName": "Polaris Enigma Frigate", "size": 0.0}
+{"typeID": 1944, "typeName": "Bestower", "size": 2.0}
+{"typeID": 2006, "typeName": "Omen", "size": 2.0}
+{"typeID": 2161, "typeName": "Crucifier", "size": 1.0}
+{"typeID": 2834, "typeName": "Utu", "size": 1.0}
+{"typeID": 2836, "typeName": "Adrestia", "size": 2.0}
+{"typeID": 2998, "typeName": "Noctis", "size": 2.0}
+{"typeID": 3514, "typeName": "Revenant", "size": 4.0}
+{"typeID": 3516, "typeName": "Malice", "size": 1.0}
+{"typeID": 3518, "typeName": "Vangel", "size": 2.0}
+{"typeID": 3532, "typeName": "Echelon", "size": 1.0}
+{"typeID": 3751, "typeName": "SOCT 1", "size": 1.0}
+{"typeID": 3753, "typeName": "SOCT 2", "size": 1.0}
+{"typeID": 3756, "typeName": "Gnosis", "size": 2.0}
+{"typeID": 3764, "typeName": "Leviathan", "size": 4.0}
+{"typeID": 3766, "typeName": "Vigil", "size": 1.0}
+{"typeID": 3768, "typeName": "Amarr Police Frigate", "size": 1.0}
+{"typeID": 77114, "typeName": "Metamorphosis", "size": 1.0}
+{"typeID": 4005, "typeName": "Scorpion Ishukone Watch", "size": 3.0}
+{"typeID": 4302, "typeName": "Oracle", "size": 2.0}
+{"typeID": 4306, "typeName": "Naga", "size": 2.0}
+{"typeID": 4308, "typeName": "Talos", "size": 2.0}
+{"typeID": 4310, "typeName": "Tornado", "size": 2.0}
+{"typeID": 4363, "typeName": "Miasmos Quafe Ultra Edition", "size": 2.0}
+{"typeID": 4369, "typeName": "Small Targeting Amplifier I", "size": 1.0}
+{"typeID": 4388, "typeName": "Miasmos Quafe Ultramarine Edition", "size": 2.0}
+{"typeID": 4395, "typeName": "Medium Processor Overclocking Unit I", "size": 2.0}
+{"typeID": 4397, "typeName": "Large Processor Overclocking Unit I", "size": 3.0}
+{"typeID": 4399, "typeName": "Medium Processor Overclocking Unit II", "size": 2.0}
+{"typeID": 4401, "typeName": "Large Processor Overclocking Unit II", "size": 3.0}
+{"typeID": 77281, "typeName": "Hubris", "size": 4.0}
+{"typeID": 77283, "typeName": "Bane", "size": 4.0}
+{"typeID": 72811, "typeName": "Cyclone Fleet Issue", "size": 2.0}
+{"typeID": 72812, "typeName": "Ferox Navy Issue", "size": 2.0}
+{"typeID": 72872, "typeName": "Prophecy Navy Issue", "size": 2.0}
+{"typeID": 72904, "typeName": "Heron Navy Issue", "size": 1.0}
+{"typeID": 72913, "typeName": "Imicus Navy Issue", "size": 1.0}
+{"typeID": 77726, "typeName": "Cybele", "size": 2.0}
+{"typeID": 73790, "typeName": "Revelation Navy Issue", "size": 4.0}
+{"typeID": 73792, "typeName": "Moros Navy Issue", "size": 4.0}
+{"typeID": 73794, "typeName": "Thrasher Fleet Issue", "size": 1.0}
+{"typeID": 73796, "typeName": "Catalyst Navy Issue", "size": 1.0}
+{"typeID": 74141, "typeName": "Geri", "size": 1.0}
+{"typeID": 74316, "typeName": "Bestla", "size": 2.0}
+{"typeID": 81046, "typeName": "Deluge", "size": 2.0}
+{"typeID": 11011, "typeName": "Guardian-Vexor", "size": 2.0}
+{"typeID": 11019, "typeName": "Cockroach", "size": 1.0}
+{"typeID": 11172, "typeName": "Helios", "size": 1.0}
+{"typeID": 11174, "typeName": "Keres", "size": 1.0}
+{"typeID": 11176, "typeName": "Crow", "size": 1.0}
+{"typeID": 11178, "typeName": "Raptor", "size": 1.0}
+{"typeID": 11182, "typeName": "Cheetah", "size": 1.0}
+{"typeID": 11184, "typeName": "Crusader", "size": 1.0}
+{"typeID": 11186, "typeName": "Malediction", "size": 1.0}
+{"typeID": 11188, "typeName": "Anathema", "size": 1.0}
+{"typeID": 11190, "typeName": "Sentinel", "size": 1.0}
+{"typeID": 11192, "typeName": "Buzzard", "size": 1.0}
+{"typeID": 11194, "typeName": "Kitsune", "size": 1.0}
+{"typeID": 11196, "typeName": "Claw", "size": 1.0}
+{"typeID": 11198, "typeName": "Stiletto", "size": 1.0}
+{"typeID": 11200, "typeName": "Taranis", "size": 1.0}
+{"typeID": 11202, "typeName": "Ares", "size": 1.0}
+{"typeID": 11365, "typeName": "Vengeance", "size": 1.0}
+{"typeID": 11371, "typeName": "Wolf", "size": 1.0}
+{"typeID": 11373, "typeName": "Blade", "size": 1.0}
+{"typeID": 11375, "typeName": "Erinye", "size": 1.0}
+{"typeID": 11377, "typeName": "Nemesis", "size": 1.0}
+{"typeID": 11379, "typeName": "Hawk", "size": 1.0}
+{"typeID": 11381, "typeName": "Harpy", "size": 1.0}
+{"typeID": 11383, "typeName": "Gatherer", "size": 1.0}
+{"typeID": 11387, "typeName": "Hyena", "size": 1.0}
+{"typeID": 11389, "typeName": "Kishar", "size": 1.0}
+{"typeID": 11393, "typeName": "Retribution", "size": 1.0}
+{"typeID": 11400, "typeName": "Jaguar", "size": 1.0}
+{"typeID": 11567, "typeName": "Avatar", "size": 4.0}
+{"typeID": 77284, "typeName": "Karura", "size": 4.0}
+{"typeID": 77288, "typeName": "Valravn", "size": 4.0}
+{"typeID": 11936, "typeName": "Apocalypse Imperial Issue", "size": 3.0}
+{"typeID": 11938, "typeName": "Armageddon Imperial Issue", "size": 3.0}
+{"typeID": 11940, "typeName": "Gold Magnate", "size": 1.0}
+{"typeID": 11942, "typeName": "Silver Magnate", "size": 1.0}
+{"typeID": 11957, "typeName": "Falcon", "size": 2.0}
+{"typeID": 11959, "typeName": "Rook", "size": 2.0}
+{"typeID": 11961, "typeName": "Huginn", "size": 2.0}
+{"typeID": 11963, "typeName": "Rapier", "size": 2.0}
+{"typeID": 11965, "typeName": "Pilgrim", "size": 2.0}
+{"typeID": 11969, "typeName": "Arazu", "size": 2.0}
+{"typeID": 11971, "typeName": "Lachesis", "size": 2.0}
+{"typeID": 11978, "typeName": "Scimitar", "size": 2.0}
+{"typeID": 11985, "typeName": "Basilisk", "size": 2.0}
+{"typeID": 11987, "typeName": "Guardian", "size": 2.0}
+{"typeID": 11989, "typeName": "Oneiros", "size": 2.0}
+{"typeID": 11993, "typeName": "Cerberus", "size": 2.0}
+{"typeID": 11995, "typeName": "Onyx", "size": 2.0}
+{"typeID": 11999, "typeName": "Vagabond", "size": 2.0}
+{"typeID": 12003, "typeName": "Zealot", "size": 2.0}
+{"typeID": 12005, "typeName": "Ishtar", "size": 2.0}
+{"typeID": 12011, "typeName": "Eagle", "size": 2.0}
+{"typeID": 12013, "typeName": "Broadsword", "size": 2.0}
+{"typeID": 12015, "typeName": "Muninn", "size": 2.0}
+{"typeID": 12017, "typeName": "Devoter", "size": 2.0}
+{"typeID": 12019, "typeName": "Sacrilege", "size": 2.0}
+{"typeID": 12021, "typeName": "Phobos", "size": 2.0}
+{"typeID": 12023, "typeName": "Deimos", "size": 2.0}
+{"typeID": 12032, "typeName": "Manticore", "size": 1.0}
+{"typeID": 12034, "typeName": "Hound", "size": 1.0}
+{"typeID": 12036, "typeName": "Dagger", "size": 1.0}
+{"typeID": 12038, "typeName": "Purifier", "size": 1.0}
+{"typeID": 12042, "typeName": "Ishkur", "size": 1.0}
+{"typeID": 12044, "typeName": "Enyo", "size": 1.0}
+{"typeID": 78576, "typeName": "Azariel", "size": 4.0}
+{"typeID": 12729, "typeName": "Crane", "size": 2.0}
+{"typeID": 12731, "typeName": "Bustard", "size": 2.0}
+{"typeID": 12733, "typeName": "Prorator", "size": 2.0}
+{"typeID": 12735, "typeName": "Prowler", "size": 2.0}
+{"typeID": 12743, "typeName": "Viator", "size": 2.0}
+{"typeID": 12745, "typeName": "Occator", "size": 2.0}
+{"typeID": 12747, "typeName": "Mastodon", "size": 2.0}
+{"typeID": 12753, "typeName": "Impel", "size": 2.0}
+{"typeID": 78414, "typeName": "Shapash", "size": 1.0}
+{"typeID": 13202, "typeName": "Megathron Federate Issue", "size": 3.0}
+{"typeID": 81008, "typeName": "Squall", "size": 2.0}
+{"typeID": 81040, "typeName": "Avalanche", "size": 4.0}
+{"typeID": 16227, "typeName": "Ferox", "size": 2.0}
+{"typeID": 16229, "typeName": "Brutix", "size": 2.0}
+{"typeID": 16231, "typeName": "Cyclone", "size": 2.0}
+{"typeID": 16233, "typeName": "Prophecy", "size": 2.0}
+{"typeID": 16236, "typeName": "Coercer", "size": 1.0}
+{"typeID": 16238, "typeName": "Cormorant", "size": 1.0}
+{"typeID": 16240, "typeName": "Catalyst", "size": 1.0}
+{"typeID": 16242, "typeName": "Thrasher", "size": 1.0}
+{"typeID": 17360, "typeName": "Immovable Enigma", "size": 1.0}
+{"typeID": 17476, "typeName": "Covetor", "size": 2.0}
+{"typeID": 17478, "typeName": "Retriever", "size": 2.0}
+{"typeID": 17480, "typeName": "Procurer", "size": 2.0}
+{"typeID": 17619, "typeName": "Caldari Navy Hookbill", "size": 1.0}
+{"typeID": 17634, "typeName": "Caracal Navy Issue", "size": 2.0}
+{"typeID": 17636, "typeName": "Raven Navy Issue", "size": 3.0}
+{"typeID": 17703, "typeName": "Imperial Navy Slicer", "size": 1.0}
+{"typeID": 17705, "typeName": "Khanid Navy Frigate", "size": 1.0}
+{"typeID": 17707, "typeName": "Mordus Frigate", "size": 1.0}
+{"typeID": 17709, "typeName": "Omen Navy Issue", "size": 2.0}
+{"typeID": 17713, "typeName": "Stabber Fleet Issue", "size": 2.0}
+{"typeID": 17715, "typeName": "Gila", "size": 2.0}
+{"typeID": 17718, "typeName": "Phantasm", "size": 2.0}
+{"typeID": 17720, "typeName": "Cynabal", "size": 2.0}
+{"typeID": 17722, "typeName": "Vigilant", "size": 2.0}
+{"typeID": 17726, "typeName": "Apocalypse Navy Issue", "size": 3.0}
+{"typeID": 17728, "typeName": "Megathron Navy Issue", "size": 3.0}
+{"typeID": 17732, "typeName": "Tempest Fleet Issue", "size": 3.0}
+{"typeID": 17736, "typeName": "Nightmare", "size": 3.0}
+{"typeID": 17738, "typeName": "Machariel", "size": 3.0}
+{"typeID": 17740, "typeName": "Vindicator", "size": 3.0}
+{"typeID": 17812, "typeName": "Republic Fleet Firetail", "size": 1.0}
+{"typeID": 17841, "typeName": "Federation Navy Comet", "size": 1.0}
+{"typeID": 17843, "typeName": "Vexor Navy Issue", "size": 2.0}
+{"typeID": 17918, "typeName": "Rattlesnake", "size": 3.0}
+{"typeID": 17920, "typeName": "Bhaalgorn", "size": 3.0}
+{"typeID": 17922, "typeName": "Ashimmu", "size": 2.0}
+{"typeID": 17924, "typeName": "Succubus", "size": 1.0}
+{"typeID": 17926, "typeName": "Cruor", "size": 1.0}
+{"typeID": 17928, "typeName": "Daredevil", "size": 1.0}
+{"typeID": 17930, "typeName": "Worm", "size": 1.0}
+{"typeID": 17932, "typeName": "Dramiel", "size": 1.0}
+{"typeID": 19720, "typeName": "Revelation", "size": 4.0}
+{"typeID": 19722, "typeName": "Naglfar", "size": 4.0}
+{"typeID": 19724, "typeName": "Moros", "size": 4.0}
+{"typeID": 19726, "typeName": "Phoenix", "size": 4.0}
+{"typeID": 19744, "typeName": "Sigil", "size": 2.0}
+{"typeID": 20125, "typeName": "Curse", "size": 2.0}
+{"typeID": 20183, "typeName": "Providence", "size": 4.0}
+{"typeID": 20185, "typeName": "Charon", "size": 4.0}
+{"typeID": 20187, "typeName": "Obelisk", "size": 4.0}
+{"typeID": 20189, "typeName": "Fenrir", "size": 4.0}
+{"typeID": 22428, "typeName": "Redeemer", "size": 3.0}
+{"typeID": 22430, "typeName": "Sin", "size": 3.0}
+{"typeID": 22436, "typeName": "Widow", "size": 3.0}
+{"typeID": 22440, "typeName": "Panther", "size": 3.0}
+{"typeID": 22442, "typeName": "Eos", "size": 2.0}
+{"typeID": 22444, "typeName": "Sleipnir", "size": 2.0}
+{"typeID": 22446, "typeName": "Vulture", "size": 2.0}
+{"typeID": 22448, "typeName": "Absolution", "size": 2.0}
+{"typeID": 22452, "typeName": "Heretic", "size": 1.0}
+{"typeID": 22456, "typeName": "Sabre", "size": 1.0}
+{"typeID": 22460, "typeName": "Eris", "size": 1.0}
+{"typeID": 22464, "typeName": "Flycatcher", "size": 1.0}
+{"typeID": 22466, "typeName": "Astarte", "size": 2.0}
+{"typeID": 22468, "typeName": "Claymore", "size": 2.0}
+{"typeID": 22470, "typeName": "Nighthawk", "size": 2.0}
+{"typeID": 22474, "typeName": "Damnation", "size": 2.0}
+{"typeID": 22544, "typeName": "Hulk", "size": 2.0}
+{"typeID": 22546, "typeName": "Skiff", "size": 2.0}
+{"typeID": 22548, "typeName": "Mackinaw", "size": 2.0}
+{"typeID": 22852, "typeName": "Hel", "size": 4.0}
+{"typeID": 23757, "typeName": "Archon", "size": 4.0}
+{"typeID": 23773, "typeName": "Ragnarok", "size": 4.0}
+{"typeID": 23911, "typeName": "Thanatos", "size": 4.0}
+{"typeID": 23913, "typeName": "Nyx", "size": 4.0}
+{"typeID": 23915, "typeName": "Chimera", "size": 4.0}
+{"typeID": 23917, "typeName": "Wyvern", "size": 4.0}
+{"typeID": 23919, "typeName": "Aeon", "size": 4.0}
+{"typeID": 24483, "typeName": "Nidhoggur", "size": 4.0}
+{"typeID": 24688, "typeName": "Rokh", "size": 3.0}
+{"typeID": 24690, "typeName": "Hyperion", "size": 3.0}
+{"typeID": 24692, "typeName": "Abaddon", "size": 3.0}
+{"typeID": 24694, "typeName": "Maelstrom", "size": 3.0}
+{"typeID": 24696, "typeName": "Harbinger", "size": 2.0}
+{"typeID": 24698, "typeName": "Drake", "size": 2.0}
+{"typeID": 24700, "typeName": "Myrmidon", "size": 2.0}
+{"typeID": 24702, "typeName": "Hurricane", "size": 2.0}
+{"typeID": 25560, "typeName": "Opux Dragoon Yacht", "size": 2.0}
+{"typeID": 25736, "typeName": "Large EM Armor Reinforcer I", "size": 3.0}
+{"typeID": 25888, "typeName": "Large Explosive Armor Reinforcer I", "size": 3.0}
+{"typeID": 25890, "typeName": "Large Kinetic Armor Reinforcer I", "size": 3.0}
+{"typeID": 25892, "typeName": "Large Thermal Armor Reinforcer I", "size": 3.0}
+{"typeID": 25894, "typeName": "Large Trimark Armor Pump I", "size": 3.0}
+{"typeID": 25896, "typeName": "Large Auxiliary Nano Pump I", "size": 3.0}
+{"typeID": 25898, "typeName": "Large Nanobot Accelerator I", "size": 3.0}
+{"typeID": 25900, "typeName": "Large Remote Repair Augmentor I", "size": 3.0}
+{"typeID": 25902, "typeName": "Large Salvage Tackle I", "size": 3.0}
+{"typeID": 25906, "typeName": "Large Core Defense Capacitor Safeguard I", "size": 3.0}
+{"typeID": 25908, "typeName": "Large Drone Control Range Augmentor I", "size": 3.0}
+{"typeID": 25910, "typeName": "Large Drone Repair Augmentor I", "size": 3.0}
+{"typeID": 25912, "typeName": "Large Drone Scope Chip I", "size": 3.0}
+{"typeID": 25914, "typeName": "Large Drone Speed Augmentor I", "size": 3.0}
+{"typeID": 25916, "typeName": "Large Drone Durability Enhancer I", "size": 3.0}
+{"typeID": 25918, "typeName": "Large Drone Mining Augmentor I", "size": 3.0}
+{"typeID": 25920, "typeName": "Large Sentry Damage Augmentor I", "size": 3.0}
+{"typeID": 25922, "typeName": "Large EW Drone Range Augmentor I", "size": 3.0}
+{"typeID": 25924, "typeName": "Large Stasis Drone Augmentor I", "size": 3.0}
+{"typeID": 25928, "typeName": "Large Signal Disruption Amplifier I", "size": 3.0}
+{"typeID": 25930, "typeName": "Large Emission Scope Sharpener I", "size": 3.0}
+{"typeID": 25932, "typeName": "Large Memetic Algorithm Bank I", "size": 3.0}
+{"typeID": 25934, "typeName": "Large Liquid Cooled Electronics I", "size": 3.0}
+{"typeID": 25936, "typeName": "Large Gravity Capacitor Upgrade I", "size": 3.0}
+{"typeID": 25948, "typeName": "Large Capacitor Control Circuit I", "size": 3.0}
+{"typeID": 25950, "typeName": "Large Egress Port Maximizer I", "size": 3.0}
+{"typeID": 25952, "typeName": "Large Powergrid Subroutine Maximizer I", "size": 3.0}
+{"typeID": 25954, "typeName": "Large Semiconductor Memory Cell I", "size": 3.0}
+{"typeID": 25956, "typeName": "Large Ancillary Current Router I", "size": 3.0}
+{"typeID": 25968, "typeName": "Large Energy Discharge Elutriation I", "size": 3.0}
+{"typeID": 25970, "typeName": "Large Energy Ambit Extension I", "size": 3.0}
+{"typeID": 25972, "typeName": "Large Energy Locus Coordinator I", "size": 3.0}
+{"typeID": 25974, "typeName": "Large Energy Metastasis Adjuster I", "size": 3.0}
+{"typeID": 25976, "typeName": "Large Algid Energy Administrations Unit I", "size": 3.0}
+{"typeID": 25978, "typeName": "Large Energy Burst Aerator I", "size": 3.0}
+{"typeID": 25980, "typeName": "Large Energy Collision Accelerator I", "size": 3.0}
+{"typeID": 25996, "typeName": "Large Hybrid Discharge Elutriation I", "size": 3.0}
+{"typeID": 25998, "typeName": "Large Hybrid Ambit Extension I", "size": 3.0}
+{"typeID": 26000, "typeName": "Large Hybrid Locus Coordinator I", "size": 3.0}
+{"typeID": 26002, "typeName": "Large Hybrid Metastasis Adjuster I", "size": 3.0}
+{"typeID": 26004, "typeName": "Large Algid Hybrid Administrations Unit I", "size": 3.0}
+{"typeID": 26006, "typeName": "Large Hybrid Burst Aerator I", "size": 3.0}
+{"typeID": 26008, "typeName": "Large Hybrid Collision Accelerator I", "size": 3.0}
+{"typeID": 26016, "typeName": "Large Hydraulic Bay Thrusters I", "size": 3.0}
+{"typeID": 26018, "typeName": "Launcher Processor Rig I", "size": 1.0}
+{"typeID": 26020, "typeName": "Large Warhead Rigor Catalyst I", "size": 3.0}
+{"typeID": 26022, "typeName": "Large Rocket Fuel Cache Partition I", "size": 3.0}
+{"typeID": 26024, "typeName": "Missile Guidance System Rig I", "size": 1.0}
+{"typeID": 26026, "typeName": "Large Bay Loading Accelerator I", "size": 3.0}
+{"typeID": 26028, "typeName": "Large Warhead Flare Catalyst I", "size": 3.0}
+{"typeID": 26030, "typeName": "Large Warhead Calefaction Catalyst I", "size": 3.0}
+{"typeID": 26036, "typeName": "Projectile Cache Distributor I", "size": 1.0}
+{"typeID": 26038, "typeName": "Large Projectile Ambit Extension I", "size": 3.0}
+{"typeID": 26040, "typeName": "Large Projectile Locus Coordinator I", "size": 3.0}
+{"typeID": 26042, "typeName": "Large Projectile Metastasis Adjuster I", "size": 3.0}
+{"typeID": 26044, "typeName": "Projectile Consumption Elutriator I", "size": 1.0}
+{"typeID": 26046, "typeName": "Large Projectile Burst Aerator I", "size": 3.0}
+{"typeID": 26048, "typeName": "Large Projectile Collision Accelerator I", "size": 3.0}
+{"typeID": 26056, "typeName": "Large Dynamic Fuel Valve I", "size": 3.0}
+{"typeID": 26058, "typeName": "Large Low Friction Nozzle Joints I", "size": 3.0}
+{"typeID": 26060, "typeName": "Large Auxiliary Thrusters I", "size": 3.0}
+{"typeID": 26062, "typeName": "Large Engine Thermal Shielding I", "size": 3.0}
+{"typeID": 26066, "typeName": "Large Warp Core Optimizer I", "size": 3.0}
+{"typeID": 26068, "typeName": "Large Hyperspatial Velocity Optimizer I", "size": 3.0}
+{"typeID": 26070, "typeName": "Large Polycarbon Engine Housing I", "size": 3.0}
+{"typeID": 26072, "typeName": "Large Cargohold Optimization I", "size": 3.0}
+{"typeID": 26076, "typeName": "Large EM Shield Reinforcer I", "size": 3.0}
+{"typeID": 26078, "typeName": "Large Explosive Shield Reinforcer I", "size": 3.0}
+{"typeID": 26080, "typeName": "Large Kinetic Shield Reinforcer I", "size": 3.0}
+{"typeID": 26082, "typeName": "Large Thermal Shield Reinforcer I", "size": 3.0}
+{"typeID": 26084, "typeName": "Large Core Defense Field Purger I", "size": 3.0}
+{"typeID": 26086, "typeName": "Large Core Defense Operational Solidifier I", "size": 3.0}
+{"typeID": 26088, "typeName": "Large Core Defense Field Extender I", "size": 3.0}
+{"typeID": 26090, "typeName": "Large Core Defense Charge Economizer I", "size": 3.0}
+{"typeID": 26096, "typeName": "Large Targeting Systems Stabilizer I", "size": 3.0}
+{"typeID": 26100, "typeName": "Large Targeting System Subcontroller I", "size": 3.0}
+{"typeID": 26102, "typeName": "Large Ionic Field Projector I", "size": 3.0}
+{"typeID": 26104, "typeName": "Large Signal Focusing Kit I", "size": 3.0}
+{"typeID": 26106, "typeName": "Large Particle Dispersion Augmentor I", "size": 3.0}
+{"typeID": 26108, "typeName": "Large Particle Dispersion Projector I", "size": 3.0}
+{"typeID": 26110, "typeName": "Large Inverted Signal Field Projector I", "size": 3.0}
+{"typeID": 26112, "typeName": "Large Tracking Diagnostic Subroutines I", "size": 3.0}
+{"typeID": 26286, "typeName": "Large EM Armor Reinforcer II", "size": 3.0}
+{"typeID": 26288, "typeName": "Large Explosive Armor Reinforcer II", "size": 3.0}
+{"typeID": 26290, "typeName": "Large Kinetic Armor Reinforcer II", "size": 3.0}
+{"typeID": 26292, "typeName": "Large Thermal Armor Reinforcer II", "size": 3.0}
+{"typeID": 26294, "typeName": "Large Auxiliary Nano Pump II", "size": 3.0}
+{"typeID": 26296, "typeName": "Large Nanobot Accelerator II", "size": 3.0}
+{"typeID": 26298, "typeName": "Large Remote Repair Augmentor II", "size": 3.0}
+{"typeID": 26300, "typeName": "Large Salvage Tackle II", "size": 3.0}
+{"typeID": 26302, "typeName": "Large Trimark Armor Pump II", "size": 3.0}
+{"typeID": 26304, "typeName": "Large Cargohold Optimization II", "size": 3.0}
+{"typeID": 26306, "typeName": "Large Dynamic Fuel Valve II", "size": 3.0}
+{"typeID": 26308, "typeName": "Large Engine Thermal Shielding II", "size": 3.0}
+{"typeID": 26310, "typeName": "Large Low Friction Nozzle Joints II", "size": 3.0}
+{"typeID": 26312, "typeName": "Large Polycarbon Engine Housing II", "size": 3.0}
+{"typeID": 26318, "typeName": "Large Auxiliary Thrusters II", "size": 3.0}
+{"typeID": 26320, "typeName": "Large Warp Core Optimizer II", "size": 3.0}
+{"typeID": 26322, "typeName": "Large Hyperspatial Velocity Optimizer II", "size": 3.0}
+{"typeID": 26324, "typeName": "Large Drone Control Range Augmentor II", "size": 3.0}
+{"typeID": 26326, "typeName": "Large Drone Durability Enhancer II", "size": 3.0}
+{"typeID": 26328, "typeName": "Large Drone Mining Augmentor II", "size": 3.0}
+{"typeID": 26330, "typeName": "Large Drone Repair Augmentor II", "size": 3.0}
+{"typeID": 26332, "typeName": "Large Drone Scope Chip II", "size": 3.0}
+{"typeID": 26334, "typeName": "Large Drone Speed Augmentor II", "size": 3.0}
+{"typeID": 26336, "typeName": "Large EW Drone Range Augmentor II", "size": 3.0}
+{"typeID": 26338, "typeName": "Large Sentry Damage Augmentor II", "size": 3.0}
+{"typeID": 26340, "typeName": "Large Stasis Drone Augmentor II", "size": 3.0}
+{"typeID": 26342, "typeName": "Large Emission Scope Sharpener II", "size": 3.0}
+{"typeID": 26344, "typeName": "Large Signal Disruption Amplifier II", "size": 3.0}
+{"typeID": 26346, "typeName": "Large Memetic Algorithm Bank II", "size": 3.0}
+{"typeID": 26348, "typeName": "Large Liquid Cooled Electronics II", "size": 3.0}
+{"typeID": 26350, "typeName": "Large Gravity Capacitor Upgrade II", "size": 3.0}
+{"typeID": 26352, "typeName": "Large Particle Dispersion Augmentor II", "size": 3.0}
+{"typeID": 26354, "typeName": "Large Inverted Signal Field Projector II", "size": 3.0}
+{"typeID": 26356, "typeName": "Large Tracking Diagnostic Subroutines II", "size": 3.0}
+{"typeID": 26358, "typeName": "Large Ionic Field Projector II", "size": 3.0}
+{"typeID": 26360, "typeName": "Large Particle Dispersion Projector II", "size": 3.0}
+{"typeID": 26362, "typeName": "Large Signal Focusing Kit II", "size": 3.0}
+{"typeID": 26364, "typeName": "Large Targeting System Subcontroller II", "size": 3.0}
+{"typeID": 26366, "typeName": "Large Targeting Systems Stabilizer II", "size": 3.0}
+{"typeID": 26368, "typeName": "Large Egress Port Maximizer II", "size": 3.0}
+{"typeID": 26370, "typeName": "Large Ancillary Current Router II", "size": 3.0}
+{"typeID": 26372, "typeName": "Large Powergrid Subroutine Maximizer II", "size": 3.0}
+{"typeID": 26374, "typeName": "Large Capacitor Control Circuit II", "size": 3.0}
+{"typeID": 26376, "typeName": "Large Semiconductor Memory Cell II", "size": 3.0}
+{"typeID": 26378, "typeName": "Large Energy Discharge Elutriation II", "size": 3.0}
+{"typeID": 26380, "typeName": "Large Energy Burst Aerator II", "size": 3.0}
+{"typeID": 26382, "typeName": "Large Energy Collision Accelerator II", "size": 3.0}
+{"typeID": 26384, "typeName": "Large Algid Energy Administrations Unit II", "size": 3.0}
+{"typeID": 26386, "typeName": "Large Energy Ambit Extension II", "size": 3.0}
+{"typeID": 26388, "typeName": "Large Energy Locus Coordinator II", "size": 3.0}
+{"typeID": 26390, "typeName": "Large Energy Metastasis Adjuster II", "size": 3.0}
+{"typeID": 26392, "typeName": "Large Hybrid Discharge Elutriation II", "size": 3.0}
+{"typeID": 26394, "typeName": "Large Hybrid Burst Aerator II", "size": 3.0}
+{"typeID": 26396, "typeName": "Large Hybrid Collision Accelerator II", "size": 3.0}
+{"typeID": 26398, "typeName": "Large Algid Hybrid Administrations Unit II", "size": 3.0}
+{"typeID": 26400, "typeName": "Large Hybrid Ambit Extension II", "size": 3.0}
+{"typeID": 26402, "typeName": "Large Hybrid Locus Coordinator II", "size": 3.0}
+{"typeID": 26404, "typeName": "Large Hybrid Metastasis Adjuster II", "size": 3.0}
+{"typeID": 26406, "typeName": "Large Bay Loading Accelerator II", "size": 3.0}
+{"typeID": 26408, "typeName": "Launcher Processor Rig II", "size": 1.0}
+{"typeID": 26410, "typeName": "Missile Guidance System Rig II", "size": 1.0}
+{"typeID": 26412, "typeName": "Large Warhead Flare Catalyst II", "size": 3.0}
+{"typeID": 26414, "typeName": "Large Warhead Rigor Catalyst II", "size": 3.0}
+{"typeID": 26416, "typeName": "Large Hydraulic Bay Thrusters II", "size": 3.0}
+{"typeID": 26418, "typeName": "Large Rocket Fuel Cache Partition II", "size": 3.0}
+{"typeID": 26420, "typeName": "Large Warhead Calefaction Catalyst II", "size": 3.0}
+{"typeID": 26422, "typeName": "Projectile Cache Distributor II", "size": 1.0}
+{"typeID": 26424, "typeName": "Large Projectile Collision Accelerator II", "size": 3.0}
+{"typeID": 26426, "typeName": "Projectile Consumption Elutriator II", "size": 1.0}
+{"typeID": 26428, "typeName": "Large Projectile Ambit Extension II", "size": 3.0}
+{"typeID": 26430, "typeName": "Large Projectile Burst Aerator II", "size": 3.0}
+{"typeID": 26432, "typeName": "Large Projectile Locus Coordinator II", "size": 3.0}
+{"typeID": 26434, "typeName": "Large Projectile Metastasis Adjuster II", "size": 3.0}
+{"typeID": 26436, "typeName": "Large EM Shield Reinforcer II", "size": 3.0}
+{"typeID": 26438, "typeName": "Large Explosive Shield Reinforcer II", "size": 3.0}
+{"typeID": 26440, "typeName": "Large Kinetic Shield Reinforcer II", "size": 3.0}
+{"typeID": 26442, "typeName": "Large Thermal Shield Reinforcer II", "size": 3.0}
+{"typeID": 26444, "typeName": "Large Core Defense Capacitor Safeguard II", "size": 3.0}
+{"typeID": 26446, "typeName": "Large Core Defense Charge Economizer II", "size": 3.0}
+{"typeID": 26448, "typeName": "Large Core Defense Field Extender II", "size": 3.0}
+{"typeID": 26450, "typeName": "Large Core Defense Field Purger II", "size": 3.0}
+{"typeID": 26452, "typeName": "Large Core Defense Operational Solidifier II", "size": 3.0}
+{"typeID": 26840, "typeName": "Raven State Issue", "size": 3.0}
+{"typeID": 26842, "typeName": "Tempest Tribal Issue", "size": 3.0}
+{"typeID": 26925, "typeName": "Drone Damage Rig I", "size": 1.0}
+{"typeID": 26927, "typeName": "Drone Damage Rig II", "size": 1.0}
+{"typeID": 26929, "typeName": "Small Processor Overclocking Unit I", "size": 1.0}
+{"typeID": 26931, "typeName": "Small Processor Overclocking Unit II", "size": 1.0}
+{"typeID": 26960, "typeName": "Sensor Strength Rig I", "size": 1.0}
+{"typeID": 26962, "typeName": "Sensor Strength Rig II", "size": 1.0}
+{"typeID": 26964, "typeName": "Shield Transporter Rig I", "size": 1.0}
+{"typeID": 26966, "typeName": "Shield Transporter Rig II", "size": 1.0}
+{"typeID": 27064, "typeName": "Capital Auxiliary Nano Pump I", "size": 4.0}
+{"typeID": 27066, "typeName": "Capital Nanobot Accelerator II", "size": 4.0}
+{"typeID": 27068, "typeName": "Small Remote Repair Augmentor I", "size": 1.0}
+{"typeID": 81047, "typeName": "Torrent", "size": 2.0}
+{"typeID": 28352, "typeName": "Rorqual", "size": 4.0}
+{"typeID": 28606, "typeName": "Orca", "size": 3.0}
+{"typeID": 28659, "typeName": "Paladin", "size": 3.0}
+{"typeID": 28661, "typeName": "Kronos", "size": 3.0}
+{"typeID": 28665, "typeName": "Vargur", "size": 3.0}
+{"typeID": 28710, "typeName": "Golem", "size": 3.0}
+{"typeID": 28844, "typeName": "Rhea", "size": 4.0}
+{"typeID": 28846, "typeName": "Nomad", "size": 4.0}
+{"typeID": 28848, "typeName": "Anshar", "size": 4.0}
+{"typeID": 28850, "typeName": "Ark", "size": 4.0}
+{"typeID": 29248, "typeName": "Magnate", "size": 1.0}
+{"typeID": 29336, "typeName": "Scythe Fleet Issue", "size": 2.0}
+{"typeID": 29337, "typeName": "Augoror Navy Issue", "size": 2.0}
+{"typeID": 29340, "typeName": "Osprey Navy Issue", "size": 2.0}
+{"typeID": 29344, "typeName": "Exequror Navy Issue", "size": 2.0}
+{"typeID": 29984, "typeName": "Tengu", "size": 2.0}
+{"typeID": 29986, "typeName": "Legion", "size": 2.0}
+{"typeID": 29988, "typeName": "Proteus", "size": 2.0}
+{"typeID": 29990, "typeName": "Loki", "size": 2.0}
+{"typeID": 30987, "typeName": "Small Trimark Armor Pump I", "size": 1.0}
+{"typeID": 30993, "typeName": "Capital Trimark Armor Pump I", "size": 4.0}
+{"typeID": 30997, "typeName": "Small EM Armor Reinforcer I", "size": 1.0}
+{"typeID": 30999, "typeName": "Medium EM Armor Reinforcer I", "size": 2.0}
+{"typeID": 31001, "typeName": "Capital EM Armor Reinforcer I", "size": 4.0}
+{"typeID": 31003, "typeName": "Small EM Armor Reinforcer II", "size": 1.0}
+{"typeID": 31005, "typeName": "Medium EM Armor Reinforcer II", "size": 2.0}
+{"typeID": 31007, "typeName": "Capital EM Armor Reinforcer II", "size": 4.0}
+{"typeID": 31009, "typeName": "Small Explosive Armor Reinforcer I", "size": 1.0}
+{"typeID": 31011, "typeName": "Medium Explosive Armor Reinforcer I", "size": 2.0}
+{"typeID": 31013, "typeName": "Capital Explosive Armor Reinforcer I", "size": 4.0}
+{"typeID": 31015, "typeName": "Small Explosive Armor Reinforcer II", "size": 1.0}
+{"typeID": 31017, "typeName": "Medium Explosive Armor Reinforcer II", "size": 2.0}
+{"typeID": 31019, "typeName": "Capital Explosive Armor Reinforcer II", "size": 4.0}
+{"typeID": 31021, "typeName": "Small Kinetic Armor Reinforcer I", "size": 1.0}
+{"typeID": 31023, "typeName": "Medium Kinetic Armor Reinforcer I", "size": 2.0}
+{"typeID": 31025, "typeName": "Capital Kinetic Armor Reinforcer I", "size": 4.0}
+{"typeID": 31027, "typeName": "Small Kinetic Armor Reinforcer II", "size": 1.0}
+{"typeID": 31029, "typeName": "Medium Kinetic Armor Reinforcer II", "size": 2.0}
+{"typeID": 31031, "typeName": "Capital Kinetic Armor Reinforcer II", "size": 4.0}
+{"typeID": 31033, "typeName": "Small Thermal Armor Reinforcer I", "size": 1.0}
+{"typeID": 31035, "typeName": "Medium Thermal Armor Reinforcer I", "size": 2.0}
+{"typeID": 31037, "typeName": "Capital Thermal Armor Reinforcer I", "size": 4.0}
+{"typeID": 31039, "typeName": "Small Thermal Armor Reinforcer II", "size": 1.0}
+{"typeID": 31041, "typeName": "Medium Thermal Armor Reinforcer II", "size": 2.0}
+{"typeID": 31043, "typeName": "Capital Thermal Armor Reinforcer II", "size": 4.0}
+{"typeID": 31045, "typeName": "Small Auxiliary Nano Pump I", "size": 1.0}
+{"typeID": 31047, "typeName": "Medium Auxiliary Nano Pump I", "size": 2.0}
+{"typeID": 31049, "typeName": "Capital Auxiliary Nano Pump II", "size": 4.0}
+{"typeID": 31051, "typeName": "Small Auxiliary Nano Pump II", "size": 1.0}
+{"typeID": 31053, "typeName": "Medium Auxiliary Nano Pump II", "size": 2.0}
+{"typeID": 31055, "typeName": "Medium Trimark Armor Pump I", "size": 2.0}
+{"typeID": 31057, "typeName": "Small Trimark Armor Pump II", "size": 1.0}
+{"typeID": 31059, "typeName": "Medium Trimark Armor Pump II", "size": 2.0}
+{"typeID": 31061, "typeName": "Capital Trimark Armor Pump II", "size": 4.0}
+{"typeID": 31063, "typeName": "Small Nanobot Accelerator I", "size": 1.0}
+{"typeID": 31065, "typeName": "Medium Nanobot Accelerator I", "size": 2.0}
+{"typeID": 31067, "typeName": "Capital Nanobot Accelerator I", "size": 4.0}
+{"typeID": 31069, "typeName": "Small Nanobot Accelerator II", "size": 1.0}
+{"typeID": 31071, "typeName": "Medium Nanobot Accelerator II", "size": 2.0}
+{"typeID": 31073, "typeName": "Medium Remote Repair Augmentor I", "size": 2.0}
+{"typeID": 31075, "typeName": "Capital Remote Repair Augmentor I", "size": 4.0}
+{"typeID": 31077, "typeName": "Small Remote Repair Augmentor II", "size": 1.0}
+{"typeID": 31079, "typeName": "Medium Remote Repair Augmentor II", "size": 2.0}
+{"typeID": 31081, "typeName": "Capital Remote Repair Augmentor II", "size": 4.0}
+{"typeID": 31083, "typeName": "Small Salvage Tackle I", "size": 1.0}
+{"typeID": 31085, "typeName": "Medium Salvage Tackle I", "size": 2.0}
+{"typeID": 31087, "typeName": "Capital Salvage Tackle I", "size": 4.0}
+{"typeID": 31089, "typeName": "Small Salvage Tackle II", "size": 1.0}
+{"typeID": 31091, "typeName": "Medium Salvage Tackle II", "size": 2.0}
+{"typeID": 31093, "typeName": "Capital Salvage Tackle II", "size": 4.0}
+{"typeID": 31105, "typeName": "Small Auxiliary Thrusters I", "size": 1.0}
+{"typeID": 31107, "typeName": "Medium Auxiliary Thrusters I", "size": 2.0}
+{"typeID": 31109, "typeName": "Capital Auxiliary Thrusters I", "size": 4.0}
+{"typeID": 31111, "typeName": "Small Auxiliary Thrusters II", "size": 1.0}
+{"typeID": 31113, "typeName": "Medium Auxiliary Thrusters II", "size": 2.0}
+{"typeID": 31115, "typeName": "Capital Auxiliary Thrusters II", "size": 4.0}
+{"typeID": 31117, "typeName": "Small Cargohold Optimization I", "size": 1.0}
+{"typeID": 31119, "typeName": "Medium Cargohold Optimization I", "size": 2.0}
+{"typeID": 31121, "typeName": "Capital Cargohold Optimization I", "size": 4.0}
+{"typeID": 31123, "typeName": "Small Cargohold Optimization II", "size": 1.0}
+{"typeID": 31125, "typeName": "Medium Cargohold Optimization II", "size": 2.0}
+{"typeID": 31127, "typeName": "Capital Cargohold Optimization II", "size": 4.0}
+{"typeID": 31129, "typeName": "Small Dynamic Fuel Valve I", "size": 1.0}
+{"typeID": 31131, "typeName": "Medium Dynamic Fuel Valve I", "size": 2.0}
+{"typeID": 31133, "typeName": "Capital Dynamic Fuel Valve I", "size": 4.0}
+{"typeID": 31135, "typeName": "Small Dynamic Fuel Valve II", "size": 1.0}
+{"typeID": 31137, "typeName": "Medium Dynamic Fuel Valve II", "size": 2.0}
+{"typeID": 31139, "typeName": "Capital Dynamic Fuel Valve II", "size": 4.0}
+{"typeID": 31141, "typeName": "Small Engine Thermal Shielding I", "size": 1.0}
+{"typeID": 31143, "typeName": "Medium Engine Thermal Shielding I", "size": 2.0}
+{"typeID": 31145, "typeName": "Capital Engine Thermal Shielding I", "size": 4.0}
+{"typeID": 31147, "typeName": "Small Engine Thermal Shielding II", "size": 1.0}
+{"typeID": 31149, "typeName": "Medium Engine Thermal Shielding II", "size": 2.0}
+{"typeID": 31151, "typeName": "Capital Engine Thermal Shielding II", "size": 4.0}
+{"typeID": 31153, "typeName": "Small Low Friction Nozzle Joints I", "size": 1.0}
+{"typeID": 31155, "typeName": "Medium Low Friction Nozzle Joints I", "size": 2.0}
+{"typeID": 31157, "typeName": "Capital Low Friction Nozzle Joints I", "size": 4.0}
+{"typeID": 31159, "typeName": "Small Hyperspatial Velocity Optimizer I", "size": 1.0}
+{"typeID": 31161, "typeName": "Medium Hyperspatial Velocity Optimizer I", "size": 2.0}
+{"typeID": 31163, "typeName": "Capital Hyperspatial Velocity Optimizer I", "size": 4.0}
+{"typeID": 31165, "typeName": "Small Hyperspatial Velocity Optimizer II", "size": 1.0}
+{"typeID": 31167, "typeName": "Medium Hyperspatial Velocity Optimizer II", "size": 2.0}
+{"typeID": 31169, "typeName": "Capital Hyperspatial Velocity Optimizer II", "size": 4.0}
+{"typeID": 31171, "typeName": "Small Low Friction Nozzle Joints II", "size": 1.0}
+{"typeID": 31173, "typeName": "Medium Low Friction Nozzle Joints II", "size": 2.0}
+{"typeID": 31175, "typeName": "Capital Low Friction Nozzle Joints II", "size": 4.0}
+{"typeID": 31177, "typeName": "Small Polycarbon Engine Housing I", "size": 1.0}
+{"typeID": 31179, "typeName": "Medium Polycarbon Engine Housing I", "size": 2.0}
+{"typeID": 31181, "typeName": "Capital Polycarbon Engine Housing I", "size": 4.0}
+{"typeID": 31183, "typeName": "Small Polycarbon Engine Housing II", "size": 1.0}
+{"typeID": 31185, "typeName": "Medium Polycarbon Engine Housing II", "size": 2.0}
+{"typeID": 31187, "typeName": "Capital Polycarbon Engine Housing II", "size": 4.0}
+{"typeID": 31189, "typeName": "Small Warp Core Optimizer I", "size": 1.0}
+{"typeID": 31191, "typeName": "Medium Warp Core Optimizer I", "size": 2.0}
+{"typeID": 31193, "typeName": "Capital Warp Core Optimizer I", "size": 4.0}
+{"typeID": 31195, "typeName": "Small Warp Core Optimizer II", "size": 1.0}
+{"typeID": 31197, "typeName": "Medium Warp Core Optimizer II", "size": 2.0}
+{"typeID": 31199, "typeName": "Capital Warp Core Optimizer II", "size": 4.0}
+{"typeID": 31201, "typeName": "Small Emission Scope Sharpener I", "size": 1.0}
+{"typeID": 31203, "typeName": "Medium Emission Scope Sharpener I", "size": 2.0}
+{"typeID": 31205, "typeName": "Capital Emission Scope Sharpener I", "size": 4.0}
+{"typeID": 31207, "typeName": "Small Emission Scope Sharpener II", "size": 1.0}
+{"typeID": 31209, "typeName": "Medium Emission Scope Sharpener II", "size": 2.0}
+{"typeID": 31211, "typeName": "Capital Emission Scope Sharpener II", "size": 4.0}
+{"typeID": 31213, "typeName": "Small Gravity Capacitor Upgrade I", "size": 1.0}
+{"typeID": 31215, "typeName": "Medium Gravity Capacitor Upgrade I", "size": 2.0}
+{"typeID": 31217, "typeName": "Capital Gravity Capacitor Upgrade I", "size": 4.0}
+{"typeID": 31220, "typeName": "Small Gravity Capacitor Upgrade II", "size": 1.0}
+{"typeID": 31222, "typeName": "Medium Gravity Capacitor Upgrade II", "size": 2.0}
+{"typeID": 31224, "typeName": "Capital Gravity Capacitor Upgrade II", "size": 4.0}
+{"typeID": 31226, "typeName": "Small Liquid Cooled Electronics I", "size": 1.0}
+{"typeID": 31228, "typeName": "Medium Liquid Cooled Electronics I", "size": 2.0}
+{"typeID": 31230, "typeName": "Capital Liquid Cooled Electronics I", "size": 4.0}
+{"typeID": 31232, "typeName": "Small Liquid Cooled Electronics II", "size": 1.0}
+{"typeID": 31234, "typeName": "Medium Liquid Cooled Electronics II", "size": 2.0}
+{"typeID": 31236, "typeName": "Capital Liquid Cooled Electronics II", "size": 4.0}
+{"typeID": 31238, "typeName": "Small Memetic Algorithm Bank I", "size": 1.0}
+{"typeID": 31240, "typeName": "Medium Memetic Algorithm Bank I", "size": 2.0}
+{"typeID": 31242, "typeName": "Capital Memetic Algorithm Bank I", "size": 4.0}
+{"typeID": 31244, "typeName": "Small Memetic Algorithm Bank II", "size": 1.0}
+{"typeID": 31246, "typeName": "Medium Memetic Algorithm Bank II", "size": 2.0}
+{"typeID": 31248, "typeName": "Capital Memetic Algorithm Bank II", "size": 4.0}
+{"typeID": 31250, "typeName": "Small Signal Disruption Amplifier I", "size": 1.0}
+{"typeID": 31252, "typeName": "Medium Signal Disruption Amplifier I", "size": 2.0}
+{"typeID": 31254, "typeName": "Capital Signal Disruption Amplifier I", "size": 4.0}
+{"typeID": 31256, "typeName": "Small Signal Disruption Amplifier II", "size": 1.0}
+{"typeID": 31258, "typeName": "Medium Signal Disruption Amplifier II", "size": 2.0}
+{"typeID": 31260, "typeName": "Capital Signal Disruption Amplifier II", "size": 4.0}
+{"typeID": 31262, "typeName": "Small Inverted Signal Field Projector I", "size": 1.0}
+{"typeID": 31264, "typeName": "Medium Inverted Signal Field Projector I", "size": 2.0}
+{"typeID": 31266, "typeName": "Capital Inverted Signal Field Projector I", "size": 4.0}
+{"typeID": 31268, "typeName": "Small Inverted Signal Field Projector II", "size": 1.0}
+{"typeID": 31270, "typeName": "Medium Inverted Signal Field Projector II", "size": 2.0}
+{"typeID": 31272, "typeName": "Capital Inverted Signal Field Projector II", "size": 4.0}
+{"typeID": 31274, "typeName": "Small Ionic Field Projector I", "size": 1.0}
+{"typeID": 31276, "typeName": "Medium Ionic Field Projector I", "size": 2.0}
+{"typeID": 31278, "typeName": "Capital Ionic Field Projector I", "size": 4.0}
+{"typeID": 31280, "typeName": "Small Ionic Field Projector II", "size": 1.0}
+{"typeID": 31282, "typeName": "Medium Ionic Field Projector II", "size": 2.0}
+{"typeID": 31284, "typeName": "Capital Ionic Field Projector II", "size": 4.0}
+{"typeID": 31286, "typeName": "Small Particle Dispersion Augmentor I", "size": 1.0}
+{"typeID": 31288, "typeName": "Medium Particle Dispersion Augmentor I", "size": 2.0}
+{"typeID": 31290, "typeName": "Capital Particle Dispersion Augmentor I", "size": 4.0}
+{"typeID": 31292, "typeName": "Small Particle Dispersion Augmentor II", "size": 1.0}
+{"typeID": 31294, "typeName": "Medium Particle Dispersion Augmentor II", "size": 2.0}
+{"typeID": 31296, "typeName": "Capital Particle Dispersion Augmentor II", "size": 4.0}
+{"typeID": 31298, "typeName": "Small Particle Dispersion Projector I", "size": 1.0}
+{"typeID": 31300, "typeName": "Medium Particle Dispersion Projector I", "size": 2.0}
+{"typeID": 31302, "typeName": "Capital Particle Dispersion Projector I", "size": 4.0}
+{"typeID": 31304, "typeName": "Small Particle Dispersion Projector II", "size": 1.0}
+{"typeID": 31306, "typeName": "Medium Particle Dispersion Projector II", "size": 2.0}
+{"typeID": 31308, "typeName": "Capital Particle Dispersion Projector II", "size": 4.0}
+{"typeID": 31310, "typeName": "Small Signal Focusing Kit I", "size": 1.0}
+{"typeID": 31312, "typeName": "Medium Signal Focusing Kit I", "size": 2.0}
+{"typeID": 31314, "typeName": "Capital Signal Focusing Kit I", "size": 4.0}
+{"typeID": 31316, "typeName": "Small Signal Focusing Kit II", "size": 1.0}
+{"typeID": 31318, "typeName": "Medium Signal Focusing Kit II", "size": 2.0}
+{"typeID": 31320, "typeName": "Capital Signal Focusing Kit II", "size": 4.0}
+{"typeID": 31322, "typeName": "Small Targeting System Subcontroller I", "size": 1.0}
+{"typeID": 31324, "typeName": "Medium Targeting System Subcontroller I", "size": 2.0}
+{"typeID": 31326, "typeName": "Capital Targeting System Subcontroller I", "size": 4.0}
+{"typeID": 31328, "typeName": "Small Targeting System Subcontroller II", "size": 1.0}
+{"typeID": 31330, "typeName": "Medium Targeting System Subcontroller II", "size": 2.0}
+{"typeID": 31332, "typeName": "Capital Targeting System Subcontroller II", "size": 4.0}
+{"typeID": 31334, "typeName": "Small Targeting Systems Stabilizer I", "size": 1.0}
+{"typeID": 31336, "typeName": "Medium Targeting Systems Stabilizer I", "size": 2.0}
+{"typeID": 31338, "typeName": "Capital Targeting Systems Stabilizer I", "size": 4.0}
+{"typeID": 31340, "typeName": "Small Targeting Systems Stabilizer II", "size": 1.0}
+{"typeID": 31342, "typeName": "Medium Targeting Systems Stabilizer II", "size": 2.0}
+{"typeID": 31344, "typeName": "Capital Targeting Systems Stabilizer II", "size": 4.0}
+{"typeID": 31346, "typeName": "Small Tracking Diagnostic Subroutines I", "size": 1.0}
+{"typeID": 31348, "typeName": "Medium Tracking Diagnostic Subroutines I", "size": 2.0}
+{"typeID": 31350, "typeName": "Capital Tracking Diagnostic Subroutines I", "size": 4.0}
+{"typeID": 31352, "typeName": "Small Tracking Diagnostic Subroutines II", "size": 1.0}
+{"typeID": 31354, "typeName": "Medium Tracking Diagnostic Subroutines II", "size": 2.0}
+{"typeID": 31356, "typeName": "Capital Tracking Diagnostic Subroutines II", "size": 4.0}
+{"typeID": 31358, "typeName": "Small Ancillary Current Router I", "size": 1.0}
+{"typeID": 31360, "typeName": "Medium Ancillary Current Router I", "size": 2.0}
+{"typeID": 31362, "typeName": "Capital Ancillary Current Router I", "size": 4.0}
+{"typeID": 31364, "typeName": "Small Ancillary Current Router II", "size": 1.0}
+{"typeID": 31366, "typeName": "Medium Ancillary Current Router II", "size": 2.0}
+{"typeID": 31368, "typeName": "Capital Ancillary Current Router II", "size": 4.0}
+{"typeID": 31370, "typeName": "Small Capacitor Control Circuit I", "size": 1.0}
+{"typeID": 31372, "typeName": "Medium Capacitor Control Circuit I", "size": 2.0}
+{"typeID": 31374, "typeName": "Capital Capacitor Control Circuit I", "size": 4.0}
+{"typeID": 31376, "typeName": "Small Capacitor Control Circuit II", "size": 1.0}
+{"typeID": 31378, "typeName": "Medium Capacitor Control Circuit II", "size": 2.0}
+{"typeID": 31380, "typeName": "Capital Capacitor Control Circuit II", "size": 4.0}
+{"typeID": 31382, "typeName": "Small Egress Port Maximizer I", "size": 1.0}
+{"typeID": 31384, "typeName": "Medium Egress Port Maximizer I", "size": 2.0}
+{"typeID": 31386, "typeName": "Capital Egress Port Maximizer I", "size": 4.0}
+{"typeID": 31388, "typeName": "Small Egress Port Maximizer II", "size": 1.0}
+{"typeID": 31390, "typeName": "Medium Egress Port Maximizer II", "size": 2.0}
+{"typeID": 31392, "typeName": "Capital Egress Port Maximizer II", "size": 4.0}
+{"typeID": 31394, "typeName": "Small Powergrid Subroutine Maximizer I", "size": 1.0}
+{"typeID": 31396, "typeName": "Medium Powergrid Subroutine Maximizer I", "size": 2.0}
+{"typeID": 31398, "typeName": "Capital Powergrid Subroutine Maximizer I", "size": 4.0}
+{"typeID": 31400, "typeName": "Small Powergrid Subroutine Maximizer II", "size": 1.0}
+{"typeID": 31402, "typeName": "Medium Powergrid Subroutine Maximizer II", "size": 2.0}
+{"typeID": 31404, "typeName": "Capital Powergrid Subroutine Maximizer II", "size": 4.0}
+{"typeID": 31406, "typeName": "Small Semiconductor Memory Cell I", "size": 1.0}
+{"typeID": 31408, "typeName": "Medium Semiconductor Memory Cell I", "size": 2.0}
+{"typeID": 31410, "typeName": "Capital Semiconductor Memory Cell I", "size": 4.0}
+{"typeID": 31412, "typeName": "Small Semiconductor Memory Cell II", "size": 1.0}
+{"typeID": 31414, "typeName": "Medium Semiconductor Memory Cell II", "size": 2.0}
+{"typeID": 31416, "typeName": "Capital Semiconductor Memory Cell II", "size": 4.0}
+{"typeID": 31418, "typeName": "Small Algid Energy Administrations Unit I", "size": 1.0}
+{"typeID": 31420, "typeName": "Medium Algid Energy Administrations Unit I", "size": 2.0}
+{"typeID": 31422, "typeName": "Capital Algid Energy Administrations Unit I", "size": 4.0}
+{"typeID": 31424, "typeName": "Small Algid Energy Administrations Unit II", "size": 1.0}
+{"typeID": 31426, "typeName": "Medium Algid Energy Administrations Unit II", "size": 2.0}
+{"typeID": 31428, "typeName": "Capital Algid Energy Administrations Unit II", "size": 4.0}
+{"typeID": 31430, "typeName": "Small Energy Ambit Extension I", "size": 1.0}
+{"typeID": 31432, "typeName": "Medium Energy Ambit Extension I", "size": 2.0}
+{"typeID": 31434, "typeName": "Capital Energy Ambit Extension I", "size": 4.0}
+{"typeID": 31436, "typeName": "Small Energy Ambit Extension II", "size": 1.0}
+{"typeID": 31438, "typeName": "Medium Energy Ambit Extension II", "size": 2.0}
+{"typeID": 31440, "typeName": "Capital Energy Ambit Extension II", "size": 4.0}
+{"typeID": 31442, "typeName": "Small Energy Burst Aerator I", "size": 1.0}
+{"typeID": 31444, "typeName": "Medium Energy Burst Aerator I", "size": 2.0}
+{"typeID": 31446, "typeName": "Capital Energy Burst Aerator I", "size": 4.0}
+{"typeID": 31448, "typeName": "Small Energy Burst Aerator II", "size": 1.0}
+{"typeID": 31450, "typeName": "Medium Energy Burst Aerator II", "size": 2.0}
+{"typeID": 31452, "typeName": "Capital Energy Burst Aerator II", "size": 4.0}
+{"typeID": 31454, "typeName": "Small Energy Collision Accelerator I", "size": 1.0}
+{"typeID": 31456, "typeName": "Medium Energy Collision Accelerator I", "size": 2.0}
+{"typeID": 31458, "typeName": "Capital Energy Collision Accelerator I", "size": 4.0}
+{"typeID": 31460, "typeName": "Small Energy Collision Accelerator II", "size": 1.0}
+{"typeID": 31462, "typeName": "Medium Energy Collision Accelerator II", "size": 2.0}
+{"typeID": 31464, "typeName": "Capital Energy Collision Accelerator II", "size": 4.0}
+{"typeID": 31466, "typeName": "Small Energy Discharge Elutriation I", "size": 1.0}
+{"typeID": 31468, "typeName": "Medium Energy Discharge Elutriation I", "size": 2.0}
+{"typeID": 31470, "typeName": "Capital Energy Discharge Elutriation I", "size": 4.0}
+{"typeID": 31472, "typeName": "Small Energy Discharge Elutriation II", "size": 1.0}
+{"typeID": 31474, "typeName": "Medium Energy Discharge Elutriation II", "size": 2.0}
+{"typeID": 31476, "typeName": "Capital Energy Discharge Elutriation II", "size": 4.0}
+{"typeID": 31478, "typeName": "Small Energy Locus Coordinator I", "size": 1.0}
+{"typeID": 31480, "typeName": "Medium Energy Locus Coordinator I", "size": 2.0}
+{"typeID": 31482, "typeName": "Capital Energy Locus Coordinator I", "size": 4.0}
+{"typeID": 31484, "typeName": "Small Energy Locus Coordinator II", "size": 1.0}
+{"typeID": 31486, "typeName": "Medium Energy Locus Coordinator II", "size": 2.0}
+{"typeID": 31488, "typeName": "Capital Energy Locus Coordinator II", "size": 4.0}
+{"typeID": 31490, "typeName": "Small Energy Metastasis Adjuster I", "size": 1.0}
+{"typeID": 31492, "typeName": "Medium Energy Metastasis Adjuster I", "size": 2.0}
+{"typeID": 31494, "typeName": "Capital Energy Metastasis Adjuster I", "size": 4.0}
+{"typeID": 31496, "typeName": "Small Energy Metastasis Adjuster II", "size": 1.0}
+{"typeID": 31498, "typeName": "Medium Energy Metastasis Adjuster II", "size": 2.0}
+{"typeID": 31500, "typeName": "Capital Energy Metastasis Adjuster II", "size": 4.0}
+{"typeID": 31502, "typeName": "Small Algid Hybrid Administrations Unit I", "size": 1.0}
+{"typeID": 31504, "typeName": "Medium Algid Hybrid Administrations Unit I", "size": 2.0}
+{"typeID": 31506, "typeName": "Capital Algid Hybrid Administrations Unit I", "size": 4.0}
+{"typeID": 31508, "typeName": "Small Algid Hybrid Administrations Unit II", "size": 1.0}
+{"typeID": 31510, "typeName": "Medium Algid Hybrid Administrations Unit II", "size": 2.0}
+{"typeID": 31512, "typeName": "Capital Algid Hybrid Administrations Unit II", "size": 4.0}
+{"typeID": 31514, "typeName": "Small Hybrid Ambit Extension I", "size": 1.0}
+{"typeID": 31516, "typeName": "Medium Hybrid Ambit Extension I", "size": 2.0}
+{"typeID": 31518, "typeName": "Capital Hybrid Ambit Extension I", "size": 4.0}
+{"typeID": 31520, "typeName": "Small Hybrid Ambit Extension II", "size": 1.0}
+{"typeID": 31522, "typeName": "Medium Hybrid Ambit Extension II", "size": 2.0}
+{"typeID": 31524, "typeName": "Capital Hybrid Ambit Extension II", "size": 4.0}
+{"typeID": 31526, "typeName": "Small Hybrid Burst Aerator I", "size": 1.0}
+{"typeID": 31528, "typeName": "Medium Hybrid Burst Aerator I", "size": 2.0}
+{"typeID": 31530, "typeName": "Capital Hybrid Burst Aerator I", "size": 4.0}
+{"typeID": 31532, "typeName": "Small Hybrid Burst Aerator II", "size": 1.0}
+{"typeID": 31534, "typeName": "Medium Hybrid Burst Aerator II", "size": 2.0}
+{"typeID": 31536, "typeName": "Capital Hybrid Burst Aerator II", "size": 4.0}
+{"typeID": 31538, "typeName": "Small Hybrid Collision Accelerator I", "size": 1.0}
+{"typeID": 31540, "typeName": "Medium Hybrid Collision Accelerator I", "size": 2.0}
+{"typeID": 31542, "typeName": "Capital Hybrid Collision Accelerator I", "size": 4.0}
+{"typeID": 31544, "typeName": "Small Hybrid Collision Accelerator II", "size": 1.0}
+{"typeID": 31546, "typeName": "Medium Hybrid Collision Accelerator II", "size": 2.0}
+{"typeID": 31548, "typeName": "Capital Hybrid Collision Accelerator II", "size": 4.0}
+{"typeID": 31550, "typeName": "Small Hybrid Discharge Elutriation I", "size": 1.0}
+{"typeID": 31552, "typeName": "Medium Hybrid Discharge Elutriation I", "size": 2.0}
+{"typeID": 31554, "typeName": "Capital Hybrid Discharge Elutriation I", "size": 4.0}
+{"typeID": 31556, "typeName": "Small Hybrid Discharge Elutriation II", "size": 1.0}
+{"typeID": 31558, "typeName": "Medium Hybrid Discharge Elutriation II", "size": 2.0}
+{"typeID": 31560, "typeName": "Capital Hybrid Discharge Elutriation II", "size": 4.0}
+{"typeID": 31562, "typeName": "Small Hybrid Locus Coordinator I", "size": 1.0}
+{"typeID": 31564, "typeName": "Medium Hybrid Locus Coordinator I", "size": 2.0}
+{"typeID": 31566, "typeName": "Capital Hybrid Locus Coordinator I", "size": 4.0}
+{"typeID": 31568, "typeName": "Small Hybrid Locus Coordinator II", "size": 1.0}
+{"typeID": 31570, "typeName": "Medium Hybrid Locus Coordinator II", "size": 2.0}
+{"typeID": 31572, "typeName": "Capital Hybrid Locus Coordinator II", "size": 4.0}
+{"typeID": 31574, "typeName": "Small Hybrid Metastasis Adjuster I", "size": 1.0}
+{"typeID": 31576, "typeName": "Medium Hybrid Metastasis Adjuster I", "size": 2.0}
+{"typeID": 31578, "typeName": "Capital Hybrid Metastasis Adjuster I", "size": 4.0}
+{"typeID": 31580, "typeName": "Small Hybrid Metastasis Adjuster II", "size": 1.0}
+{"typeID": 31582, "typeName": "Medium Hybrid Metastasis Adjuster II", "size": 2.0}
+{"typeID": 31584, "typeName": "Capital Hybrid Metastasis Adjuster II", "size": 4.0}
+{"typeID": 31586, "typeName": "Small Bay Loading Accelerator I", "size": 1.0}
+{"typeID": 31588, "typeName": "Medium Bay Loading Accelerator I", "size": 2.0}
+{"typeID": 31590, "typeName": "Capital Bay Loading Accelerator I", "size": 4.0}
+{"typeID": 31592, "typeName": "Small Bay Loading Accelerator II", "size": 1.0}
+{"typeID": 31594, "typeName": "Medium Bay Loading Accelerator II", "size": 2.0}
+{"typeID": 31596, "typeName": "Capital Bay Loading Accelerator II", "size": 4.0}
+{"typeID": 31598, "typeName": "Small Hydraulic Bay Thrusters I", "size": 1.0}
+{"typeID": 31600, "typeName": "Medium Hydraulic Bay Thrusters I", "size": 2.0}
+{"typeID": 31602, "typeName": "Capital Hydraulic Bay Thrusters I", "size": 4.0}
+{"typeID": 31604, "typeName": "Small Hydraulic Bay Thrusters II", "size": 1.0}
+{"typeID": 31606, "typeName": "Medium Hydraulic Bay Thrusters II", "size": 2.0}
+{"typeID": 31608, "typeName": "Small Rocket Fuel Cache Partition I", "size": 1.0}
+{"typeID": 31610, "typeName": "Medium Rocket Fuel Cache Partition I", "size": 2.0}
+{"typeID": 31612, "typeName": "Capital Rocket Fuel Cache Partition I", "size": 4.0}
+{"typeID": 31614, "typeName": "Small Rocket Fuel Cache Partition II", "size": 1.0}
+{"typeID": 31616, "typeName": "Medium Rocket Fuel Cache Partition II", "size": 2.0}
+{"typeID": 31618, "typeName": "Capital Rocket Fuel Cache Partition II", "size": 4.0}
+{"typeID": 31620, "typeName": "Small Warhead Calefaction Catalyst I", "size": 1.0}
+{"typeID": 31622, "typeName": "Medium Warhead Calefaction Catalyst I", "size": 2.0}
+{"typeID": 31624, "typeName": "Capital Warhead Calefaction Catalyst I", "size": 4.0}
+{"typeID": 31626, "typeName": "Small Warhead Calefaction Catalyst II", "size": 1.0}
+{"typeID": 31628, "typeName": "Medium Warhead Calefaction Catalyst II", "size": 2.0}
+{"typeID": 31630, "typeName": "Capital Warhead Calefaction Catalyst II", "size": 4.0}
+{"typeID": 31632, "typeName": "Small Warhead Flare Catalyst I", "size": 1.0}
+{"typeID": 31634, "typeName": "Medium Warhead Flare Catalyst I", "size": 2.0}
+{"typeID": 31636, "typeName": "Capital Warhead Flare Catalyst I", "size": 4.0}
+{"typeID": 31638, "typeName": "Small Warhead Flare Catalyst II", "size": 1.0}
+{"typeID": 31640, "typeName": "Medium Warhead Flare Catalyst II", "size": 2.0}
+{"typeID": 31642, "typeName": "Capital Warhead Flare Catalyst II", "size": 4.0}
+{"typeID": 31644, "typeName": "Small Warhead Rigor Catalyst I", "size": 1.0}
+{"typeID": 31646, "typeName": "Medium Warhead Rigor Catalyst I", "size": 2.0}
+{"typeID": 31648, "typeName": "Capital Warhead Rigor Catalyst I", "size": 4.0}
+{"typeID": 31650, "typeName": "Small Warhead Rigor Catalyst II", "size": 1.0}
+{"typeID": 31652, "typeName": "Medium Warhead Rigor Catalyst II", "size": 2.0}
+{"typeID": 31654, "typeName": "Capital Warhead Rigor Catalyst II", "size": 4.0}
+{"typeID": 31656, "typeName": "Small Projectile Ambit Extension I", "size": 1.0}
+{"typeID": 31658, "typeName": "Medium Projectile Ambit Extension I", "size": 2.0}
+{"typeID": 31660, "typeName": "Capital Projectile Ambit Extension I", "size": 4.0}
+{"typeID": 31662, "typeName": "Small Projectile Ambit Extension II", "size": 1.0}
+{"typeID": 31664, "typeName": "Medium Projectile Ambit Extension II", "size": 2.0}
+{"typeID": 31666, "typeName": "Capital Projectile Ambit Extension II", "size": 4.0}
+{"typeID": 31668, "typeName": "Small Projectile Burst Aerator I", "size": 1.0}
+{"typeID": 31670, "typeName": "Medium Projectile Burst Aerator I", "size": 2.0}
+{"typeID": 31672, "typeName": "Capital Projectile Burst Aerator I", "size": 4.0}
+{"typeID": 31674, "typeName": "Small Projectile Burst Aerator II", "size": 1.0}
+{"typeID": 31676, "typeName": "Medium Projectile Burst Aerator II", "size": 2.0}
+{"typeID": 31678, "typeName": "Capital Projectile Burst Aerator II", "size": 4.0}
+{"typeID": 31680, "typeName": "Small Projectile Collision Accelerator I", "size": 1.0}
+{"typeID": 31682, "typeName": "Medium Projectile Collision Accelerator I", "size": 2.0}
+{"typeID": 31684, "typeName": "Capital Projectile Collision Accelerator I", "size": 4.0}
+{"typeID": 31686, "typeName": "Small Projectile Collision Accelerator II", "size": 1.0}
+{"typeID": 31688, "typeName": "Medium Projectile Collision Accelerator II", "size": 2.0}
+{"typeID": 31690, "typeName": "Capital Projectile Collision Accelerator II", "size": 4.0}
+{"typeID": 31692, "typeName": "Small Projectile Locus Coordinator I", "size": 1.0}
+{"typeID": 31694, "typeName": "Medium Projectile Locus Coordinator I", "size": 2.0}
+{"typeID": 31696, "typeName": "Capital Projectile Locus Coordinator I", "size": 4.0}
+{"typeID": 31698, "typeName": "Small Projectile Locus Coordinator II", "size": 1.0}
+{"typeID": 31700, "typeName": "Medium Projectile Locus Coordinator II", "size": 2.0}
+{"typeID": 31702, "typeName": "Capital Projectile Locus Coordinator II", "size": 4.0}
+{"typeID": 31704, "typeName": "Small Projectile Metastasis Adjuster I", "size": 1.0}
+{"typeID": 31706, "typeName": "Medium Projectile Metastasis Adjuster I", "size": 2.0}
+{"typeID": 31708, "typeName": "Capital Projectile Metastasis Adjuster I", "size": 4.0}
+{"typeID": 31710, "typeName": "Small Projectile Metastasis Adjuster II", "size": 1.0}
+{"typeID": 31712, "typeName": "Medium Projectile Metastasis Adjuster II", "size": 2.0}
+{"typeID": 31714, "typeName": "Capital Projectile Metastasis Adjuster II", "size": 4.0}
+{"typeID": 31716, "typeName": "Small EM Shield Reinforcer I", "size": 1.0}
+{"typeID": 31718, "typeName": "Medium EM Shield Reinforcer I", "size": 2.0}
+{"typeID": 31720, "typeName": "Capital EM Shield Reinforcer I", "size": 4.0}
+{"typeID": 31722, "typeName": "Small EM Shield Reinforcer II", "size": 1.0}
+{"typeID": 31724, "typeName": "Medium EM Shield Reinforcer II", "size": 2.0}
+{"typeID": 31726, "typeName": "Capital EM Shield Reinforcer II", "size": 4.0}
+{"typeID": 31728, "typeName": "Small Explosive Shield Reinforcer I", "size": 1.0}
+{"typeID": 31730, "typeName": "Medium Explosive Shield Reinforcer I", "size": 2.0}
+{"typeID": 31732, "typeName": "Capital Explosive Shield Reinforcer I", "size": 4.0}
+{"typeID": 31734, "typeName": "Small Explosive Shield Reinforcer II", "size": 1.0}
+{"typeID": 31736, "typeName": "Medium Explosive Shield Reinforcer II", "size": 2.0}
+{"typeID": 31738, "typeName": "Capital Explosive Shield Reinforcer II", "size": 4.0}
+{"typeID": 31740, "typeName": "Small Kinetic Shield Reinforcer I", "size": 1.0}
+{"typeID": 31742, "typeName": "Medium Kinetic Shield Reinforcer I", "size": 2.0}
+{"typeID": 31744, "typeName": "Capital Kinetic Shield Reinforcer I", "size": 4.0}
+{"typeID": 31746, "typeName": "Small Kinetic Shield Reinforcer II", "size": 1.0}
+{"typeID": 31748, "typeName": "Medium Kinetic Shield Reinforcer II", "size": 2.0}
+{"typeID": 31750, "typeName": "Capital Kinetic Shield Reinforcer II", "size": 4.0}
+{"typeID": 31752, "typeName": "Small Thermal Shield Reinforcer I", "size": 1.0}
+{"typeID": 31754, "typeName": "Medium Thermal Shield Reinforcer I", "size": 2.0}
+{"typeID": 31756, "typeName": "Capital Thermal Shield Reinforcer I", "size": 4.0}
+{"typeID": 31758, "typeName": "Small Thermal Shield Reinforcer II", "size": 1.0}
+{"typeID": 31760, "typeName": "Medium Thermal Shield Reinforcer II", "size": 2.0}
+{"typeID": 31762, "typeName": "Capital Thermal Shield Reinforcer II", "size": 4.0}
+{"typeID": 31764, "typeName": "Small Core Defense Capacitor Safeguard I", "size": 1.0}
+{"typeID": 31766, "typeName": "Medium Core Defense Capacitor Safeguard I", "size": 2.0}
+{"typeID": 31768, "typeName": "Capital Core Defense Capacitor Safeguard I", "size": 4.0}
+{"typeID": 31770, "typeName": "Small Core Defense Capacitor Safeguard II", "size": 1.0}
+{"typeID": 31772, "typeName": "Medium Core Defense Capacitor Safeguard II", "size": 2.0}
+{"typeID": 31774, "typeName": "Capital Core Defense Capacitor Safeguard II", "size": 4.0}
+{"typeID": 31776, "typeName": "Small Core Defense Charge Economizer I", "size": 1.0}
+{"typeID": 31778, "typeName": "Medium Core Defense Charge Economizer I", "size": 2.0}
+{"typeID": 31780, "typeName": "Capital Core Defense Charge Economizer I", "size": 4.0}
+{"typeID": 31782, "typeName": "Small Core Defense Charge Economizer II", "size": 1.0}
+{"typeID": 31784, "typeName": "Medium Core Defense Charge Economizer II", "size": 2.0}
+{"typeID": 31786, "typeName": "Capital Core Defense Charge Economizer II", "size": 4.0}
+{"typeID": 31788, "typeName": "Small Core Defense Field Extender I", "size": 1.0}
+{"typeID": 31790, "typeName": "Medium Core Defense Field Extender I", "size": 2.0}
+{"typeID": 31792, "typeName": "Capital Core Defense Field Extender I", "size": 4.0}
+{"typeID": 31794, "typeName": "Small Core Defense Field Extender II", "size": 1.0}
+{"typeID": 31796, "typeName": "Medium Core Defense Field Extender II", "size": 2.0}
+{"typeID": 31798, "typeName": "Capital Core Defense Field Extender II", "size": 4.0}
+{"typeID": 31800, "typeName": "Small Core Defense Field Purger I", "size": 1.0}
+{"typeID": 31802, "typeName": "Medium Core Defense Field Purger I", "size": 2.0}
+{"typeID": 31804, "typeName": "Capital Core Defense Field Purger I", "size": 4.0}
+{"typeID": 31810, "typeName": "Small Core Defense Field Purger II", "size": 1.0}
+{"typeID": 31812, "typeName": "Medium Core Defense Field Purger II", "size": 2.0}
+{"typeID": 31814, "typeName": "Capital Core Defense Field Purger II", "size": 4.0}
+{"typeID": 31816, "typeName": "Small Core Defense Operational Solidifier I", "size": 1.0}
+{"typeID": 31818, "typeName": "Medium Core Defense Operational Solidifier I", "size": 2.0}
+{"typeID": 31820, "typeName": "Capital Core Defense Operational Solidifier I", "size": 4.0}
+{"typeID": 31822, "typeName": "Small Core Defense Operational Solidifier II", "size": 1.0}
+{"typeID": 31824, "typeName": "Medium Core Defense Operational Solidifier II", "size": 2.0}
+{"typeID": 31826, "typeName": "Capital Core Defense Operational Solidifier II", "size": 4.0}
+{"typeID": 32025, "typeName": "Small Drone Control Range Augmentor I", "size": 1.0}
+{"typeID": 32027, "typeName": "Medium Drone Control Range Augmentor I", "size": 2.0}
+{"typeID": 32029, "typeName": "Small Drone Control Range Augmentor II", "size": 1.0}
+{"typeID": 32031, "typeName": "Medium Drone Control Range Augmentor II", "size": 2.0}
+{"typeID": 32033, "typeName": "Small Drone Durability Enhancer I", "size": 1.0}
+{"typeID": 32035, "typeName": "Medium Drone Durability Enhancer I", "size": 2.0}
+{"typeID": 32037, "typeName": "Small Drone Durability Enhancer II", "size": 1.0}
+{"typeID": 32039, "typeName": "Medium Drone Durability Enhancer II", "size": 2.0}
+{"typeID": 32041, "typeName": "Small Drone Mining Augmentor I", "size": 1.0}
+{"typeID": 32043, "typeName": "Medium Drone Mining Augmentor I", "size": 2.0}
+{"typeID": 32045, "typeName": "Small Drone Mining Augmentor II", "size": 1.0}
+{"typeID": 32047, "typeName": "Medium Drone Mining Augmentor II", "size": 2.0}
+{"typeID": 32049, "typeName": "Small Drone Repair Augmentor I", "size": 1.0}
+{"typeID": 32051, "typeName": "Medium Drone Repair Augmentor I", "size": 2.0}
+{"typeID": 32053, "typeName": "Small Drone Repair Augmentor II", "size": 1.0}
+{"typeID": 32055, "typeName": "Medium Drone Repair Augmentor II", "size": 2.0}
+{"typeID": 32057, "typeName": "Small Drone Speed Augmentor I", "size": 1.0}
+{"typeID": 32059, "typeName": "Medium Drone Speed Augmentor I", "size": 2.0}
+{"typeID": 32061, "typeName": "Small Drone Speed Augmentor II", "size": 1.0}
+{"typeID": 32063, "typeName": "Medium Drone Speed Augmentor II", "size": 2.0}
+{"typeID": 32065, "typeName": "Small EW Drone Range Augmentor I", "size": 1.0}
+{"typeID": 32067, "typeName": "Medium EW Drone Range Augmentor I", "size": 2.0}
+{"typeID": 32069, "typeName": "Small Drone Scope Chip I", "size": 1.0}
+{"typeID": 32071, "typeName": "Medium Drone Scope Chip I", "size": 2.0}
+{"typeID": 32073, "typeName": "Small Drone Scope Chip II", "size": 1.0}
+{"typeID": 32075, "typeName": "Medium Drone Scope Chip II", "size": 2.0}
+{"typeID": 32077, "typeName": "Small EW Drone Range Augmentor II", "size": 1.0}
+{"typeID": 32079, "typeName": "Medium EW Drone Range Augmentor II", "size": 2.0}
+{"typeID": 32081, "typeName": "Small Sentry Damage Augmentor I", "size": 1.0}
+{"typeID": 32083, "typeName": "Medium Sentry Damage Augmentor I", "size": 2.0}
+{"typeID": 32085, "typeName": "Small Sentry Damage Augmentor II", "size": 1.0}
+{"typeID": 32087, "typeName": "Medium Sentry Damage Augmentor II", "size": 2.0}
+{"typeID": 32089, "typeName": "Small Stasis Drone Augmentor I", "size": 1.0}
+{"typeID": 32091, "typeName": "Medium Stasis Drone Augmentor I", "size": 2.0}
+{"typeID": 32093, "typeName": "Small Stasis Drone Augmentor II", "size": 1.0}
+{"typeID": 32095, "typeName": "Medium Stasis Drone Augmentor II", "size": 2.0}
+{"typeID": 32207, "typeName": "Freki", "size": 1.0}
+{"typeID": 32209, "typeName": "Mimir", "size": 2.0}
+{"typeID": 32305, "typeName": "Armageddon Navy Issue", "size": 3.0}
+{"typeID": 32307, "typeName": "Dominix Navy Issue", "size": 3.0}
+{"typeID": 32309, "typeName": "Scorpion Navy Issue", "size": 3.0}
+{"typeID": 32311, "typeName": "Typhoon Fleet Issue", "size": 3.0}
+{"typeID": 32788, "typeName": "Cambion", "size": 1.0}
+{"typeID": 32790, "typeName": "Etana", "size": 2.0}
+{"typeID": 32811, "typeName": "Miasmos Amastris Edition", "size": 2.0}
+{"typeID": 32817, "typeName": "Medium Mercoxit Mining Crystal Optimization I", "size": 2.0}
+{"typeID": 32819, "typeName": "Medium Ice Harvester Accelerator I", "size": 2.0}
+{"typeID": 32840, "typeName": "InterBus Catalyst", "size": 1.0}
+{"typeID": 32842, "typeName": "Intaki Syndicate Catalyst", "size": 1.0}
+{"typeID": 32844, "typeName": "Inner Zone Shipping Catalyst", "size": 1.0}
+{"typeID": 32846, "typeName": "Quafe Catalyst", "size": 1.0}
+{"typeID": 32848, "typeName": "Aliastra Catalyst", "size": 1.0}
+{"typeID": 32872, "typeName": "Algos", "size": 1.0}
+{"typeID": 32874, "typeName": "Dragoon", "size": 1.0}
+{"typeID": 32876, "typeName": "Corax", "size": 1.0}
+{"typeID": 32878, "typeName": "Talwar", "size": 1.0}
+{"typeID": 32880, "typeName": "Venture", "size": 1.0}
+{"typeID": 32983, "typeName": "Sukuuvestaa Heron", "size": 1.0}
+{"typeID": 32985, "typeName": "Inner Zone Shipping Imicus", "size": 1.0}
+{"typeID": 32987, "typeName": "Sarum Magnate", "size": 1.0}
+{"typeID": 32989, "typeName": "Vherokior Probe", "size": 1.0}
+{"typeID": 33099, "typeName": "Nefantar Thrasher", "size": 1.0}
+{"typeID": 33151, "typeName": "Brutix Navy Issue", "size": 2.0}
+{"typeID": 33153, "typeName": "Drake Navy Issue", "size": 2.0}
+{"typeID": 33155, "typeName": "Harbinger Navy Issue", "size": 2.0}
+{"typeID": 33157, "typeName": "Hurricane Fleet Issue", "size": 2.0}
+{"typeID": 33190, "typeName": "Tash-Murkon Magnate", "size": 1.0}
+{"typeID": 33277, "typeName": "Capital Drone Control Range Augmentor I", "size": 4.0}
+{"typeID": 33279, "typeName": "Capital Drone Control Range Augmentor II", "size": 4.0}
+{"typeID": 33281, "typeName": "Capital Drone Durability Enhancer I", "size": 4.0}
+{"typeID": 33283, "typeName": "Capital Drone Durability Enhancer II", "size": 4.0}
+{"typeID": 33285, "typeName": "Capital Drone Mining Augmentor I", "size": 4.0}
+{"typeID": 33287, "typeName": "Capital Drone Mining Augmentor II", "size": 4.0}
+{"typeID": 33289, "typeName": "Capital Drone Repair Augmentor I", "size": 4.0}
+{"typeID": 33291, "typeName": "Capital Drone Repair Augmentor II", "size": 4.0}
+{"typeID": 33293, "typeName": "Capital Drone Scope Chip I", "size": 4.0}
+{"typeID": 33295, "typeName": "Capital Drone Scope Chip II", "size": 4.0}
+{"typeID": 33297, "typeName": "Capital Drone Speed Augmentor I", "size": 4.0}
+{"typeID": 33298, "typeName": "Capital Drone Speed Augmentor II", "size": 4.0}
+{"typeID": 33301, "typeName": "Capital Hydraulic Bay Thrusters II", "size": 4.0}
+{"typeID": 33303, "typeName": "Capital Processor Overclocking Unit I", "size": 4.0}
+{"typeID": 33305, "typeName": "Capital Processor Overclocking Unit II", "size": 4.0}
+{"typeID": 33307, "typeName": "Capital Sentry Damage Augmentor I", "size": 4.0}
+{"typeID": 33309, "typeName": "Capital Sentry Damage Augmentor II", "size": 4.0}
+{"typeID": 33311, "typeName": "Capital Stasis Drone Augmentor I", "size": 4.0}
+{"typeID": 33313, "typeName": "Capital Stasis Drone Augmentor II", "size": 4.0}
+{"typeID": 33395, "typeName": "Moracha", "size": 2.0}
+{"typeID": 33397, "typeName": "Chremoas", "size": 1.0}
+{"typeID": 33468, "typeName": "Astero", "size": 1.0}
+{"typeID": 33470, "typeName": "Stratios", "size": 2.0}
+{"typeID": 33472, "typeName": "Nestor", "size": 3.0}
+{"typeID": 33553, "typeName": "Stratios Emergency Responder", "size": 2.0}
+{"typeID": 33623, "typeName": "Abaddon Tash-Murkon Edition", "size": 3.0}
+{"typeID": 33625, "typeName": "Abaddon Kador Edition", "size": 3.0}
+{"typeID": 33627, "typeName": "Rokh Nugoeihuvi Edition", "size": 3.0}
+{"typeID": 33629, "typeName": "Rokh Wiyrkomi Edition", "size": 3.0}
+{"typeID": 33631, "typeName": "Maelstrom Nefantar Edition", "size": 3.0}
+{"typeID": 33633, "typeName": "Maelstrom Krusual Edition", "size": 3.0}
+{"typeID": 33635, "typeName": "Hyperion Aliastra Edition", "size": 3.0}
+{"typeID": 33637, "typeName": "Hyperion Inner Zone Shipping Edition", "size": 3.0}
+{"typeID": 33639, "typeName": "Omen Kador Edition", "size": 2.0}
+{"typeID": 33641, "typeName": "Omen Tash-Murkon Edition", "size": 2.0}
+{"typeID": 33643, "typeName": "Caracal Nugoeihuvi Edition", "size": 2.0}
+{"typeID": 33645, "typeName": "Caracal Wiyrkomi Edition", "size": 2.0}
+{"typeID": 33647, "typeName": "Stabber Nefantar Edition", "size": 2.0}
+{"typeID": 33649, "typeName": "Stabber Krusual Edition", "size": 2.0}
+{"typeID": 33651, "typeName": "Thorax Aliastra Edition", "size": 2.0}
+{"typeID": 33653, "typeName": "Thorax Inner Zone Shipping Edition", "size": 2.0}
+{"typeID": 33655, "typeName": "Punisher Kador Edition", "size": 1.0}
+{"typeID": 33657, "typeName": "Punisher Tash-Murkon Edition", "size": 1.0}
+{"typeID": 33659, "typeName": "Merlin Nugoeihuvi Edition", "size": 1.0}
+{"typeID": 33661, "typeName": "Merlin Wiyrkomi Edition", "size": 1.0}
+{"typeID": 33663, "typeName": "Rifter Nefantar Edition", "size": 1.0}
+{"typeID": 33665, "typeName": "Rifter Krusual Edition", "size": 1.0}
+{"typeID": 33667, "typeName": "Incursus Aliastra Edition", "size": 1.0}
+{"typeID": 33669, "typeName": "Incursus Inner Zone Shipping Edition", "size": 1.0}
+{"typeID": 33673, "typeName": "Whiptail", "size": 1.0}
+{"typeID": 33675, "typeName": "Chameleon", "size": 2.0}
+{"typeID": 33677, "typeName": "Police Pursuit Comet", "size": 1.0}
+{"typeID": 33683, "typeName": "Mackinaw ORE Development Edition", "size": 2.0}
+{"typeID": 33685, "typeName": "Orca ORE Development Edition", "size": 3.0}
+{"typeID": 33687, "typeName": "Rorqual ORE Development Edition", "size": 4.0}
+{"typeID": 33689, "typeName": "Iteron Inner Zone Shipping Edition", "size": 2.0}
+{"typeID": 33691, "typeName": "Tayra Wiyrkomi Edition", "size": 2.0}
+{"typeID": 33693, "typeName": "Mammoth Nefantar Edition", "size": 2.0}
+{"typeID": 33695, "typeName": "Bestower Tash-Murkon Edition", "size": 2.0}
+{"typeID": 33697, "typeName": "Prospect", "size": 1.0}
+{"typeID": 33816, "typeName": "Garmur", "size": 1.0}
+{"typeID": 33818, "typeName": "Orthrus", "size": 2.0}
+{"typeID": 33820, "typeName": "Barghest", "size": 3.0}
+{"typeID": 33869, "typeName": "Brutix Serpentis Edition", "size": 2.0}
+{"typeID": 33871, "typeName": "Cyclone Thukker Tribe Edition", "size": 2.0}
+{"typeID": 33873, "typeName": "Ferox Guristas Edition", "size": 2.0}
+{"typeID": 33875, "typeName": "Prophecy Blood Raiders Edition", "size": 2.0}
+{"typeID": 33877, "typeName": "Catalyst Serpentis Edition", "size": 1.0}
+{"typeID": 33879, "typeName": "Coercer Blood Raiders Edition", "size": 1.0}
+{"typeID": 33881, "typeName": "Cormorant Guristas Edition", "size": 1.0}
+{"typeID": 33883, "typeName": "Thrasher Thukker Tribe Edition", "size": 1.0}
+{"typeID": 33890, "typeName": "Small Transverse Bulkhead I", "size": 1.0}
+{"typeID": 33892, "typeName": "Small Transverse Bulkhead II", "size": 1.0}
+{"typeID": 33894, "typeName": "Medium Transverse Bulkhead I", "size": 2.0}
+{"typeID": 33896, "typeName": "Medium Transverse Bulkhead II", "size": 2.0}
+{"typeID": 33898, "typeName": "Large Transverse Bulkhead I", "size": 3.0}
+{"typeID": 33900, "typeName": "Large Transverse Bulkhead II", "size": 3.0}
+{"typeID": 33902, "typeName": "Capital Transverse Bulkhead I", "size": 4.0}
+{"typeID": 33904, "typeName": "Capital Transverse Bulkhead II", "size": 4.0}
+{"typeID": 34118, "typeName": "Megathron Quafe Edition", "size": 3.0}
+{"typeID": 34151, "typeName": "Rattlesnake Victory Edition", "size": 3.0}
+{"typeID": 34213, "typeName": "Apocalypse Blood Raider Edition", "size": 3.0}
+{"typeID": 34215, "typeName": "Apocalypse Kador Edition", "size": 3.0}
+{"typeID": 34217, "typeName": "Apocalypse Tash-Murkon Edition", "size": 3.0}
+{"typeID": 34219, "typeName": "Paladin Blood Raider Edition", "size": 3.0}
+{"typeID": 34221, "typeName": "Paladin Kador Edition", "size": 3.0}
+{"typeID": 34223, "typeName": "Paladin Tash-Murkon Edition", "size": 3.0}
+{"typeID": 34225, "typeName": "Raven Guristas Edition", "size": 3.0}
+{"typeID": 34227, "typeName": "Raven Kaalakiota Edition", "size": 3.0}
+{"typeID": 34229, "typeName": "Raven Nugoeihuvi Edition", "size": 3.0}
+{"typeID": 34231, "typeName": "Golem Guristas Edition", "size": 3.0}
+{"typeID": 34233, "typeName": "Golem Kaalakiota Edition", "size": 3.0}
+{"typeID": 34235, "typeName": "Golem Nugoeihuvi Edition", "size": 3.0}
+{"typeID": 34237, "typeName": "Megathron Police Edition", "size": 3.0}
+{"typeID": 34239, "typeName": "Megathron Inner Zone Shipping Edition", "size": 3.0}
+{"typeID": 34241, "typeName": "Kronos Police Edition", "size": 3.0}
+{"typeID": 34243, "typeName": "Kronos Quafe Edition", "size": 3.0}
+{"typeID": 34245, "typeName": "Kronos Inner Zone Shipping Edition", "size": 3.0}
+{"typeID": 34247, "typeName": "Tempest Justice Edition", "size": 3.0}
+{"typeID": 34249, "typeName": "Tempest Krusual Edition", "size": 3.0}
+{"typeID": 34251, "typeName": "Tempest Nefantar Edition", "size": 3.0}
+{"typeID": 34253, "typeName": "Vargur Justice Edition", "size": 3.0}
+{"typeID": 34255, "typeName": "Vargur Krusual Edition", "size": 3.0}
+{"typeID": 34257, "typeName": "Vargur Nefantar Edition", "size": 3.0}
+{"typeID": 34266, "typeName": "Small Higgs Anchor I", "size": 1.0}
+{"typeID": 34268, "typeName": "Medium Higgs Anchor I", "size": 2.0}
+{"typeID": 34306, "typeName": "Large Higgs Anchor I", "size": 3.0}
+{"typeID": 34308, "typeName": "Capital Higgs Anchor I", "size": 4.0}
+{"typeID": 34317, "typeName": "Confessor", "size": 1.0}
+{"typeID": 34328, "typeName": "Bowhead", "size": 4.0}
+{"typeID": 34441, "typeName": "Dominix Quafe Edition", "size": 3.0}
+{"typeID": 34443, "typeName": "Tristan Quafe Edition", "size": 1.0}
+{"typeID": 34445, "typeName": "Vexor Quafe Edition", "size": 2.0}
+{"typeID": 34457, "typeName": "\u672b\u65e5\u6c99\u573a\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34459, "typeName": "\u5730\u72f1\u5929\u4f7f\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34461, "typeName": "\u9a6c\u514b\u745e\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34463, "typeName": "\u54cd\u5c3e\u86c7\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34465, "typeName": "\u591a\u7c73\u5c3c\u514b\u65af\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34467, "typeName": "\u4e07\u738b\u5b9d\u5ea7\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34469, "typeName": "\u4e4c\u9e26\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34471, "typeName": "\u707e\u96be\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 3.0}
+{"typeID": 34473, "typeName": "\u5e7c\u9f99\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 2.0}
+{"typeID": 34475, "typeName": "\u6bd2\u8725\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 2.0}
+{"typeID": 34477, "typeName": "\u94f6\u9e70\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 2.0}
+{"typeID": 34479, "typeName": "\u4f0a\u4ec0\u5854\u7ea7YC117\u5e74\u7279\u522b\u7248", "size": 2.0}
+{"typeID": 34562, "typeName": "Svipul", "size": 1.0}
+{"typeID": 34590, "typeName": "Victorieux Luxury Yacht", "size": 2.0}
+{"typeID": 34828, "typeName": "Jackdaw", "size": 1.0}
+{"typeID": 35683, "typeName": "Hecate", "size": 1.0}
+{"typeID": 35779, "typeName": "Imp", "size": 1.0}
+{"typeID": 35781, "typeName": "Fiend", "size": 2.0}
+{"typeID": 35825, "typeName": "Raitaru", "size": 2.0}
+{"typeID": 35826, "typeName": "Azbel", "size": 3.0}
+{"typeID": 35827, "typeName": "Sotiyo", "size": 4.0}
+{"typeID": 35828, "typeName": "Medium Laboratory", "size": 2.0}
+{"typeID": 35829, "typeName": "Large Laboratory", "size": 3.0}
+{"typeID": 35830, "typeName": "X-Large Laboratory", "size": 4.0}
+{"typeID": 35832, "typeName": "Astrahus", "size": 2.0}
+{"typeID": 35833, "typeName": "Fortizar", "size": 3.0}
+{"typeID": 35834, "typeName": "Keepstar", "size": 4.0}
+{"typeID": 35835, "typeName": "Athanor", "size": 2.0}
+{"typeID": 35836, "typeName": "Tatara", "size": 3.0}
+{"typeID": 78367, "typeName": "Mamba", "size": 1.0}
+{"typeID": 78369, "typeName": "Khizriel", "size": 2.0}
+{"typeID": 37135, "typeName": "Endurance", "size": 1.0}
+{"typeID": 37146, "typeName": "Standup M-Set Basic Medium Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 37147, "typeName": "Standup M-Set Basic Medium Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 37148, "typeName": "Standup M-Set Drone and Fighter Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 37149, "typeName": "Standup M-Set Drone and Fighter Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 37150, "typeName": "Standup M-Set Ammunition Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 37151, "typeName": "Standup M-Set Ammunition Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 37152, "typeName": "Standup M-Set Basic Large Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 37153, "typeName": "Standup M-Set Basic Medium Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 37154, "typeName": "Standup M-Set Basic Small Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 37155, "typeName": "Standup M-Set Basic Small Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 37156, "typeName": "Standup M-Set Drone and Fighter Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 37157, "typeName": "Standup M-Set Drone and Fighter Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 37158, "typeName": "Standup M-Set Ammunition Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 37159, "typeName": "Standup M-Set Ammunition Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 37160, "typeName": "Standup M-Set Equipment Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 37161, "typeName": "Standup M-Set Equipment Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 37162, "typeName": "Standup M-Set Basic Small Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 37163, "typeName": "Standup M-Set Basic Small Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 37164, "typeName": "Standup L-Set Ammunition Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37165, "typeName": "Standup L-Set Ammunition Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37166, "typeName": "Standup L-Set Basic Large Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37167, "typeName": "Standup L-Set Basic Large Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37168, "typeName": "Standup L-Set Advanced Large Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37169, "typeName": "Standup L-Set Advanced Large Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37170, "typeName": "Standup L-Set Equipment Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37171, "typeName": "Standup L-Set Equipment Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37172, "typeName": "Standup L-Set Capital Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37173, "typeName": "Standup L-Set Capital Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37174, "typeName": "Standup L-Set Advanced Component Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 37175, "typeName": "Standup L-Set Advanced Component Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 37176, "typeName": "Large Tech I Subsystem Manufacturing I", "size": 3.0}
+{"typeID": 37177, "typeName": "Large Tech I Subsystem Manufacturing II", "size": 3.0}
+{"typeID": 37178, "typeName": "Standup XL-Set Equipment and Consumable Manufacturing Efficiency I", "size": 4.0}
+{"typeID": 37179, "typeName": "Standup XL-Set Equipment and Consumable Manufacturing Efficiency II", "size": 4.0}
+{"typeID": 37180, "typeName": "Standup XL-Set Ship Manufacturing Efficiency I", "size": 4.0}
+{"typeID": 37181, "typeName": "Standup XL-Set Ship Manufacturing Efficiency II", "size": 4.0}
+{"typeID": 37182, "typeName": "Standup XL-Set Laboratory Optimization II", "size": 4.0}
+{"typeID": 37183, "typeName": "Standup XL-Set Laboratory Optimization I", "size": 4.0}
+{"typeID": 37184, "typeName": "Medium Tech I Small Ship Research I", "size": 2.0}
+{"typeID": 37185, "typeName": "Medium Tech I Small Ship Research II", "size": 2.0}
+{"typeID": 37186, "typeName": "Medium Tech I Medium Ship Research I", "size": 2.0}
+{"typeID": 37187, "typeName": "Medium Tech I Medium Ship Research II", "size": 2.0}
+{"typeID": 37188, "typeName": "Medium Tech I Large Ship Research I", "size": 2.0}
+{"typeID": 37190, "typeName": "Medium Drone Research I", "size": 2.0}
+{"typeID": 37191, "typeName": "Medium Drone Research II", "size": 2.0}
+{"typeID": 37192, "typeName": "Medium Consumable Research I", "size": 2.0}
+{"typeID": 37193, "typeName": "Medium Consumable Research II", "size": 2.0}
+{"typeID": 37194, "typeName": "Medium Module Research I", "size": 2.0}
+{"typeID": 37195, "typeName": "Medium Module Research II", "size": 2.0}
+{"typeID": 37196, "typeName": "Large Module, Consumable, Drone Research I", "size": 3.0}
+{"typeID": 37197, "typeName": "Large Module, Consumable, Drone Research II", "size": 3.0}
+{"typeID": 37198, "typeName": "Large Tech I Ship Research I", "size": 3.0}
+{"typeID": 37199, "typeName": "Large Tech I Ship Research II", "size": 3.0}
+{"typeID": 37202, "typeName": "Large Tech II Component Research I", "size": 3.0}
+{"typeID": 37203, "typeName": "Large Tech II Component Research II", "size": 3.0}
+{"typeID": 37204, "typeName": "Large Tech I Capital Component Research I", "size": 3.0}
+{"typeID": 37205, "typeName": "Large Tech I Capital Component Research II", "size": 3.0}
+{"typeID": 37206, "typeName": "Large Structure Component Research I", "size": 3.0}
+{"typeID": 37207, "typeName": "Large Structure Component Research II", "size": 3.0}
+{"typeID": 37208, "typeName": "Large Tech I Subsystem Research I", "size": 3.0}
+{"typeID": 37209, "typeName": "Large Tech I Subsystem Research II", "size": 3.0}
+{"typeID": 37210, "typeName": "X-Large Equipment Research I", "size": 4.0}
+{"typeID": 37211, "typeName": "X-Large Equipment Research II", "size": 4.0}
+{"typeID": 37212, "typeName": "X-Large Ship Research I", "size": 4.0}
+{"typeID": 37213, "typeName": "X-Large Ship Research II", "size": 4.0}
+{"typeID": 37214, "typeName": "X-Large All Components Research I", "size": 4.0}
+{"typeID": 37215, "typeName": "X-Large All Components Research II", "size": 4.0}
+{"typeID": 37216, "typeName": "Standup M-Set Missile Precision I", "size": 2.0}
+{"typeID": 37217, "typeName": "Standup M-Set Missile Precision II", "size": 2.0}
+{"typeID": 37218, "typeName": "Standup M-Set Energy Neutralizer Projection I", "size": 2.0}
+{"typeID": 37219, "typeName": "Standup M-Set Energy Neutralizer Projection II", "size": 2.0}
+{"typeID": 37220, "typeName": "Standup M-Set Missile Projection I", "size": 2.0}
+{"typeID": 37221, "typeName": "Standup M-Set Missile Projection II", "size": 2.0}
+{"typeID": 37222, "typeName": "Standup M-Set Energy Neutralizer Economy I", "size": 2.0}
+{"typeID": 37223, "typeName": "Standup M-Set Energy Neutralizer Economy II", "size": 2.0}
+{"typeID": 37224, "typeName": "Standup M-Set Fighter Survival I", "size": 2.0}
+{"typeID": 37225, "typeName": "Standup M-Set Fighter Survival II", "size": 2.0}
+{"typeID": 37226, "typeName": "Standup M-Set Fighter Navigation I", "size": 2.0}
+{"typeID": 37227, "typeName": "Standup M-Set Fighter Navigation II", "size": 2.0}
+{"typeID": 37228, "typeName": "Standup M-Set Electronic Warfare Projection I", "size": 2.0}
+{"typeID": 37229, "typeName": "Standup M-Set Electronic Warfare Projection II", "size": 2.0}
+{"typeID": 37230, "typeName": "Standup M-Set Electronic Warfare Economy I", "size": 2.0}
+{"typeID": 37231, "typeName": "Standup M-Set Electronic Warfare Economy II", "size": 2.0}
+{"typeID": 37232, "typeName": "Standup M-Set Structure Target Multiplexing I", "size": 2.0}
+{"typeID": 37233, "typeName": "Standup M-Set Structure Target Multiplexing II", "size": 2.0}
+{"typeID": 37234, "typeName": "Standup M-Set Enhanced Targeting System I", "size": 2.0}
+{"typeID": 37235, "typeName": "Standup M-Set Enhanced Targeting System II", "size": 2.0}
+{"typeID": 37248, "typeName": "Standup L-Set Missile Flight Processor I", "size": 3.0}
+{"typeID": 37249, "typeName": "Standup L-Set Missile Flight Processor II", "size": 3.0}
+{"typeID": 37250, "typeName": "Standup L-Set Energy Neutralizer Feedback Control I", "size": 3.0}
+{"typeID": 37251, "typeName": "Standup L-Set Energy Neutralizer Feedback Control II", "size": 3.0}
+{"typeID": 37252, "typeName": "Standup L-Set Fighter Mission Control I", "size": 3.0}
+{"typeID": 37253, "typeName": "Standup L-Set Fighter Mission Control II", "size": 3.0}
+{"typeID": 37254, "typeName": "Standup L-Set EW Command System I", "size": 3.0}
+{"typeID": 37255, "typeName": "Standup L-Set EW Command System II", "size": 3.0}
+{"typeID": 37256, "typeName": "Standup L-Set Bomb Aimer I", "size": 3.0}
+{"typeID": 37257, "typeName": "Standup L-Set Bomb Aimer II", "size": 3.0}
+{"typeID": 37258, "typeName": "Standup L-Set Point Defense Battery Control I", "size": 3.0}
+{"typeID": 37259, "typeName": "Standup L-Set Point Defense Battery Control II", "size": 3.0}
+{"typeID": 37260, "typeName": "Standup L-Set Target Acquisition Array I", "size": 3.0}
+{"typeID": 37261, "typeName": "Standup L-Set Target Acquisition Array II", "size": 3.0}
+{"typeID": 37268, "typeName": "Standup XL-Set Missile Fire Control Computer I", "size": 4.0}
+{"typeID": 37269, "typeName": "Standup XL-Set Missile Fire Control Computer II", "size": 4.0}
+{"typeID": 37270, "typeName": "Standup XL-Set Integrated Fighter and PD Network I", "size": 4.0}
+{"typeID": 37271, "typeName": "Standup XL-Set Integrated Fighter and PD Network II", "size": 4.0}
+{"typeID": 37272, "typeName": "Standup XL-Set EW and Emissions Co-ordinator I", "size": 4.0}
+{"typeID": 37273, "typeName": "Standup XL-Set EW and Emissions Co-ordinator II", "size": 4.0}
+{"typeID": 37274, "typeName": "Standup XL-Set Extinction Level Weapons Suite I", "size": 4.0}
+{"typeID": 37275, "typeName": "Standup XL-Set Extinction Level Weapons Suite II", "size": 4.0}
+{"typeID": 37280, "typeName": "OLD M-Set HS Materials Reclamation I", "size": 2.0}
+{"typeID": 37281, "typeName": "OLD M-Set HS Materials Reclamation II", "size": 2.0}
+{"typeID": 37282, "typeName": "OLD L-Set Ore Grading Processor I", "size": 3.0}
+{"typeID": 37283, "typeName": "OLD L-Set Ore Grading Processor II", "size": 3.0}
+{"typeID": 37284, "typeName": "OLD XL-Set Reprocessing Monitor I", "size": 4.0}
+{"typeID": 37285, "typeName": "OLD XL-Set Reprocessing Monitor II", "size": 4.0}
+{"typeID": 37453, "typeName": "Crucifier Navy Issue", "size": 1.0}
+{"typeID": 37454, "typeName": "Vigil Fleet Issue", "size": 1.0}
+{"typeID": 37455, "typeName": "Griffin Navy Issue", "size": 1.0}
+{"typeID": 37456, "typeName": "Maulus Navy Issue", "size": 1.0}
+{"typeID": 37457, "typeName": "Deacon", "size": 1.0}
+{"typeID": 37458, "typeName": "Kirin", "size": 1.0}
+{"typeID": 37459, "typeName": "Thalia", "size": 1.0}
+{"typeID": 37460, "typeName": "Scalpel", "size": 1.0}
+{"typeID": 37475, "typeName": "Medium Tech I Large Ship Research II", "size": 2.0}
+{"typeID": 37480, "typeName": "Bifrost", "size": 1.0}
+{"typeID": 37481, "typeName": "Pontifex", "size": 1.0}
+{"typeID": 37482, "typeName": "Stork", "size": 1.0}
+{"typeID": 37483, "typeName": "Magus", "size": 1.0}
+{"typeID": 37604, "typeName": "Apostle", "size": 4.0}
+{"typeID": 37605, "typeName": "Minokawa", "size": 4.0}
+{"typeID": 37606, "typeName": "Lif", "size": 4.0}
+{"typeID": 37607, "typeName": "Ninazu", "size": 4.0}
+{"typeID": 40340, "typeName": "Upwell Palatine Keepstar", "size": 4.0}
+{"typeID": 41422, "typeName": "OLD M-Set LNS Materials Reclamation I", "size": 2.0}
+{"typeID": 41423, "typeName": "OLD M-Set LNS Materials Reclamation II", "size": 2.0}
+{"typeID": 41424, "typeName": "OLD M-Set I1 Materials Reclamation I", "size": 2.0}
+{"typeID": 41425, "typeName": "OLD M-Set I1 Materials Reclamation II", "size": 2.0}
+{"typeID": 41426, "typeName": "OLD M-Set I2 Materials Reclamation I", "size": 2.0}
+{"typeID": 41427, "typeName": "OLD M-Set I2 Materials Reclamation II", "size": 2.0}
+{"typeID": 41428, "typeName": "OLD L-Set Ice Grading Processor I", "size": 3.0}
+{"typeID": 41429, "typeName": "OLD L-Set Ice Grading Processor II", "size": 3.0}
+{"typeID": 42124, "typeName": "Vehement", "size": 4.0}
+{"typeID": 42125, "typeName": "Vendetta", "size": 4.0}
+{"typeID": 42126, "typeName": "Vanquisher", "size": 4.0}
+{"typeID": 42132, "typeName": "Vanguard", "size": 4.0}
+{"typeID": 42133, "typeName": "Venerable", "size": 4.0}
+{"typeID": 42241, "typeName": "Molok", "size": 4.0}
+{"typeID": 42242, "typeName": "Dagon", "size": 4.0}
+{"typeID": 42243, "typeName": "Chemosh", "size": 4.0}
+{"typeID": 42244, "typeName": "Porpoise", "size": 2.0}
+{"typeID": 42245, "typeName": "Rabisu", "size": 2.0}
+{"typeID": 42246, "typeName": "Caedes", "size": 1.0}
+{"typeID": 42685, "typeName": "Sunesis", "size": 1.0}
+{"typeID": 43704, "typeName": "Standup XL-Set Structure and Component Manufacturing Efficiency I", "size": 4.0}
+{"typeID": 43705, "typeName": "Standup XL-Set Structure and Component Manufacturing Efficiency II", "size": 4.0}
+{"typeID": 43707, "typeName": "Standup L-Set Advanced Small Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43708, "typeName": "Standup L-Set Advanced Small Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43709, "typeName": "Standup L-Set Advanced Medium Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43711, "typeName": "Standup L-Set Advanced Medium Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43712, "typeName": "Standup L-Set Drone and Fighter Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43713, "typeName": "Standup L-Set Drone and Fighter Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43714, "typeName": "Standup L-Set Basic Small Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43715, "typeName": "Standup L-Set Basic Small Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43716, "typeName": "Standup L-Set Basic Medium Ship Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43717, "typeName": "Standup L-Set Basic Medium Ship Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43718, "typeName": "Standup L-Set Basic Capital Component Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43719, "typeName": "Standup L-Set Basic Capital Component Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43720, "typeName": "Standup L-Set Structure Manufacturing Efficiency I", "size": 3.0}
+{"typeID": 43721, "typeName": "Standup L-Set Structure Manufacturing Efficiency II", "size": 3.0}
+{"typeID": 43722, "typeName": "Standup L-Set Invention Optimization I", "size": 3.0}
+{"typeID": 43723, "typeName": "Standup L-Set Invention Optimization II", "size": 3.0}
+{"typeID": 43724, "typeName": "Standup L-Set ME Research Optimization I", "size": 3.0}
+{"typeID": 43725, "typeName": "Standup L-Set ME Research Optimization II", "size": 3.0}
+{"typeID": 43726, "typeName": "Standup L-Set TE Research Optimization I", "size": 3.0}
+{"typeID": 43727, "typeName": "Standup L-Set TE Research Optimization II", "size": 3.0}
+{"typeID": 43729, "typeName": "Standup L-Set Blueprint Copy Optimization I", "size": 3.0}
+{"typeID": 43730, "typeName": "Standup L-Set Blueprint Copy Optimization II", "size": 3.0}
+{"typeID": 43732, "typeName": "Standup M-Set Basic Large Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43733, "typeName": "Standup M-Set Basic Large Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43734, "typeName": "Standup M-Set Basic Large Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43854, "typeName": "Standup M-Set Advanced Small Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43855, "typeName": "Standup M-Set Advanced Small Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43856, "typeName": "Standup M-Set Advanced Small Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43857, "typeName": "Standup M-Set Advanced Small Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43858, "typeName": "Standup M-Set Advanced Medium Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43859, "typeName": "Standup M-Set Advanced Medium Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43860, "typeName": "Standup M-Set Advanced Medium Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43861, "typeName": "Standup M-Set Advanced Medium Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43862, "typeName": "Standup M-Set Advanced Large Ship Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43863, "typeName": "Standup M-Set Advanced Large Ship Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43864, "typeName": "Standup M-Set Advanced Large Ship Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43865, "typeName": "Standup M-Set Advanced Large Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43866, "typeName": "Standup M-Set Advanced Component Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43867, "typeName": "Standup M-Set Advanced Component Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43868, "typeName": "Standup M-Set Advanced Component Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43869, "typeName": "Standup M-Set Advanced Component Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43870, "typeName": "Standup M-Set Basic Capital Component Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43871, "typeName": "Standup M-Set Basic Capital Component Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43872, "typeName": "Standup M-Set Basic Capital Component Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43873, "typeName": "Standup M-Set Basic Capital Component Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43874, "typeName": "Standup M-Set Structure Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 43875, "typeName": "Standup M-Set Structure Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43876, "typeName": "Standup M-Set Structure Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43877, "typeName": "Standup M-Set Structure Manufacturing Time Efficiency II", "size": 2.0}
+{"typeID": 43878, "typeName": "Standup M-Set Invention Cost Optimization II", "size": 2.0}
+{"typeID": 43879, "typeName": "Standup M-Set Invention Cost Optimization I", "size": 2.0}
+{"typeID": 43880, "typeName": "Standup M-Set Invention Accelerator I", "size": 2.0}
+{"typeID": 43881, "typeName": "Standup M-Set Invention Accelerator II", "size": 2.0}
+{"typeID": 43882, "typeName": "Standup M-Set ME Research Accelerator II", "size": 2.0}
+{"typeID": 43883, "typeName": "Standup M-Set ME Research Accelerator I", "size": 2.0}
+{"typeID": 43884, "typeName": "Standup M-Set ME Research Cost Optimization II", "size": 2.0}
+{"typeID": 43885, "typeName": "Standup M-Set ME Research Cost Optimization I", "size": 2.0}
+{"typeID": 43886, "typeName": "Standup M-Set TE Research Cost Optimization II", "size": 2.0}
+{"typeID": 43887, "typeName": "Standup M-Set TE Research Cost Optimization I", "size": 2.0}
+{"typeID": 43888, "typeName": "Standup M-Set TE Research Accelerator II", "size": 2.0}
+{"typeID": 43889, "typeName": "Standup M-Set TE Research Accelerator I", "size": 2.0}
+{"typeID": 43890, "typeName": "Standup M-Set Blueprint Copy Cost Optimization II", "size": 2.0}
+{"typeID": 43891, "typeName": "Standup M-Set Blueprint Copy Cost Optimization I", "size": 2.0}
+{"typeID": 43892, "typeName": "Standup M-Set Blueprint Copy Accelerator II", "size": 2.0}
+{"typeID": 43893, "typeName": "Standup M-Set Blueprint Copy Accelerator I", "size": 2.0}
+{"typeID": 43894, "typeName": "Small Command Processor I", "size": 1.0}
+{"typeID": 43896, "typeName": "Medium Command Processor I", "size": 2.0}
+{"typeID": 43898, "typeName": "Large Command Processor I", "size": 3.0}
+{"typeID": 43900, "typeName": "Capital Command Processor I", "size": 4.0}
+{"typeID": 43919, "typeName": "Standup M-Set Basic Medium Ship Manufacturing Time Efficiency I", "size": 2.0}
+{"typeID": 43920, "typeName": "Standup M-Set Equipment Manufacturing Material Efficiency I", "size": 2.0}
+{"typeID": 43921, "typeName": "Standup M-Set Equipment Manufacturing Material Efficiency II", "size": 2.0}
+{"typeID": 72869, "typeName": "Myrmidon Navy Issue", "size": 2.0}
+{"typeID": 72903, "typeName": "Probe Fleet Issue", "size": 1.0}
+{"typeID": 72907, "typeName": "Magnate Navy Issue", "size": 1.0}
+{"typeID": 44993, "typeName": "Pacifier", "size": 1.0}
+{"typeID": 44995, "typeName": "Enforcer", "size": 2.0}
+{"typeID": 44996, "typeName": "Marshal", "size": 3.0}
+{"typeID": 45006, "typeName": "\u2666 Sotiyo", "size": 4.0}
+{"typeID": 45530, "typeName": "Virtuoso", "size": 1.0}
+{"typeID": 45531, "typeName": "Victor", "size": 2.0}
+{"typeID": 45534, "typeName": "Monitor", "size": 2.0}
+{"typeID": 45544, "typeName": "Standup M-Set Thukker Basic Capital Component Manufacturing Material Efficiency", "size": 2.0}
+{"typeID": 45546, "typeName": "Standup L-Set Thukker Basic Capital Component Manufacturing Efficiency", "size": 3.0}
+{"typeID": 45548, "typeName": "Standup XL-Set Thukker Structure and Component Manufacturing Efficiency", "size": 4.0}
+{"typeID": 45640, "typeName": "Standup M-Set Thukker Advanced Component Manufacturing Material Efficiency", "size": 2.0}
+{"typeID": 45641, "typeName": "Standup L-Set Thukker Advanced Component Manufacturing Efficiency", "size": 3.0}
+{"typeID": 45645, "typeName": "Loggerhead", "size": 4.0}
+{"typeID": 45647, "typeName": "Caiman", "size": 4.0}
+{"typeID": 45649, "typeName": "Komodo", "size": 4.0}
+{"typeID": 46323, "typeName": "Standup M-Set Moon Drilling Efficiency I", "size": 2.0}
+{"typeID": 46324, "typeName": "Standup M-Set Moon Drilling Efficiency II", "size": 2.0}
+{"typeID": 46325, "typeName": "Standup M-Set Moon Drilling Stability I", "size": 2.0}
+{"typeID": 46326, "typeName": "Standup M-Set Moon Drilling Stability II", "size": 2.0}
+{"typeID": 46327, "typeName": "Standup L-Set Moon Drilling Proficiency I", "size": 3.0}
+{"typeID": 46328, "typeName": "Standup L-Set Moon Drilling Proficiency II", "size": 3.0}
+{"typeID": 46484, "typeName": "Standup M-Set Composite Reactor Time Efficiency I", "size": 2.0}
+{"typeID": 46485, "typeName": "Standup M-Set Composite Reactor Time Efficiency II", "size": 2.0}
+{"typeID": 46486, "typeName": "Standup M-Set Composite Reactor Material Efficiency I", "size": 2.0}
+{"typeID": 46487, "typeName": "Standup M-Set Composite Reactor Material Efficiency II", "size": 2.0}
+{"typeID": 46488, "typeName": "Standup M-Set Hybrid Reactor Time Efficiency I", "size": 2.0}
+{"typeID": 46489, "typeName": "Standup M-Set Hybrid Reactor Time Efficiency II", "size": 2.0}
+{"typeID": 46490, "typeName": "Standup M-Set Hybrid Reactor Material Efficiency I", "size": 2.0}
+{"typeID": 46491, "typeName": "Standup M-Set Hybrid Reactor Material Efficiency II", "size": 2.0}
+{"typeID": 46492, "typeName": "Standup M-Set Biochemical Reactor Time Efficiency I", "size": 2.0}
+{"typeID": 46493, "typeName": "Standup M-Set Biochemical Reactor Time Efficiency II", "size": 2.0}
+{"typeID": 46494, "typeName": "Standup M-Set Biochemical Reactor Material Efficiency I", "size": 2.0}
+{"typeID": 46495, "typeName": "Standup M-Set Biochemical Reactor Material Efficiency II", "size": 2.0}
+{"typeID": 46496, "typeName": "Standup L-Set Reactor Efficiency I", "size": 3.0}
+{"typeID": 46497, "typeName": "Standup L-Set Reactor Efficiency II", "size": 3.0}
+{"typeID": 46633, "typeName": "Standup M-Set Asteroid Ore Grading Processor I", "size": 2.0}
+{"typeID": 46634, "typeName": "Standup M-Set Asteroid Ore Grading Processor II", "size": 2.0}
+{"typeID": 46635, "typeName": "Standup M-Set Ice Grading Processor I", "size": 2.0}
+{"typeID": 46636, "typeName": "Standup M-Set Ice Grading Processor II", "size": 2.0}
+{"typeID": 46637, "typeName": "Standup M-Set Moon Ore Grading Processor I", "size": 2.0}
+{"typeID": 46638, "typeName": "Standup M-Set Moon Ore Grading Processor II", "size": 2.0}
+{"typeID": 46639, "typeName": "Standup L-Set Reprocessing Monitor I", "size": 3.0}
+{"typeID": 46640, "typeName": "Standup L-Set Reprocessing Monitor II", "size": 3.0}
+{"typeID": 46641, "typeName": "Standup XL-Set Reprocessing Monitor I", "size": 4.0}
+{"typeID": 46642, "typeName": "Standup XL-Set Reprocessing Monitor II", "size": 4.0}
+{"typeID": 47269, "typeName": "Damavik", "size": 1.0}
+{"typeID": 47270, "typeName": "Vedmak", "size": 2.0}
+{"typeID": 47271, "typeName": "Leshak", "size": 3.0}
+{"typeID": 47466, "typeName": "Praxis", "size": 3.0}
+{"typeID": 47512, "typeName": "'Moreau' Fortizar", "size": 3.0}
+{"typeID": 47513, "typeName": "'Draccous' Fortizar", "size": 3.0}
+{"typeID": 47514, "typeName": "'Horizon' Fortizar", "size": 3.0}
+{"typeID": 47515, "typeName": "'Marginis' Fortizar", "size": 3.0}
+{"typeID": 47516, "typeName": "'Prometheus' Fortizar", "size": 3.0}
+{"typeID": 47727, "typeName": "GFX Test Vargur 1/2", "size": 3.0}
+{"typeID": 47728, "typeName": "GFX Test Vargur 2/2", "size": 3.0}
+{"typeID": 47881, "typeName": "Upwell Standard Outpost Rig", "size": 3.0}
+{"typeID": 47882, "typeName": "Upwell M1R Outpost Rig", "size": 3.0}
+{"typeID": 47883, "typeName": "Upwell A1F Outpost Rig", "size": 3.0}
+{"typeID": 47884, "typeName": "Upwell M2R- Outpost Rig", "size": 3.0}
+{"typeID": 47979, "typeName": "Upwell M3R-- Outpost Rig", "size": 3.0}
+{"typeID": 47980, "typeName": "Upwell M2RO Outpost Rig", "size": 3.0}
+{"typeID": 47981, "typeName": "Upwell A2FP Outpost Rig", "size": 3.0}
+{"typeID": 47982, "typeName": "Upwell A3PFO Outpost Rig", "size": 3.0}
+{"typeID": 47983, "typeName": "Upwell A1O Outpost Rig", "size": 3.0}
+{"typeID": 47984, "typeName": "Upwell C1L Outpost Rig", "size": 3.0}
+{"typeID": 47985, "typeName": "Upwell A1P Outpost Rig", "size": 3.0}
+{"typeID": 47986, "typeName": "Upwell A3FPO Outpost Rig", "size": 3.0}
+{"typeID": 47987, "typeName": "Upwell A2PF Outpost Rig", "size": 3.0}
+{"typeID": 47988, "typeName": "Upwell G1O Outpost Rig", "size": 3.0}
+{"typeID": 47989, "typeName": "Upwell M3R-O Outpost Rig", "size": 3.0}
+{"typeID": 47990, "typeName": "Upwell A3FP- Outpost Rig", "size": 3.0}
+{"typeID": 47991, "typeName": "Upwell A2F- Outpost Rig", "size": 3.0}
+{"typeID": 47992, "typeName": "Upwell G1F Outpost Rig", "size": 3.0}
+{"typeID": 47993, "typeName": "Upwell M3RPO Outpost Rig", "size": 3.0}
+{"typeID": 47994, "typeName": "Upwell M3RO- Outpost Rig", "size": 3.0}
+{"typeID": 47995, "typeName": "Upwell G1R Outpost Rig", "size": 3.0}
+{"typeID": 47996, "typeName": "Upwell A1R Outpost Rig", "size": 3.0}
+{"typeID": 47997, "typeName": "Upwell M2RL Outpost Rig", "size": 3.0}
+{"typeID": 47998, "typeName": "Upwell M2PR Outpost Rig", "size": 3.0}
+{"typeID": 47999, "typeName": "Upwell C1I Outpost Rig", "size": 3.0}
+{"typeID": 48000, "typeName": "Upwell M1O Outpost Rig", "size": 3.0}
+{"typeID": 48001, "typeName": "Upwell C2LI Outpost Rig", "size": 3.0}
+{"typeID": 48002, "typeName": "Upwell M3R-LO Outpost Rig", "size": 3.0}
+{"typeID": 48003, "typeName": "Upwell M1L Outpost Rig", "size": 3.0}
+{"typeID": 48004, "typeName": "Upwell C1R Outpost Rig", "size": 3.0}
+{"typeID": 48005, "typeName": "Upwell M2-RO Outpost Rig", "size": 3.0}
+{"typeID": 48006, "typeName": "Upwell M2OR Outpost Rig", "size": 3.0}
+{"typeID": 48007, "typeName": "Upwell G1P Outpost Rig", "size": 3.0}
+{"typeID": 48008, "typeName": "Upwell G2FP Outpost Rig", "size": 3.0}
+{"typeID": 48009, "typeName": "Upwell M2-RP Outpost Rig", "size": 3.0}
+{"typeID": 48010, "typeName": "Upwell M2RP Outpost Rig", "size": 3.0}
+{"typeID": 48011, "typeName": "Upwell G2PF Outpost Rig", "size": 3.0}
+{"typeID": 48012, "typeName": "Upwell A3PF- Outpost Rig", "size": 3.0}
+{"typeID": 48013, "typeName": "Upwell C3LIO Outpost Rig", "size": 3.0}
+{"typeID": 48014, "typeName": "Upwell C2L- Outpost Rig", "size": 3.0}
+{"typeID": 48015, "typeName": "Upwell C2IL Outpost Rig", "size": 3.0}
+{"typeID": 48016, "typeName": "Upwell C3L-IO Outpost Rig", "size": 3.0}
+{"typeID": 48017, "typeName": "Upwell C3LI- Outpost Rig", "size": 3.0}
+{"typeID": 48018, "typeName": "Upwell C2IR Outpost Rig", "size": 3.0}
+{"typeID": 48019, "typeName": "Upwell G1L Outpost Rig", "size": 3.0}
+{"typeID": 48020, "typeName": "Upwell M3ROL Outpost Rig", "size": 3.0}
+{"typeID": 48021, "typeName": "Upwell G2O- Outpost Rig", "size": 3.0}
+{"typeID": 48022, "typeName": "Upwell M3RPF Outpost Rig", "size": 3.0}
+{"typeID": 48023, "typeName": "Upwell M3P-RF Outpost Rig", "size": 3.0}
+{"typeID": 48024, "typeName": "Upwell M3R-F Outpost Rig", "size": 3.0}
+{"typeID": 48025, "typeName": "Upwell M3ROF Outpost Rig", "size": 3.0}
+{"typeID": 48026, "typeName": "Upwell C3FIL Outpost Rig", "size": 3.0}
+{"typeID": 48027, "typeName": "Upwell A3FPL Outpost Rig", "size": 3.0}
+{"typeID": 48028, "typeName": "Upwell A2-FP Outpost Rig", "size": 3.0}
+{"typeID": 48029, "typeName": "Upwell A2-FR Outpost Rig", "size": 3.0}
+{"typeID": 48030, "typeName": "Upwell A2OF Outpost Rig", "size": 3.0}
+{"typeID": 48031, "typeName": "Upwell A3FOP Outpost Rig", "size": 3.0}
+{"typeID": 48032, "typeName": "Upwell M3ROP Outpost Rig", "size": 3.0}
+{"typeID": 48033, "typeName": "Upwell A2L- Outpost Rig", "size": 3.0}
+{"typeID": 48034, "typeName": "Upwell G2OP Outpost Rig", "size": 3.0}
+{"typeID": 48035, "typeName": "Upwell M1P Outpost Rig", "size": 3.0}
+{"typeID": 48036, "typeName": "Upwell M3PR- Outpost Rig", "size": 3.0}
+{"typeID": 48037, "typeName": "Upwell G3FLP Outpost Rig", "size": 3.0}
+{"typeID": 48038, "typeName": "Upwell M3RFO Outpost Rig", "size": 3.0}
+{"typeID": 48039, "typeName": "Upwell G2PR Outpost Rig", "size": 3.0}
+{"typeID": 48040, "typeName": "Upwell M3-RPL Outpost Rig", "size": 3.0}
+{"typeID": 48041, "typeName": "Upwell M3LPR Outpost Rig", "size": 3.0}
+{"typeID": 48042, "typeName": "Upwell A2PO Outpost Rig", "size": 3.0}
+{"typeID": 48043, "typeName": "Upwell A2FO Outpost Rig", "size": 3.0}
+{"typeID": 48044, "typeName": "Upwell C2LF Outpost Rig", "size": 3.0}
+{"typeID": 48045, "typeName": "Upwell C3L-- Outpost Rig", "size": 3.0}
+{"typeID": 48046, "typeName": "Upwell A3F-- Outpost Rig", "size": 3.0}
+{"typeID": 48047, "typeName": "Upwell C3LIF Outpost Rig", "size": 3.0}
+{"typeID": 48048, "typeName": "Upwell M3L-R Outpost Rig", "size": 3.0}
+{"typeID": 48049, "typeName": "Upwell C3L-I Outpost Rig", "size": 3.0}
+{"typeID": 48050, "typeName": "Upwell M3RP- Outpost Rig", "size": 3.0}
+{"typeID": 48051, "typeName": "Upwell M3R-P Outpost Rig", "size": 3.0}
+{"typeID": 48052, "typeName": "Upwell M3R-L Outpost Rig", "size": 3.0}
+{"typeID": 48053, "typeName": "Upwell A2P- Outpost Rig", "size": 3.0}
+{"typeID": 48054, "typeName": "Upwell G3FP- Outpost Rig", "size": 3.0}
+{"typeID": 48055, "typeName": "Upwell M3RPL Outpost Rig", "size": 3.0}
+{"typeID": 48056, "typeName": "Upwell A3PFL Outpost Rig", "size": 3.0}
+{"typeID": 48057, "typeName": "Upwell M3RL- Outpost Rig", "size": 3.0}
+{"typeID": 48058, "typeName": "Upwell M3L-- Outpost Rig", "size": 3.0}
+{"typeID": 48059, "typeName": "Upwell G3L-- Outpost Rig", "size": 3.0}
+{"typeID": 48060, "typeName": "Upwell M3LRP Outpost Rig", "size": 3.0}
+{"typeID": 48061, "typeName": "Upwell C3LF- Outpost Rig", "size": 3.0}
+{"typeID": 48062, "typeName": "Upwell C3LFI Outpost Rig", "size": 3.0}
+{"typeID": 48063, "typeName": "Upwell C3FLI Outpost Rig", "size": 3.0}
+{"typeID": 48064, "typeName": "Upwell A3L-P Outpost Rig", "size": 3.0}
+{"typeID": 48065, "typeName": "Upwell G3LFP Outpost Rig", "size": 3.0}
+{"typeID": 48066, "typeName": "Upwell G2F- Outpost Rig", "size": 3.0}
+{"typeID": 48067, "typeName": "Upwell G3FPO Outpost Rig", "size": 3.0}
+{"typeID": 48068, "typeName": "Upwell C3L-F Outpost Rig", "size": 3.0}
+{"typeID": 48069, "typeName": "Upwell A3P-F Outpost Rig", "size": 3.0}
+{"typeID": 48070, "typeName": "Upwell A3FPR Outpost Rig", "size": 3.0}
+{"typeID": 48071, "typeName": "Upwell M2-RL Outpost Rig", "size": 3.0}
+{"typeID": 48072, "typeName": "Upwell M2LR Outpost Rig", "size": 3.0}
+{"typeID": 48073, "typeName": "Upwell C3-LI- Outpost Rig", "size": 3.0}
+{"typeID": 48074, "typeName": "Upwell C3ILR Outpost Rig", "size": 3.0}
+{"typeID": 48075, "typeName": "Upwell C3L-R Outpost Rig", "size": 3.0}
+{"typeID": 48076, "typeName": "Upwell G2L- Outpost Rig", "size": 3.0}
+{"typeID": 48077, "typeName": "Upwell A3L-- Outpost Rig", "size": 3.0}
+{"typeID": 48078, "typeName": "Upwell M3RLP Outpost Rig", "size": 3.0}
+{"typeID": 48635, "typeName": "Tiamat", "size": 2.0}
+{"typeID": 48636, "typeName": "Hydra", "size": 1.0}
+{"typeID": 48648, "typeName": "Citizen Venture", "size": 0.0}
+{"typeID": 73787, "typeName": "Naglfar Fleet Issue", "size": 4.0}
+{"typeID": 73789, "typeName": "Coercer Navy Issue", "size": 1.0}
+{"typeID": 73793, "typeName": "Phoenix Navy Issue", "size": 4.0}
+{"typeID": 73795, "typeName": "Cormorant Navy Issue", "size": 1.0}
+{"typeID": 49710, "typeName": "Kikimora", "size": 1.0}
+{"typeID": 49711, "typeName": "Drekavac", "size": 2.0}
+{"typeID": 49712, "typeName": "Rodiva", "size": 2.0}
+{"typeID": 49713, "typeName": "Zarmazd", "size": 2.0}
+{"typeID": 52250, "typeName": "Nergal", "size": 1.0}
+{"typeID": 52252, "typeName": "Ikitursa", "size": 2.0}
+{"typeID": 52254, "typeName": "Draugur", "size": 1.0}
+{"typeID": 52267, "typeName": "Test Site Maller", "size": 2.0}
+{"typeID": 52907, "typeName": "Zirnitra", "size": 4.0}
+{"typeID": 54731, "typeName": "Skybreaker", "size": 1.0}
+{"typeID": 54732, "typeName": "Stormbringer", "size": 2.0}
+{"typeID": 54733, "typeName": "Thunderchild", "size": 3.0}
+{"typeID": 78333, "typeName": "Mekubal", "size": 1.0}
+{"typeID": 78366, "typeName": "Alligator", "size": 2.0}
+{"typeID": 60764, "typeName": "Laelaps", "size": 2.0}
+{"typeID": 60765, "typeName": "Raiju", "size": 1.0}
