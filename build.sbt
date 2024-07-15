@@ -29,6 +29,8 @@ lazy val root = (project in file("."))
       "io.circe"       %%% "circe-literal"           % "0.14.8",
       "org.typelevel"  %%% "spire"                   % "0.18.0",
       "net.andimiller" %%% "cats-parse-interpolator" % "0.1.0",
+      "net.andimiller" %%% "hedgehogs-core"          % "0.3.0",
+      "net.andimiller" %%% "hedgehogs-circe"         % "0.3.0",
       "org.typelevel"  %%% "spire-laws"              % "0.18.0"    % Test,
       "org.typelevel"  %%% "munit-cats-effect"       % "2.0.0-M4"  % Test,
       "org.typelevel"  %%% "discipline-munit"        % "2.0.0-M3"  % Test,

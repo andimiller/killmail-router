@@ -10,6 +10,26 @@
           "damage_done": 2434,
           "final_blow": true,
           "security_status": 5,
+          "ship_type_id": 35833,
+          "weapon_type_id": 3178
+        },
+        {
+          "alliance_id": 99012982,
+          "character_id": 96120524,
+          "corporation_id": 98469412,
+          "damage_done": 2434,
+          "final_blow": true,
+          "security_status": 5,
+          "ship_type_id": 35834,
+          "weapon_type_id": 3178
+        },
+        {
+          "alliance_id": 99012982,
+          "character_id": 96120524,
+          "corporation_id": 98469412,
+          "damage_done": 2434,
+          "final_blow": true,
+          "security_status": 5,
           "ship_type_id": 19722,
           "weapon_type_id": 3178
         }
