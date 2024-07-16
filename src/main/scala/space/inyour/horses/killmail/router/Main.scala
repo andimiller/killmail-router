@@ -11,6 +11,7 @@ import org.http4s.ember.client.EmberClientBuilder
 import org.typelevel.log4cats.LoggerFactory
 import io.circe.syntax.*
 import io.circe.scalayaml.syntax.*
+import org.typelevel.log4cats.extras.LogLevel
 import space.inyour.horses.killmail.router.enrichers.Enricher
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
@@ -78,18 +79,25 @@ object Main extends IOApp {
     CLI.command.parse(args, sys.env) match
       case Left(value) => IO.println(value).as(ExitCode.Error)
       case Right(cli)  =>
-        cli match
-          case CLI.Run(configFile, loglevel) =>
-            for
-              staticConfig           <- loadConfig[IO](configFile)
-              given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
-              _                      <- program[IO](staticConfig)
-            yield ExitCode.Success
-          case CLI.Format(configFile)        =>
-            for
-              cfg <- loadConfig[IO](configFile)
-              p    = cfg.pretty
-              _   <- IO.println(p.asJson.asYaml)
-            yield ExitCode.Success
+        {
+          cli match
+            case CLI.Run(configFile, loglevel) =>
+              for
+                staticConfig           <- loadConfig[IO](configFile)
+                given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
+                _                      <- program[IO](staticConfig)
+              yield ExitCode.Success
+            case CLI.Format(configFile)        =>
+              for
+                cfg <- loadConfig[IO](configFile)
+                p    = cfg.pretty
+                _   <- IO.println(p.asJson.asYaml)
+              yield ExitCode.Success
+        }.attemptT.leftSemiflatMap { e =>
+          new ConsoleLoggerFactory[IO](LogLevel.Warn)
+            .getLoggerFromClass(getClass[Main.type])
+            .error(e)("Main method failed with an exception")
+            .as(ExitCode.Error)
+        }.merge
 
 }
