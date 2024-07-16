@@ -11,7 +11,7 @@ lazy val root = (project in file("."))
     nativeConfig ~= { c =>
       c.withLTO(LTO.none)
         .withMode(Mode.debug) // releaseFast might be better for releases
-        .withGC(GC.immix)
+        .withGC(GC.commix)
     },
     libraryDependencies ++= List(
       "org.scodec"     %%% "scodec-bits"             % "1.1.38",

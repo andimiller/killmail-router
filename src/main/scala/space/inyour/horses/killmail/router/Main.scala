@@ -91,7 +91,7 @@ object Main extends IOApp {
               for
                 cfg <- loadConfig[IO](configFile)
                 p    = cfg.pretty
-                _   <- IO.println(p.asJson.asYaml)
+                _   <- IO.println(p.asJson.asYaml.spaces2)
               yield ExitCode.Success
         }.attemptT.leftSemiflatMap { e =>
           new ConsoleLoggerFactory[IO](LogLevel.Warn)

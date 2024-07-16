@@ -21,4 +21,4 @@ COPY rigsizes.json /rigsizes.json
 WORKDIR /
 ENV S2N_DONT_MLOCK=1
 ENV LOGLEVEL=Info
-ENTRYPOINT ["/router", "/config.yml"]
+ENTRYPOINT ["/router", "run", "/config.yml"]

@@ -21,14 +21,14 @@ spec:
       - envFrom:
         - configMapRef:
             name: killmail-router-config
-        image: andimiller/killmail-router:0.5
+        image: andimiller/killmail-router:0.9
         imagePullPolicy: Always
         name: killmail-router
         resources:
           requests:
-            memory: "300Mi"
+            memory: "1024Mi"
           limits:
-            memory: "300Mi"
+            memory: "1024Mi"
         volumeMounts:
         - name: config
           mountPath: /config.yml
