@@ -10,7 +10,7 @@ import org.http4s.client.middleware.{Retry, RetryPolicy}
 import org.http4s.ember.client.EmberClientBuilder
 import org.typelevel.log4cats.LoggerFactory
 import io.circe.syntax.*
-import io.circe.scalayaml.syntax.*
+import io.circe.yaml.syntax.*
 import org.typelevel.log4cats.extras.LogLevel
 import space.inyour.horses.killmail.router.enrichers.Enricher
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
@@ -70,7 +70,7 @@ object Main extends IOApp {
   def loadConfig[F[_]: Async: Files](path: Path): F[StaticConfig] =
     for
       str          <- Files[F].readAll(path).through(fs2.text.utf8.decode).compile.string
-      yml          <- Async[F].fromEither(io.circe.scalayaml.parser.parse(str))
+      yml          <- Async[F].fromEither(io.circe.yaml.parser.parse(str))
       rewritten     = yml.foldWith(StaticConfig.permissiveFilterRewriter)
       staticConfig <- Async[F].fromEither(rewritten.as[StaticConfig])
     yield staticConfig

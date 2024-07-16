@@ -39,8 +39,9 @@ object StaticConfig:
     override def onObject(value: JsonObject): Json  =
       value("filter") match
         case Some(expr) =>
+          val rewritten = expr.asString.get.replace("\\n", "").strip()
           value
-            .add("filter", expr.withString(s => Json.fromString(s.replaceAll("\\w+", " "))))
+            .add("filter", Json.fromString(rewritten))
             .mapValues(_.foldWith(permissiveFilterRewriter))
             .toJson
-        case None       => value.toJson
+        case None       => value.mapValues(_.foldWith(permissiveFilterRewriter)).toJson
