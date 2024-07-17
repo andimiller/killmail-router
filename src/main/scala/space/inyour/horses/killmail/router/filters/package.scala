@@ -191,7 +191,7 @@ package object filters:
     private inline def whitespace: Parser[Unit]   = Parser.charsWhile(_.isWhitespace).void
     private inline def whitespace0: Parser0[Unit] = Parser.charsWhile0(_.isWhitespace).void
 
-    private inline def nameParser: Parser[String] = Parser.charsWhile(c => c.isLetter || "-".contains(c))
+    private inline def nameParser: Parser[String] = Parser.charsWhile(c => c.isLetterOrDigit || "-".contains(c))
 
     lazy implicit val given_Parser_Expr: Parser[Expr] = Parser.defer {
       Parser.recursive { recurse =>
