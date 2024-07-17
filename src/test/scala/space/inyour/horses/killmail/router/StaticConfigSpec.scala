@@ -3,10 +3,9 @@ package space.inyour.horses.killmail.router
 import io.circe.syntax.*
 import cats.effect.IO
 import fs2.io.file.{Files, Path}
-import io.circe.{Json, JsonNumber, JsonObject}
+import io.circe.Json
 import munit.CatsEffectSuite
 import io.circe.yaml.syntax.*
-import space.inyour.horses.killmail.router.yaml.MultilineYamlSerializer
 
 class StaticConfigSpec extends CatsEffectSuite {
 
@@ -22,6 +21,10 @@ class StaticConfigSpec extends CatsEffectSuite {
                     .string
                     .map(_.replace("\r\n", "\n"))
     yield assertEquals(yaml, expected)
+  }
+
+  test("should also parse the pretty version") {
+    Main.loadConfig[IO](Path("./src/test/resources/rewrittenconfig.yml"))
   }
 
 }

@@ -13,6 +13,7 @@ import io.circe.{ACursor, Json, JsonNumber}
 import spire.algebra.Bool
 import net.andimiller.cats.parse.interpolator.*
 import space.inyour.horses.killmail.router.filters.PathOperation.MapArrayPath
+import scala.collection.immutable.ListMap
 
 package object filters:
 
@@ -30,26 +31,66 @@ package object filters:
 
     import Expr.given_Show_JsonNumber
     import Expr.showListPathOperation
+
     given IndentedShow[PrettyExpr] with
+
+      def showBindings(bs: ListMap[String, Expr]): String = {
+        val bindings = bs.toList
+          .map {
+            case (name, e) if e.isSimple =>
+              show"($name $e)"
+            case (name, e)               =>
+              show"""($name
+                |${show(2, e)}
+                |)
+                |""".stripMargin
+          }
+          .map(indentString(4))
+          .mkString("\n")
+
+        show"""  [
+              |$bindings
+              |  ]""".stripMargin
+      }
+
       def show(indent: Int, t: Expr): String = indentString(indent)(t match
-        case Expr.Pure(result)             => result.toString
-        case Expr.Equals(path, value)      => show"(== $path $value)".stripMargin
-        case Expr.GreaterThan(path, value) => show"(> $path $value)"
-        case Expr.LessThan(path, value)    => show"(< $path $value)"
-        case Expr.Contains(path, value)    => show"(contains $path ${value.noSpaces})"
-        case Expr.Not(expr)                => show"(not $expr)"
-        case Expr.And(left, right)         => show"""(and
+        case Expr.Pure(result)                         => result.toString
+        case Expr.Reference(result)                    => result
+        case a @ Expr.Apply(path, expr) if a.isSimple  => show"(apply $path $expr)"
+        case Expr.Apply(path, expr)                    =>
+          show"""(apply
+                |  $path
+                |${show(2, expr)}
+                |)
+                |""".stripMargin
+        case e @ Expr.Exists(path, expr) if e.isSimple => show"(exists $path $expr)"
+        case Expr.Exists(path, expr)                   => show"""(exists
+                                                               |  $path
+                                                               |${show(2, expr)}
+                                                               |)
+                                                               |""".stripMargin
+        case n @ Expr.Not(expr) if n.isSimple          => show"(not $expr)"
+        case Expr.Not(expr)                            => show"""(not
+                                                                |${show(2, expr)}
+                                                                |)
+                                                                |""".stripMargin
+        case Expr.Equals(path, value)                  => show"(== $path $value)"
+        case Expr.GreaterThan(path, value)             => show"(> $path $value)"
+        case Expr.LessThan(path, value)                => show"(< $path $value)"
+        case Expr.Contains(path, value)                => show"(contains $path ${value.noSpaces})"
+        case Expr.And(left, right)                     => show"""(and
                                             |${show(2, left)}
                                             |${show(2, right)}
                                             |)
                                             |""".stripMargin
-        case Expr.Or(left, right)          => show"""(or
+        case Expr.Or(left, right)                      => show"""(or
                                            |${show(2, left)}
                                            |${show(2, right)}
                                            |)
                                            |""".stripMargin
-        case Expr.Exists(path, expr)       => show"""(exists
-                                                    |  $path
+
+        case Expr.Let(bindings, expr) => show"""(let
+                                                    |${showBindings(bindings)}
                                                     |${show(2, expr)}
                                                     |)
                                                     |""".stripMargin
@@ -65,23 +106,32 @@ package object filters:
 
   enum Expr:
     def pretty: PrettyExpr = this
+    def isSimple: Boolean  = this match // checks if this contains things complex enough to split lines
+      case Apply(_, e)             => e.isSimple
+      case Not(e)                  => e.isSimple
+      case Exists(_, e)            => e.isSimple
+      case _: Let | _: And | _: Or => false // these are always multiline
+      case _                       => true
 
     // pure
     case Pure(result: Boolean)
     // comparisons
+    case Apply(path: List[PathOperation], expr: Expr)
     case Equals(path: List[PathOperation], value: Json)
     case GreaterThan(path: List[PathOperation], value: JsonNumber)
     case LessThan(path: List[PathOperation], value: JsonNumber)
     case Contains(path: List[PathOperation], value: Json)
-    // boolean algebra
-    case Not(expr: Expr)
-    case And(left: Expr, right: Expr)
-    case Or(left: Expr, right: Expr)
-    // combinators
     case Exists(
         path: List[PathOperation],
         expr: Expr
     ) // expects the path to point at an array, checks if any items in that array have this expression evaluate to true
+    // boolean algebra
+    case Not(expr: Expr)
+    case And(left: Expr, right: Expr)
+    case Or(left: Expr, right: Expr)
+    // language constructs
+    case Let(bindings: ListMap[String, Expr], main: Expr)
+    case Reference(name: String)
 
   object Expr:
     given Bool[Expr] with
@@ -115,9 +165,19 @@ package object filters:
       }
     }
 
+    given Show[ListMap[String, Expr]] = Show.show { lm =>
+      lm.toList
+        .map { case (name, e) =>
+          show"($name $e)"
+        }
+        .mkString("[", " ", "]")
+    }
+
     given Show[Expr] with
       def show(t: Expr): String = t match
         case Expr.Pure(result)             => result.toString
+        case Expr.Reference(name)          => name
+        case Expr.Apply(path, expr)        => show"(apply $path $expr)"
         case Expr.Equals(path, value)      => show"(== $path $value)"
         case Expr.GreaterThan(path, value) => show"(> $path $value)"
         case Expr.LessThan(path, value)    => show"(< $path $value)"
@@ -126,22 +186,28 @@ package object filters:
         case Expr.And(left, right)         => show"(and $left $right)"
         case Expr.Or(left, right)          => show"(or $left $right)"
         case Expr.Exists(path, expr)       => show"(exists $path $expr)"
+        case Expr.Let(bindings, expr)      => show"(let $bindings $expr)"
 
     private inline def whitespace: Parser[Unit]   = Parser.charsWhile(_.isWhitespace).void
     private inline def whitespace0: Parser0[Unit] = Parser.charsWhile0(_.isWhitespace).void
 
+    private inline def nameParser: Parser[String] = Parser.charsWhile(c => c.isLetter || "-".contains(c))
+
     lazy implicit val given_Parser_Expr: Parser[Expr] = Parser.defer {
       Parser.recursive { recurse =>
-        val int = Numbers.digits.map(JsonNumber.fromDecimalStringUnsafe)
+        val int                             = Numbers.digits.map(JsonNumber.fromDecimalStringUnsafe)
+        val binding: Parser[(String, Expr)] = pm"($nameParser$whitespace$recurse$whitespace0)".map { (n, _, e, _) => (n, e) }
 
         Parser.oneOf(
           List(
             p"true".as(Expr.Pure(true)).orElse(p"false".as(Expr.Pure(false))),
+            nameParser.map(Expr.Reference.apply),
+            p"(apply $pathParser $recurse)".map(Expr.Apply.apply),
             p"(== $pathParser $jsonParser)".map(Expr.Equals.apply),
             p"(> $pathParser $int)".map(Expr.GreaterThan.apply),
             p"(< $pathParser $int)".map(Expr.LessThan.apply),
             p"(contains $pathParser $jsonParser)".map(Expr.Contains.apply),
-            p"(not $recurse)".map(Expr.Not.apply),
+            pm"(not$whitespace$recurse$whitespace0)".map { (_, e, _) => Expr.Not(e) },
             for
               _ <- p"(and"
               _ <- whitespace
@@ -168,7 +234,20 @@ package object filters:
               expr <- recurse
               _    <- whitespace0
               _    <- p")"
-            yield Expr.Exists(path, expr)
+            yield Expr.Exists(path, expr),
+            for
+              _        <- p"(let"
+              _        <- whitespace
+              _        <- p"["
+              _        <- whitespace0
+              bindings <- binding.repSep(whitespace).map(bs => ListMap.from(bs.iterator))
+              _        <- whitespace0
+              _        <- p"]"
+              _        <- whitespace
+              expr     <- recurse
+              _        <- whitespace0
+              _        <- p")"
+            yield Expr.Let(bindings, expr)
           )
         )
       }
@@ -208,8 +287,14 @@ package object filters:
         .focus
 
     // runner
-    def run(expr: Expr)(input: Json): Eval[Boolean] = expr match
+    def run(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty)(input: Json): Eval[Boolean] = expr match
       case Expr.Pure(result)             => Eval.now(result)
+      case Expr.Apply(path, e)           =>
+        Eval.later {
+          evaluatePath(path)(input).fold(false) { focus =>
+            run(e, bindings)(focus).value
+          }
+        }
       case Expr.Equals(path, value)      =>
         Eval.now {
           evaluatePath(path)(input).fold(false)(_ == value)
@@ -237,24 +322,30 @@ package object filters:
             .getOrElse(false)
         }
       case Expr.Not(expr)                =>
-        run(expr)(input).map(!_)
+        run(expr, bindings)(input).map(!_)
       case Expr.And(left, right)         =>
         for
-          l <- run(left)(input)
-          r <- run(right)(input)
+          l <- run(left, bindings)(input)
+          r <- run(right, bindings)(input)
         yield l && r
       case Expr.Or(left, right)          =>
         for
-          l <- run(left)(input)
-          r <- run(right)(input)
+          l <- run(left, bindings)(input)
+          r <- run(right, bindings)(input)
         yield l || r
       case Expr.Exists(path, expr)       =>
         Eval.later {
           evaluatePath(path)(input).flatMap(_.asArray) match
             case Some(values) =>
               values.exists { value =>
-                run(expr)(value).value
+                run(expr, bindings)(value).value
               }
             case None         =>
               false
         }
+      case Expr.Reference(name)          =>
+        bindings.get(name) match
+          case Some(e) => run(e, bindings)(input)
+          case None    => throw new RuntimeException(s"Unable to find binding for $name")
+      case Expr.Let(extraBindings, expr) =>
+        run(expr, bindings ++ extraBindings)(input)

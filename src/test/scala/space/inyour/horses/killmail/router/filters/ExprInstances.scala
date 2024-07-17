@@ -4,6 +4,8 @@ import cats.implicits.*
 import io.circe.{Json, JsonNumber}
 import org.scalacheck.{Arbitrary, Gen}
 
+import scala.collection.immutable.ListMap
+
 trait ExprInstances {
 
   // syntax to make things easier to write
@@ -110,7 +112,11 @@ trait ExprInstances {
               for
                 p <- pathGen
                 e <- safeRecurse
-              yield Expr.Exists(p, e)
+              yield Expr.Exists(p, e),
+              for
+                f <- safeRecurse
+                e <- safeRecurse
+              yield Expr.Let(ListMap("ref" -> f), e)
             )
           case 0                  =>
             basicExpr.arbitrary

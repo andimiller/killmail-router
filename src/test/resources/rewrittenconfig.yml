@@ -1,17 +1,22 @@
 routes:
 - name: hkrab
   filter: |-
-    (or
-      (== root.killmail.victim.alliance_id 99005065)
-      (contains root.killmail.attackers|{root.alliance_id} 99005065)
+    (let
+      [
+        (hk (== root.alliance_id 99005065))
+      ]
+      (or
+        (apply root.killmail.victim hk)
+        (exists root.killmail.attackers hk)
+      )
     )
   webhook: https://discord.com/api/webhooks
 - name: c6-caps
   filter: |-
     (and
       (or
-          (== root.killmail.victim.is_capital true)
-          (contains root.killmail.attackers|{root.is_capital} true)
+        (== root.killmail.victim.is_capital true)
+        (contains root.killmail.attackers|{root.is_capital} true)
       )
       (== root.killmail.wormhole_class 6)
     )
@@ -20,8 +25,8 @@ routes:
   filter: |-
     (and
       (or
-          (== root.killmail.victim.is_capital true)
-          (contains root.killmail.attackers|{root.is_capital} true)
+        (== root.killmail.victim.is_capital true)
+        (contains root.killmail.attackers|{root.is_capital} true)
       )
       (== root.killmail.wormhole_class 5)
     )
@@ -30,9 +35,23 @@ routes:
   filter: |-
     (and
       (or
-          (== root.killmail.victim.is_capital true)
-          (contains root.killmail.attackers|{root.is_capital} true)
+        (== root.killmail.victim.is_capital true)
+        (contains root.killmail.attackers|{root.is_capital} true)
       )
       (< root.killmail.wormhole_class 5)
     )
   webhook: https://discord.com/api/webhooks
+- name: uses-let
+  filter: |-
+    (let
+      [
+        (both
+          (and
+            (== root.a 1)
+            (== root.b 2)
+          )
+        )
+      ]
+      (exists root.items both)
+    )
+  webhook: https://nowhere.com/

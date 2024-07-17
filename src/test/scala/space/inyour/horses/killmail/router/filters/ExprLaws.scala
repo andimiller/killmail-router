@@ -132,4 +132,69 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
 
   }
 
+  test("Let bindings should work with apply") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      "(let [(both (and (== root.a 1) (== root.b  2)))] (apply root.input both))"
+    ): @unchecked
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "input" := Json.obj("a" := 1, "b" := 2)
+          )
+        )
+        .value,
+      true
+    )
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "input" := Json.obj("a" := 1)
+          )
+        )
+        .value,
+      false
+    )
+  }
+
+  test("Let bindings should work with exists") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      "(let [(both (and (== root.a 1) (== root.b  2)))] (exists root.items both))"
+    ): @unchecked
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "items" := List(
+              Json.obj("a" := 1),
+              Json.obj("a" := 2),
+              Json.obj("a" := 1, "b" := 2),
+              Json.obj("b" := 2)
+            )
+          )
+        )
+        .value,
+      true
+    )
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "items" := List(
+              Json.obj("a" := 1),
+              Json.obj("a" := 2),
+              Json.obj("b" := 2)
+            )
+          )
+        )
+        .value,
+      false
+    )
+  }
+
 }
