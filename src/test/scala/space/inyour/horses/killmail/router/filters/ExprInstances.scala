@@ -43,7 +43,7 @@ trait ExprInstances {
           Gen.oneOf(
             Gen.alphaStr.map(PathOperation.DownField.apply),
             Gen.chooseNum(0, 10).map(PathOperation.DownIndex.apply),
-            pathGen.map(PathOperation.MapArray.apply)
+            pathGen.map(PathOperation.MapArrayPath.apply)
           )
         }
       }
@@ -51,6 +51,16 @@ trait ExprInstances {
   )
 
   private inline def pathGen: Gen[List[PathOperation]] = Gen.listOf(gen[PathOperation])
+
+  val veryBasicExpr: Arbitrary[Expr] = Arbitrary(
+    Gen.oneOf(
+      gen[Boolean].map(Expr.Pure.apply),
+      for
+        value <- gen[Json]
+        path   = List.empty[PathOperation]
+      yield Expr.Equals(path, value)
+    )
+  )
 
   val basicExpr: Arbitrary[Expr] = Arbitrary(
     Gen.oneOf[Expr](
@@ -96,7 +106,11 @@ trait ExprInstances {
               for
                 l <- safeRecurse
                 r <- safeRecurse
-              yield Expr.Or(l, r)
+              yield Expr.Or(l, r),
+              for
+                p <- pathGen
+                e <- safeRecurse
+              yield Expr.Exists(p, e)
             )
           case 0                  =>
             basicExpr.arbitrary

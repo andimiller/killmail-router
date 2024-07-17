@@ -86,12 +86,50 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
       expr.pretty.show,
       """(and
         |  (or
-        |      (== root.killmail.victim.is_capital true)
-        |      (contains root.killmail.attackers|{root.is_capital} true)
+        |    (== root.killmail.victim.is_capital true)
+        |    (contains root.killmail.attackers|{root.is_capital} true)
         |  )
         |  (== root.killmail.wormhole_class 6)
         |)""".replace("\r\n", "\n").stripMargin
     )
+  }
+
+  test("Map an expression onto a path") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      "(exists root.items (and (== root.a 1) (== root.b 2)))"
+    ): @unchecked
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "items" := List(
+              Json.obj("a" := 1),
+              Json.obj("a" := 2),
+              Json.obj("a" := 1, "b" := 2),
+              Json.obj("b" := 2)
+            )
+          )
+        )
+        .value,
+      true
+    )
+
+    assertEquals(
+      Expr
+        .run(expr)(
+          Json.obj(
+            "items" := List(
+              Json.obj("a" := 1),
+              Json.obj("a" := 2),
+              Json.obj("b" := 2)
+            )
+          )
+        )
+        .value,
+      false
+    )
+
   }
 
 }
