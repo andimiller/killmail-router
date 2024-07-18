@@ -8,6 +8,7 @@ import org.typelevel.log4cats.extras.LogLevel
 enum CLI:
   case Run(
       configFile: Path,
+      queueID: String,
       loglevel: LogLevel
   )
   case Format(
@@ -23,6 +24,7 @@ object CLI {
   val run: Command[CLI.Run] = Command("run", "run the killmail router", true)(
     (
       Opts.argument[Path]("config.yml"),
+      Opts.argument[String]("queueID"),
       Opts.env[LogLevel]("LOGLEVEL", "level to run the logger at").withDefault(LogLevel.Info)
     ).mapN(CLI.Run.apply)
   )
