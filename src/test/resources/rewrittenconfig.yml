@@ -1,3 +1,4 @@
+siggy: null
 routes:
 - name: hkrab
   filter: |-
@@ -11,6 +12,7 @@ routes:
       )
     )
   webhook: https://discord.com/api/webhooks
+  template: https://zkillboard.com/kill/${root.killID}
 - name: c6-caps
   filter: |-
     (and
@@ -21,6 +23,7 @@ routes:
       (== root.killmail.wormhole_class 6)
     )
   webhook: https://discord.com/api/webhooks
+  template: https://zkillboard.com/kill/${root.killID}
 - name: c5-caps
   filter: |-
     (and
@@ -31,6 +34,7 @@ routes:
       (== root.killmail.wormhole_class 5)
     )
   webhook: https://discord.com/api/webhooks
+  template: https://zkillboard.com/kill/${root.killID}
 - name: lowclass-caps
   filter: |-
     (and
@@ -41,6 +45,7 @@ routes:
       (< root.killmail.wormhole_class 5)
     )
   webhook: https://discord.com/api/webhooks
+  template: https://zkillboard.com/kill/${root.killID}
 - name: uses-let
   filter: |-
     (let
@@ -55,3 +60,6 @@ routes:
       (exists root.items both)
     )
   webhook: https://nowhere.com/
+  template: |-
+    Action ${root.chain_jumps.Jita} jumps from Jita
+    https://zkillboard.com/kill/${root.killID}

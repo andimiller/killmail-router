@@ -52,7 +52,7 @@ trait ExprInstances {
     )
   )
 
-  private inline def pathGen: Gen[List[PathOperation]] = Gen.listOf(gen[PathOperation])
+  inline def pathGen: Gen[List[PathOperation]] = Gen.listOf(gen[PathOperation])
 
   val veryBasicExpr: Arbitrary[Expr] = Arbitrary(
     Gen.oneOf(

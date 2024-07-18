@@ -4,28 +4,40 @@ import io.circe.*
 import org.http4s.Uri
 import space.inyour.horses.killmail.router.filters.{Expr, PrettyExpr}
 import utils.JsonCodecs.given
+import template.Template
 
 case class PrettyRoute(
     name: String,
     filter: PrettyExpr,
-    webhook: Uri
+    webhook: Uri,
+    template: Template
 ) derives Codec.AsObject
 
 case class Route(
     name: String,
     filter: Expr,
-    webhook: Uri
+    webhook: Uri,
+    template: Option[Template]
 ) derives Codec.AsObject {
-  def pretty: PrettyRoute = PrettyRoute(name, filter.pretty, webhook)
+  def pretty: PrettyRoute = PrettyRoute(name, filter.pretty, webhook, template.getOrElse(Template.default))
 }
 
+case class SiggyConfig(
+    id: String,
+    secret: String,
+    chain: String,
+    systems: List[Long]
+) derives Codec.AsObject
+
 case class StaticConfig(
+    siggy: Option[SiggyConfig],
     routes: List[Route]
 ) derives Codec.AsObject {
-  def pretty: PrettyStaticConfig = PrettyStaticConfig(routes.map(_.pretty))
+  def pretty: PrettyStaticConfig = PrettyStaticConfig(siggy, routes.map(_.pretty))
 }
 
 case class PrettyStaticConfig(
+    siggy: Option[SiggyConfig],
     routes: List[PrettyRoute]
 ) derives Codec.AsObject
 

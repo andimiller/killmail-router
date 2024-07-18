@@ -14,3 +14,6 @@ routes:
   - name: uses-let
     filter: (let [(both (and (== root.a 1) (== root.b  2)))] (exists root.items both))
     webhook: https://nowhere.com/
+    template: |-
+      Action ${root.chain_jumps.Jita} jumps from Jita
+      https://zkillboard.com/kill/${root.killID}

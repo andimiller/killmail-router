@@ -1,5 +1,6 @@
 package space.inyour.horses.killmail.router
 
+import cats.{Parallel, Semigroup}
 import cats.data.NonEmptyList
 import cats.effect.*
 import cats.implicits.*
@@ -12,12 +13,13 @@ import org.typelevel.log4cats.LoggerFactory
 import io.circe.syntax.*
 import io.circe.yaml.syntax.*
 import org.typelevel.log4cats.extras.LogLevel
-import space.inyour.horses.killmail.router.enrichers.Enricher
+import space.inyour.horses.killmail.router.enrichers.{Enricher, EnricherF}
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
 import space.inyour.horses.killmail.router.types.{Capitals, Citadels, RigSize}
 import space.inyour.horses.killmail.router.maps.Systems
 import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
+import siggy.*
 
 import scala.concurrent.duration.*
 
@@ -33,13 +35,24 @@ object Main extends IOApp {
       retry   = Retry.create[F](RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), RetryPolicy.defaultRetriable[F]))(client)
     yield retry
 
-  def program[F[_]: Concurrent: Async: Network: Files: LoggerFactory](staticConfig: StaticConfig): F[Unit] =
+  def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](staticConfig: StaticConfig): F[Unit] =
     resources.use { client =>
       val webhooks = DiscordWebhooks.create(client)
       val redisq   = RedisQ.create(client, "andi-local-test")
       val engine   = RulesEngine.fromStaticConfig(webhooks, staticConfig)
+
       for
-        enricher <-
+        siggyEnricher <- staticConfig.siggy
+                           .traverse { siggyConfig =>
+                             val siggyClient = Siggy.create[F](client, siggyConfig.id, siggyConfig.secret)
+                             siggyConfig.systems
+                               .traverse { system =>
+                                 SiggyEnricher.forSystem(siggyClient)(siggyConfig.chain, system, 1.minute)
+                               }
+                               .map(_.reduceOption(Semigroup[EnricherF[F]].combine))
+                           }
+                           .map(_.flatten)
+        pureEnrichers <-
           NonEmptyList
             .of(
               Systems.load[F](Path("./systems.json")).map(Systems.wormholeClassEnricher),
@@ -49,21 +62,22 @@ object Main extends IOApp {
             )
             .sequence
             .map(_.reduce[Enricher])
-        _        <- staticConfig.routes.traverse { route =>
-                      webhooks.activate(
-                        route.webhook,
-                        WebhookPayload(
-                          show"""Starting up with the following filter:
+        enricher       = siggyEnricher.fold(pureEnrichers.liftF[F])(_ combine pureEnrichers.liftF[F])
+        _             <- staticConfig.routes.traverse { route =>
+                           webhooks.activate(
+                             route.webhook,
+                             WebhookPayload(
+                               show"""Starting up with the following filter:
                   |
                   |```lisp
                   |${route.filter.pretty}
                   |```
                   |""".stripMargin,
-                          Some(route.name)
-                        )
-                      )
-                    }
-        _        <- redisq.stream.repeat.map(enricher).through(engine).compile.drain
+                               Some(route.name)
+                             )
+                           )
+                         }
+        _             <- redisq.stream.repeat.evalMap(enricher).through(engine).compile.drain
       yield ()
     }
 
