@@ -297,7 +297,7 @@ package object filters:
         }
       case Expr.Equals(path, value)      =>
         Eval.now {
-          evaluatePath(path)(input).fold(false)(_ == value)
+          evaluatePath(path)(input).getOrElse(Json.Null) == value
         }
       case Expr.GreaterThan(path, value) =>
         Eval.now {
@@ -321,8 +321,9 @@ package object filters:
             }
             .getOrElse(false)
         }
-      case Expr.Not(expr)                =>
+      case Expr.Not(expr)                => {
         run(expr, bindings)(input).map(!_)
+      }
       case Expr.And(left, right)         =>
         for
           l <- run(left, bindings)(input)

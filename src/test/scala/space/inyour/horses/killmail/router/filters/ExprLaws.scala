@@ -197,4 +197,19 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
     )
   }
 
+  test("Not should not fire on null packages") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      "(not (== root.killID null))"
+    ): @unchecked
+
+    assertEquals(
+      Expr.run(expr)(Json.Null).value,
+      false
+    )
+    assertEquals(
+      Expr.run(expr)(Json.obj("killID" := 1234)).value,
+      true
+    )
+  }
+
 }
