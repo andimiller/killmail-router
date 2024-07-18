@@ -8,6 +8,7 @@ import org.typelevel.log4cats.LoggerFactory
 import space.inyour.horses.killmail.router.filters.Expr
 import space.inyour.horses.killmail.router.formatters.Formatter
 import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
+import template.Template
 
 object RulesEngine {
   def withFilters[F[_]: Async](rules: (Expr, Json => F[Unit])*): Pipe[F, Json, Unit] = { input =>
@@ -27,7 +28,7 @@ object RulesEngine {
               logger.info(s"matched ${route.name}, sending to webhook") *>
                 discordWebhooks.activate(
                   route.webhook,
-                  Formatter.simpleNamed(route.name)(item)
+                  Formatter.templateNamed(route.name, route.template.getOrElse(Template.default))(item)
                 )
             } else {
               logger.debug(s"didn't match ${route.name}")
