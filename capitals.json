@@ -1,110 +1,110 @@
-{"typeID": 671, "typeName": "Erebus"}
-{"typeID": 2192, "typeName": "The Kundalini Manifest"}
-{"typeID": 2877, "typeName": "Federation Freighter Vessel"}
-{"typeID": 2879, "typeName": "Imperial Freighter Vessel"}
-{"typeID": 2882, "typeName": "State Freighter Vessel"}
-{"typeID": 3071, "typeName": "Uroborus"}
-{"typeID": 3514, "typeName": "Revenant"}
-{"typeID": 3764, "typeName": "Leviathan"}
-{"typeID": 77281, "typeName": "Hubris"}
-{"typeID": 77283, "typeName": "Bane"}
-{"typeID": 73790, "typeName": "Revelation Navy Issue"}
-{"typeID": 73792, "typeName": "Moros Navy Issue"}
-{"typeID": 11567, "typeName": "Avatar"}
-{"typeID": 77284, "typeName": "Karura"}
-{"typeID": 77288, "typeName": "Valravn"}
-{"typeID": 78576, "typeName": "Azariel"}
-{"typeID": 81040, "typeName": "Avalanche"}
-{"typeID": 19720, "typeName": "Revelation"}
-{"typeID": 19722, "typeName": "Naglfar"}
-{"typeID": 19724, "typeName": "Moros"}
-{"typeID": 19726, "typeName": "Phoenix"}
-{"typeID": 20183, "typeName": "Providence"}
-{"typeID": 20185, "typeName": "Charon"}
-{"typeID": 20187, "typeName": "Obelisk"}
-{"typeID": 20189, "typeName": "Fenrir"}
-{"typeID": 22852, "typeName": "Hel"}
-{"typeID": 23757, "typeName": "Archon"}
-{"typeID": 23773, "typeName": "Ragnarok"}
-{"typeID": 23911, "typeName": "Thanatos"}
-{"typeID": 23913, "typeName": "Nyx"}
-{"typeID": 23915, "typeName": "Chimera"}
-{"typeID": 23917, "typeName": "Wyvern"}
-{"typeID": 23919, "typeName": "Aeon"}
-{"typeID": 24483, "typeName": "Nidhoggur"}
-{"typeID": 27717, "typeName": "Imperial Redeemer"}
-{"typeID": 27719, "typeName": "State Izanaki"}
-{"typeID": 27720, "typeName": "Federation Themis"}
-{"typeID": 27721, "typeName": "Republic Harkal"}
-{"typeID": 28160, "typeName": "Federation Freighter"}
-{"typeID": 28161, "typeName": "State Freighter"}
-{"typeID": 28162, "typeName": "Republic Freighter"}
-{"typeID": 28163, "typeName": "Imperial Freighter"}
-{"typeID": 28352, "typeName": "Rorqual"}
-{"typeID": 28844, "typeName": "Rhea"}
-{"typeID": 28846, "typeName": "Nomad"}
-{"typeID": 28848, "typeName": "Anshar"}
-{"typeID": 28850, "typeName": "Ark"}
-{"typeID": 30970, "typeName": "State Transport Freighter"}
-{"typeID": 32230, "typeName": "Republic Freighter Vessels"}
-{"typeID": 33687, "typeName": "Rorqual ORE Development Edition"}
-{"typeID": 34328, "typeName": "Bowhead"}
-{"typeID": 35819, "typeName": "Amarr Navy Archon"}
-{"typeID": 36848, "typeName": "Burner Antero"}
-{"typeID": 37461, "typeName": "Angel Dreadnought"}
-{"typeID": 37462, "typeName": "Domination Titan"}
-{"typeID": 37463, "typeName": "Blood Dreadnought"}
-{"typeID": 37464, "typeName": "Dark Blood Titan"}
-{"typeID": 37465, "typeName": "Guristas Dreadnought"}
-{"typeID": 37466, "typeName": "Dread Guristas Titan"}
-{"typeID": 37467, "typeName": "Sansha's Dreadnought"}
-{"typeID": 37468, "typeName": "Serpentis Dreadnought"}
-{"typeID": 37470, "typeName": "Infested Carrier"}
-{"typeID": 37471, "typeName": "Sentient Infested Supercarrier"}
-{"typeID": 37604, "typeName": "Apostle"}
-{"typeID": 37605, "typeName": "Minokawa"}
-{"typeID": 37606, "typeName": "Lif"}
-{"typeID": 37607, "typeName": "Ninazu"}
-{"typeID": 40637, "typeName": "Shadow Serpentis Titan"}
-{"typeID": 40671, "typeName": "True Sansha's Supercarrier"}
-{"typeID": 40729, "typeName": "Kazue's Caiman"}
-{"typeID": 41396, "typeName": "Domination Dreadnought"}
-{"typeID": 41397, "typeName": "Dark Blood Dreadnought"}
-{"typeID": 41398, "typeName": "Dread Guristas Dreadnought"}
-{"typeID": 41399, "typeName": "True Sansha's Dreadnought"}
-{"typeID": 41400, "typeName": "Shadow Serpentis Dreadnought"}
-{"typeID": 41401, "typeName": "Sentient Infested Carrier"}
-{"typeID": 42124, "typeName": "Vehement"}
-{"typeID": 42125, "typeName": "Vendetta"}
-{"typeID": 42126, "typeName": "Vanquisher"}
-{"typeID": 42132, "typeName": "Vanguard"}
-{"typeID": 42133, "typeName": "Venerable"}
-{"typeID": 42241, "typeName": "Molok"}
-{"typeID": 42242, "typeName": "Dagon"}
-{"typeID": 42243, "typeName": "Chemosh"}
-{"typeID": 42844, "typeName": "Amarr Apostle"}
-{"typeID": 42847, "typeName": "Caldari Minokawa"}
-{"typeID": 42848, "typeName": "Gallente Ninazu"}
-{"typeID": 42849, "typeName": "Minmatar Lif"}
-{"typeID": 45470, "typeName": "\u2666 Chemosh"}
-{"typeID": 45471, "typeName": "\u2666 Molok"}
-{"typeID": 45472, "typeName": "\u2666 Molok"}
-{"typeID": 45473, "typeName": "\u2666 Dagon"}
-{"typeID": 45474, "typeName": "\u2666 Chemosh"}
-{"typeID": 45645, "typeName": "Loggerhead"}
-{"typeID": 45647, "typeName": "Caiman"}
-{"typeID": 45649, "typeName": "Komodo"}
-{"typeID": 47180, "typeName": "Khaitetha's Nidhoggur"}
-{"typeID": 47181, "typeName": "Otuwiri's Thanatos"}
-{"typeID": 73787, "typeName": "Naglfar Fleet Issue"}
-{"typeID": 73793, "typeName": "Phoenix Navy Issue"}
-{"typeID": 79589, "typeName": "ORE Rorqual"}
-{"typeID": 52329, "typeName": "Empress Jamyl's Avatar"}
-{"typeID": 52701, "typeName": "Liminal Zirnitra"}
-{"typeID": 52815, "typeName": "TestDreadFriendly"}
-{"typeID": 52907, "typeName": "Zirnitra"}
-{"typeID": 53390, "typeName": "Liminal Zirnitra"}
-{"typeID": 60942, "typeName": "Starwight Rakshasa"}
-{"typeID": 60943, "typeName": "Moonwight Rakshasa"}
-{"typeID": 61292, "typeName": "Darkwight Rakshasa"}
-{"typeID": 64346, "typeName": "\u2666 Officer Chemosh"}
+{"typeID": 671, "typeName": "Erebus", "techType": 1}
+{"typeID": 2192, "typeName": "The Kundalini Manifest", "techType": 1}
+{"typeID": 2877, "typeName": "Federation Freighter Vessel", "techType": 1}
+{"typeID": 2879, "typeName": "Imperial Freighter Vessel", "techType": 1}
+{"typeID": 2882, "typeName": "State Freighter Vessel", "techType": 1}
+{"typeID": 3071, "typeName": "Uroborus", "techType": 1}
+{"typeID": 3514, "typeName": "Revenant", "techType": 4}
+{"typeID": 3764, "typeName": "Leviathan", "techType": 1}
+{"typeID": 77281, "typeName": "Hubris", "techType": 2}
+{"typeID": 77283, "typeName": "Bane", "techType": 2}
+{"typeID": 73790, "typeName": "Revelation Navy Issue", "techType": 4}
+{"typeID": 73792, "typeName": "Moros Navy Issue", "techType": 4}
+{"typeID": 11567, "typeName": "Avatar", "techType": 1}
+{"typeID": 77284, "typeName": "Karura", "techType": 2}
+{"typeID": 77288, "typeName": "Valravn", "techType": 2}
+{"typeID": 78576, "typeName": "Azariel", "techType": 4}
+{"typeID": 81040, "typeName": "Avalanche", "techType": 1}
+{"typeID": 19720, "typeName": "Revelation", "techType": 1}
+{"typeID": 19722, "typeName": "Naglfar", "techType": 1}
+{"typeID": 19724, "typeName": "Moros", "techType": 1}
+{"typeID": 19726, "typeName": "Phoenix", "techType": 1}
+{"typeID": 20183, "typeName": "Providence", "techType": 1}
+{"typeID": 20185, "typeName": "Charon", "techType": 1}
+{"typeID": 20187, "typeName": "Obelisk", "techType": 1}
+{"typeID": 20189, "typeName": "Fenrir", "techType": 1}
+{"typeID": 22852, "typeName": "Hel", "techType": 1}
+{"typeID": 23757, "typeName": "Archon", "techType": 1}
+{"typeID": 23773, "typeName": "Ragnarok", "techType": 1}
+{"typeID": 23911, "typeName": "Thanatos", "techType": 1}
+{"typeID": 23913, "typeName": "Nyx", "techType": 1}
+{"typeID": 23915, "typeName": "Chimera", "techType": 1}
+{"typeID": 23917, "typeName": "Wyvern", "techType": 1}
+{"typeID": 23919, "typeName": "Aeon", "techType": 1}
+{"typeID": 24483, "typeName": "Nidhoggur", "techType": 1}
+{"typeID": 27717, "typeName": "Imperial Redeemer", "techType": 1}
+{"typeID": 27719, "typeName": "State Izanaki", "techType": 1}
+{"typeID": 27720, "typeName": "Federation Themis", "techType": 1}
+{"typeID": 27721, "typeName": "Republic Harkal", "techType": 1}
+{"typeID": 28160, "typeName": "Federation Freighter", "techType": 1}
+{"typeID": 28161, "typeName": "State Freighter", "techType": 1}
+{"typeID": 28162, "typeName": "Republic Freighter", "techType": 1}
+{"typeID": 28163, "typeName": "Imperial Freighter", "techType": 1}
+{"typeID": 28352, "typeName": "Rorqual", "techType": 1}
+{"typeID": 28844, "typeName": "Rhea", "techType": 2}
+{"typeID": 28846, "typeName": "Nomad", "techType": 2}
+{"typeID": 28848, "typeName": "Anshar", "techType": 2}
+{"typeID": 28850, "typeName": "Ark", "techType": 2}
+{"typeID": 30970, "typeName": "State Transport Freighter", "techType": 1}
+{"typeID": 32230, "typeName": "Republic Freighter Vessels", "techType": 1}
+{"typeID": 33687, "typeName": "Rorqual ORE Development Edition", "techType": 1}
+{"typeID": 34328, "typeName": "Bowhead", "techType": 1}
+{"typeID": 35819, "typeName": "Amarr Navy Archon", "techType": 1}
+{"typeID": 36848, "typeName": "Burner Antero", "techType": 1}
+{"typeID": 37461, "typeName": "Angel Dreadnought", "techType": 1}
+{"typeID": 37462, "typeName": "Domination Titan", "techType": 1}
+{"typeID": 37463, "typeName": "Blood Dreadnought", "techType": 1}
+{"typeID": 37464, "typeName": "Dark Blood Titan", "techType": 1}
+{"typeID": 37465, "typeName": "Guristas Dreadnought", "techType": 1}
+{"typeID": 37466, "typeName": "Dread Guristas Titan", "techType": 1}
+{"typeID": 37467, "typeName": "Sansha's Dreadnought", "techType": 1}
+{"typeID": 37468, "typeName": "Serpentis Dreadnought", "techType": 1}
+{"typeID": 37470, "typeName": "Infested Carrier", "techType": 1}
+{"typeID": 37471, "typeName": "Sentient Infested Supercarrier", "techType": 1}
+{"typeID": 37604, "typeName": "Apostle", "techType": 1}
+{"typeID": 37605, "typeName": "Minokawa", "techType": 1}
+{"typeID": 37606, "typeName": "Lif", "techType": 1}
+{"typeID": 37607, "typeName": "Ninazu", "techType": 1}
+{"typeID": 40637, "typeName": "Shadow Serpentis Titan", "techType": 1}
+{"typeID": 40671, "typeName": "True Sansha's Supercarrier", "techType": 1}
+{"typeID": 40729, "typeName": "Kazue's Caiman", "techType": 1}
+{"typeID": 41396, "typeName": "Domination Dreadnought", "techType": 1}
+{"typeID": 41397, "typeName": "Dark Blood Dreadnought", "techType": 1}
+{"typeID": 41398, "typeName": "Dread Guristas Dreadnought", "techType": 1}
+{"typeID": 41399, "typeName": "True Sansha's Dreadnought", "techType": 1}
+{"typeID": 41400, "typeName": "Shadow Serpentis Dreadnought", "techType": 1}
+{"typeID": 41401, "typeName": "Sentient Infested Carrier", "techType": 1}
+{"typeID": 42124, "typeName": "Vehement", "techType": 4}
+{"typeID": 42125, "typeName": "Vendetta", "techType": 4}
+{"typeID": 42126, "typeName": "Vanquisher", "techType": 4}
+{"typeID": 42132, "typeName": "Vanguard", "techType": 4}
+{"typeID": 42133, "typeName": "Venerable", "techType": 4}
+{"typeID": 42241, "typeName": "Molok", "techType": 4}
+{"typeID": 42242, "typeName": "Dagon", "techType": 4}
+{"typeID": 42243, "typeName": "Chemosh", "techType": 4}
+{"typeID": 42844, "typeName": "Amarr Apostle", "techType": 1}
+{"typeID": 42847, "typeName": "Caldari Minokawa", "techType": 1}
+{"typeID": 42848, "typeName": "Gallente Ninazu", "techType": 1}
+{"typeID": 42849, "typeName": "Minmatar Lif", "techType": 1}
+{"typeID": 45470, "typeName": "\u2666 Chemosh", "techType": 1}
+{"typeID": 45471, "typeName": "\u2666 Molok", "techType": 1}
+{"typeID": 45472, "typeName": "\u2666 Molok", "techType": 1}
+{"typeID": 45473, "typeName": "\u2666 Dagon", "techType": 1}
+{"typeID": 45474, "typeName": "\u2666 Chemosh", "techType": 1}
+{"typeID": 45645, "typeName": "Loggerhead", "techType": 4}
+{"typeID": 45647, "typeName": "Caiman", "techType": 4}
+{"typeID": 45649, "typeName": "Komodo", "techType": 4}
+{"typeID": 47180, "typeName": "Khaitetha's Nidhoggur", "techType": 1}
+{"typeID": 47181, "typeName": "Otuwiri's Thanatos", "techType": 1}
+{"typeID": 73787, "typeName": "Naglfar Fleet Issue", "techType": 4}
+{"typeID": 73793, "typeName": "Phoenix Navy Issue", "techType": 4}
+{"typeID": 79589, "typeName": "ORE Rorqual", "techType": 1}
+{"typeID": 52329, "typeName": "Empress Jamyl's Avatar", "techType": 1}
+{"typeID": 52701, "typeName": "Liminal Zirnitra", "techType": 1}
+{"typeID": 52815, "typeName": "TestDreadFriendly", "techType": 1}
+{"typeID": 52907, "typeName": "Zirnitra", "techType": 1}
+{"typeID": 53390, "typeName": "Liminal Zirnitra", "techType": 1}
+{"typeID": 60942, "typeName": "Starwight Rakshasa", "techType": 1}
+{"typeID": 60943, "typeName": "Moonwight Rakshasa", "techType": 1}
+{"typeID": 61292, "typeName": "Darkwight Rakshasa", "techType": 1}
+{"typeID": 64346, "typeName": "\u2666 Officer Chemosh", "techType": 1}
