@@ -38,7 +38,7 @@ lazy val root = (project in file("."))
       "-deprecation",
       "-source:future"
     ),
-    dockerBaseImage   := "openjdk:17",
+    dockerBaseImage   := "eclipse-temurin:17",
     dockerRepository  := Some("andimiller"),
     dockerExecCommand := Seq("podman"),
     Docker / mappings ++= List(
