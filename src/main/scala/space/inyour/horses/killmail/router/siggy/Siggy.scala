@@ -93,23 +93,6 @@ case class ChainMap(id: Int, name: String, wormholes: List[Wormhole]) derives Co
   }
 }
 
-object SiggyTest extends IOApp.Simple {
-  given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](LogLevel.Info)
-
-  override def run: IO[Unit] =
-    EmberClientBuilder.default[IO].build.use { client =>
-      val wrappedClient = ResponseLogger(true, true)(
-        RequestLogger(true, true)(client)
-      )
-      val siggy         = Siggy.create[IO](wrappedClient, "REDACTED", "REDACTED")
-
-      for
-        r <- siggy.listChainmaps
-        _ <- IO.println(r)
-      yield ()
-    }
-}
-
 object SiggyEnricher {
 
   def forSystem[F[_]: Sync](siggy: Siggy[F])(chain: String, system: Long, ttl: FiniteDuration): F[EnricherF[F]] =
