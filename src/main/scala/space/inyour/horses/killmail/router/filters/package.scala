@@ -113,6 +113,9 @@ package object filters:
       case _: Let | _: And | _: Or => false // these are always multiline
       case _                       => true
 
+    def resolve: Expr             = Expr.resolveReferences(this).value
+    def run(input: Json): Boolean = Expr.run(this)(input).value
+
     // pure
     case Pure(result: Boolean)
     // comparisons
@@ -257,7 +260,7 @@ package object filters:
       def encode(e: Expr): String = e.show
     /// circe
     given Encoder[Expr]                               = Encoder[String].contramap(_.show)
-    given Decoder[Expr]                               = Decoder[String].emap(codec.parser.parseAll(_).leftMap(_.show))
+    given Decoder[Expr]                               = Decoder[String].emap(codec.parser.parseAll(_).leftMap(_.show)).map(_.resolve)
 
     /// skunk
     given SkunkCodec[Expr] = SkunkCodec.simple(
@@ -285,6 +288,42 @@ package object filters:
               }
         }
         .focus
+
+    def resolveReferences(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty): Eval[Expr] = expr match
+      case Expr.Reference(name)          =>
+        bindings.get(name) match
+          case Some(e) => Eval.now(e)
+          case None    => throw new RuntimeException(s"Unable to find binding for $name")
+      case Expr.Apply(path, expr)        =>
+        resolveReferences(expr, bindings).map { e =>
+          Expr.Apply(path, e)
+        }
+      case Expr.Exists(path, expr)       =>
+        resolveReferences(expr, bindings).map { e =>
+          Expr.Exists(path, e)
+        }
+      case Expr.Not(expr)                =>
+        resolveReferences(expr, bindings).map { e =>
+          Expr.Not(e)
+        }
+      case Expr.And(left, right)         =>
+        (resolveReferences(left, bindings), resolveReferences(right, bindings)).mapN { case (l, r) =>
+          Expr.And(l, r)
+        }
+      case Expr.Or(left, right)          =>
+        (resolveReferences(left, bindings), resolveReferences(right, bindings)).mapN { case (l, r) =>
+          Expr.Or(l, r)
+        }
+      case Expr.Let(extraBindings, main) => // if we cross a let border, continue bindings top down
+        for
+          resolvedBindings <- extraBindings.toList.foldLeftM(bindings) { case (bs, (name, e)) =>
+                                resolveReferences(e, bs).map { re =>
+                                  bs ++ ListMap(name -> re)
+                                }
+                              }
+          resolvedMain     <- resolveReferences(main, resolvedBindings)
+        yield resolvedMain
+      case e                             => Eval.now(e)
 
     // runner
     def run(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty)(input: Json): Eval[Boolean] = expr match
