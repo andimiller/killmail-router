@@ -45,8 +45,16 @@ class CapitalsSpec extends CatsEffectSuite {
                     Some(Json.fromBoolean(false))
                   )
       _         = assertEquals(
+                    output.head.hcursor.downField("killmail").downField("victim").downField("tech_type").focus,
+                    Some(Json.Null)
+                  )
+      _         = assertEquals(
                     output.head.hcursor.downField("killmail").downField("attackers").downN(0).downField("is_capital").focus,
                     Some(Json.fromBoolean(true))
+                  )
+      _         = assertEquals(
+                    output.head.hcursor.downField("killmail").downField("attackers").downN(0).downField("tech_type").focus,
+                    Some(Json.fromInt(1))
                   )
     } yield ()
   }

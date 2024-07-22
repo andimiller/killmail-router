@@ -31,12 +31,15 @@ WHERE
             fh.write(json.dumps({"typeID": typeID, "typeName": typeName, "size": size})+"\n")
 
     with open("capitals.json", "w") as fh:
-        for (typeID, typeName) in cur.execute("""SELECT
+        for (typeID, typeName, techType) in cur.execute("""SELECT
   it.typeID,
-  it.typeName
+  it.typeName,
+  imt.metaGroupID
 FROM dgmTypeAttributes dta
 LEFT JOIN invTypes it
   ON dta.typeID= it.typeID
-WHERE attributeID=1785 
+LEFT JOIN invMetaTypes imt
+  ON it.typeID = imt.typeID
+WHERE attributeID=1785
   AND valueFloat=1.0"""):
-            fh.write(json.dumps({"typeID": typeID, "typeName": typeName})+"\n")
+            fh.write(json.dumps({"typeID": typeID, "typeName": typeName, "techType": techType or 1 })+"\n")
