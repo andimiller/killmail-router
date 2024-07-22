@@ -38,7 +38,11 @@ object Capitals {
           val techType      = value("ship_type_id").flatMap(_.as[Int].toOption).flatMap(capitals.get).map(_.techType)
 
           if (hasShipTypeId)
-            value.add("is_capital", Json.fromBoolean(isCapital)).add("tech_type", techType.fold(Json.Null)(Json.fromInt)).mapValues(_.foldWith(folder)).toJson
+            value
+              .add("is_capital", Json.fromBoolean(isCapital))
+              .add("tech_type", techType.fold(Json.Null)(Json.fromInt))
+              .mapValues(_.foldWith(folder))
+              .toJson
           else
             value.mapValues(_.foldWith(folder)).toJson
         }

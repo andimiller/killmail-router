@@ -260,7 +260,7 @@ package object filters:
       def encode(e: Expr): String = e.show
     /// circe
     given Encoder[Expr]                               = Encoder[String].contramap(_.show)
-    given Decoder[Expr]                               = Decoder[String].emap(codec.parser.parseAll(_).leftMap(_.show)).map(_.resolve)
+    given Decoder[Expr]                               = Decoder[String].emap(codec.parser.parseAll(_).leftMap(_.show))
 
     /// skunk
     given SkunkCodec[Expr] = SkunkCodec.simple(

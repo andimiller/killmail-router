@@ -20,6 +20,7 @@ case class Route(
     template: Option[Template]
 ) derives Codec.AsObject {
   def pretty: PrettyRoute = PrettyRoute(name, filter.pretty, webhook, template.getOrElse(Template.default))
+  def resolve: Route      = copy(filter = filter.resolve)
 }
 
 case class SiggyConfig(
@@ -34,6 +35,7 @@ case class StaticConfig(
     routes: List[Route]
 ) derives Codec.AsObject {
   def pretty: PrettyStaticConfig = PrettyStaticConfig(siggy, routes.map(_.pretty))
+  def resolve: StaticConfig      = StaticConfig(siggy, routes.map(_.resolve))
 }
 
 case class PrettyStaticConfig(

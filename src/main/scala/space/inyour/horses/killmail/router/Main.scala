@@ -35,7 +35,10 @@ object Main extends IOApp {
       retry   = Retry.create[F](RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), RetryPolicy.defaultRetriable[F]))(client)
     yield retry
 
-  def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](staticConfig: StaticConfig, queueID: String): F[Unit] =
+  def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](
+      staticConfig: StaticConfig,
+      queueID: String
+  ): F[Unit] =
     resources.use { client =>
       val webhooks = DiscordWebhooks.create(client)
       val redisq   = RedisQ.create(client, queueID)
@@ -101,7 +104,7 @@ object Main extends IOApp {
                 given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
                 _                      <- program[IO](staticConfig, queueID)
               yield ExitCode.Success
-            case CLI.Format(configFile)        =>
+            case CLI.Format(configFile)                 =>
               for
                 cfg <- loadConfig[IO](configFile)
                 p    = cfg.pretty
