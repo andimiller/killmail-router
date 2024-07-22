@@ -212,4 +212,64 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
     )
   }
 
+  test("ContainedIn should work") {
+    val expr = Expr.ContainedIn(List(PathOperation.DownField("value")), List(Json.fromString("hello"), Json.fromInt(123)))
+
+    assertEquals(
+      expr.run(Json.obj("value" := "hello")),
+      true
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := "world")),
+      false
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := 123)),
+      true
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := 1234)),
+      false
+    )
+
+    assertEquals(
+      expr.run(Json.obj()),
+      false
+    )
+  }
+
+  test("ContainedIn should work when parsed") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      """(contained-in root.value ["hello", 123])"""
+    ): @unchecked
+
+    assertEquals(
+      expr.run(Json.obj("value" := "hello")),
+      true
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := "world")),
+      false
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := 123)),
+      true
+    )
+
+    assertEquals(
+      expr.run(Json.obj("value" := 1234)),
+      false
+    )
+
+    assertEquals(
+      expr.run(Json.obj()),
+      false
+    )
+  }
+
 }

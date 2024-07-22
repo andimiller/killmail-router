@@ -8,6 +8,7 @@ import cats.parse.*
 import cats.parse.strings.Json.delimited as jsonStringCodec
 import io.circe.jawn.decode as jawnDecode
 import io.circe.{Decoder, Encoder}
+import io.circe.syntax.*
 import cats.{Eq, Eval}
 import io.circe.{ACursor, Json, JsonNumber}
 import spire.algebra.Bool
@@ -78,6 +79,7 @@ package object filters:
         case Expr.GreaterThan(path, value)             => show"(> $path $value)"
         case Expr.LessThan(path, value)                => show"(< $path $value)"
         case Expr.Contains(path, value)                => show"(contains $path ${value.noSpaces})"
+        case Expr.ContainedIn(path, values)            => show"(contained-in $path ${values.asJson.noSpaces})"
         case Expr.And(left, right)                     => show"""(and
                                             |${show(2, left)}
                                             |${show(2, right)}
@@ -124,6 +126,7 @@ package object filters:
     case GreaterThan(path: List[PathOperation], value: JsonNumber)
     case LessThan(path: List[PathOperation], value: JsonNumber)
     case Contains(path: List[PathOperation], value: Json)
+    case ContainedIn(path: List[PathOperation], values: List[Json])
     case Exists(
         path: List[PathOperation],
         expr: Expr
@@ -152,6 +155,8 @@ package object filters:
     given Show[Json]                                                   = Show.show(_.noSpacesSortKeys)
     given Show[JsonNumber]                                             = Show.show(n => Json.fromJsonNumber(n).noSpacesSortKeys)
     given jsonParser: Parser[Json]                                     = Parser.charsWhile(_ != ')').mapFilter(s => jawnDecode[Json](s).toOption)
+    given jsonArrParser: Parser[List[Json]]                            =
+      pm"${p"["}${Parser.charsWhile0(c => !")]".toSet.contains(c))}]".string.mapFilter(s => jawnDecode[List[Json]](s).toOption)
     lazy implicit val showPathOperation: Show[PathOperation]           = Show.show {
       case PathOperation.DownField(name)       => show".$name"
       case PathOperation.DownIndex(idx)        => show"[$idx]"
@@ -178,18 +183,19 @@ package object filters:
 
     given Show[Expr] with
       def show(t: Expr): String = t match
-        case Expr.Pure(result)             => result.toString
-        case Expr.Reference(name)          => name
-        case Expr.Apply(path, expr)        => show"(apply $path $expr)"
-        case Expr.Equals(path, value)      => show"(== $path $value)"
-        case Expr.GreaterThan(path, value) => show"(> $path $value)"
-        case Expr.LessThan(path, value)    => show"(< $path $value)"
-        case Expr.Contains(path, value)    => show"(contains $path ${value.noSpaces})"
-        case Expr.Not(expr)                => show"(not $expr)"
-        case Expr.And(left, right)         => show"(and $left $right)"
-        case Expr.Or(left, right)          => show"(or $left $right)"
-        case Expr.Exists(path, expr)       => show"(exists $path $expr)"
-        case Expr.Let(bindings, expr)      => show"(let $bindings $expr)"
+        case Expr.Pure(result)              => result.toString
+        case Expr.Reference(name)           => name
+        case Expr.Apply(path, expr)         => show"(apply $path $expr)"
+        case Expr.Equals(path, value)       => show"(== $path $value)"
+        case Expr.GreaterThan(path, value)  => show"(> $path $value)"
+        case Expr.LessThan(path, value)     => show"(< $path $value)"
+        case Expr.Contains(path, value)     => show"(contains $path ${value.noSpaces})"
+        case Expr.ContainedIn(path, values) => show"(contained-in $path ${values.asJson.noSpaces})"
+        case Expr.Not(expr)                 => show"(not $expr)"
+        case Expr.And(left, right)          => show"(and $left $right)"
+        case Expr.Or(left, right)           => show"(or $left $right)"
+        case Expr.Exists(path, expr)        => show"(exists $path $expr)"
+        case Expr.Let(bindings, expr)       => show"(let $bindings $expr)"
 
     private inline def whitespace: Parser[Unit]   = Parser.charsWhile(_.isWhitespace).void
     private inline def whitespace0: Parser0[Unit] = Parser.charsWhile0(_.isWhitespace).void
@@ -210,6 +216,7 @@ package object filters:
             p"(> $pathParser $int)".map(Expr.GreaterThan.apply),
             p"(< $pathParser $int)".map(Expr.LessThan.apply),
             p"(contains $pathParser $jsonParser)".map(Expr.Contains.apply),
+            p"(contained-in $pathParser $jsonArrParser)".map(Expr.ContainedIn.apply),
             pm"(not$whitespace$recurse$whitespace0)".map { (_, e, _) => Expr.Not(e) },
             for
               _ <- p"(and"
@@ -327,26 +334,26 @@ package object filters:
 
     // runner
     def run(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty)(input: Json): Eval[Boolean] = expr match
-      case Expr.Pure(result)             => Eval.now(result)
-      case Expr.Apply(path, e)           =>
+      case Expr.Pure(result)              => Eval.now(result)
+      case Expr.Apply(path, e)            =>
         Eval.later {
           evaluatePath(path)(input).fold(false) { focus =>
             run(e, bindings)(focus).value
           }
         }
-      case Expr.Equals(path, value)      =>
+      case Expr.Equals(path, value)       =>
         Eval.now {
           evaluatePath(path)(input).getOrElse(Json.Null) == value
         }
-      case Expr.GreaterThan(path, value) =>
+      case Expr.GreaterThan(path, value)  =>
         Eval.now {
           evaluatePath(path)(input).flatMap(_.asNumber).fold(false)(_.toDouble > value.toDouble)
         }
-      case Expr.LessThan(path, value)    =>
+      case Expr.LessThan(path, value)     =>
         Eval.now {
           evaluatePath(path)(input).flatMap(_.asNumber).fold(false)(_.toDouble < value.toDouble)
         }
-      case Expr.Contains(path, value)    =>
+      case Expr.Contains(path, value)     =>
         Eval.now {
           evaluatePath(path)(input)
             .flatMap { j =>
@@ -360,20 +367,26 @@ package object filters:
             }
             .getOrElse(false)
         }
-      case Expr.Not(expr)                => {
+      case Expr.ContainedIn(path, values) =>
+        Eval.now {
+          evaluatePath(path)(input).exists { j =>
+            values.contains(j)
+          }
+        }
+      case Expr.Not(expr)                 => {
         run(expr, bindings)(input).map(!_)
       }
-      case Expr.And(left, right)         =>
+      case Expr.And(left, right)          =>
         for
           l <- run(left, bindings)(input)
           r <- run(right, bindings)(input)
         yield l && r
-      case Expr.Or(left, right)          =>
+      case Expr.Or(left, right)           =>
         for
           l <- run(left, bindings)(input)
           r <- run(right, bindings)(input)
         yield l || r
-      case Expr.Exists(path, expr)       =>
+      case Expr.Exists(path, expr)        =>
         Eval.later {
           evaluatePath(path)(input).flatMap(_.asArray) match
             case Some(values) =>
@@ -383,9 +396,9 @@ package object filters:
             case None         =>
               false
         }
-      case Expr.Reference(name)          =>
+      case Expr.Reference(name)           =>
         bindings.get(name) match
           case Some(e) => run(e, bindings)(input)
           case None    => throw new RuntimeException(s"Unable to find binding for $name")
-      case Expr.Let(extraBindings, expr) =>
+      case Expr.Let(extraBindings, expr)  =>
         run(expr, bindings ++ extraBindings)(input)

@@ -87,7 +87,16 @@ trait ExprInstances {
                    Gen.alphaStr.map(Json.fromString),
                    Gen.chooseNum(0, 10).map(Json.fromInt)
                  )
-      yield Expr.Contains(path, value)
+      yield Expr.Contains(path, value),
+      for
+        path   <- pathGen
+        values <- Gen.listOf(
+                    Gen.oneOf(
+                      Gen.alphaStr.map(Json.fromString),
+                      Gen.chooseNum(0, 10).map(Json.fromInt)
+                    )
+                  )
+      yield Expr.ContainedIn(path, values)
     )
   )
 
