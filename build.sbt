@@ -1,6 +1,6 @@
 import scala.scalanative.build._
 
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.17"
 
 ThisBuild / scalaVersion := "3.4.2"
 
@@ -48,3 +48,15 @@ lazy val root = (project in file("."))
       "systems.json"
     ).map { s => file(s) -> s"/opt/docker/$s" }
   )
+
+lazy val readme = (project in file("docs"))
+  .settings(
+    (publish / skip) := true,
+    mdocVariables    := Map(
+      "VERSION" -> version.value
+    ),
+    mdocIn           := file("./docs/readme.md"),
+    mdocOut          := file("./readme.md")
+  )
+  .dependsOn(root)
+  .enablePlugins(MdocPlugin)
