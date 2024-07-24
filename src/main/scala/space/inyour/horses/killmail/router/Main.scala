@@ -13,7 +13,7 @@ import org.typelevel.log4cats.LoggerFactory
 import io.circe.syntax.*
 import io.circe.yaml.syntax.*
 import org.typelevel.log4cats.extras.LogLevel
-import space.inyour.horses.killmail.router.enrichers.{Enricher, EnricherF}
+import space.inyour.horses.killmail.router.enrichers.{Enricher, EnricherF, Trumpets}
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
 import space.inyour.horses.killmail.router.types.{Capitals, Citadels, RigSize}
@@ -61,7 +61,8 @@ object Main extends IOApp {
               Systems.load[F](Path("./systems.json")).map(Systems.wormholeClassEnricher),
               Capitals.load[F](Path("./capitals.json")).map(Capitals.capitalShipEnricher),
               Citadels.load[F](Path("./citadels.json")).map(Citadels.citadelEnricher),
-              RigSize.load[F](Path("./rigsizes.json")).map(RigSize.rigSizeEnricher)
+              RigSize.load[F](Path("./rigsizes.json")).map(RigSize.rigSizeEnricher),
+              Trumpets.pure[F]
             )
             .sequence
             .map(_.reduce[Enricher])
