@@ -28,7 +28,7 @@ routes:
 And it can be run with docker, kubernetes or anything else that can handle docker containers:
 
 ```sh
-docker run -it --mount type=bind,source=./config.yml,target=/config.yml  andimiller/killmail-router:0.17 /config.yml your-zkillboard-queue-id
+docker run -it --mount type=bind,source=./config.yml,target=/config.yml  andimiller/killmail-router:0.18 /config.yml your-zkillboard-queue-id
 ```
 
 ## Filters

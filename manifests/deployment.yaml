@@ -21,12 +21,13 @@ spec:
       - envFrom:
         - configMapRef:
             name: killmail-router-config
-        image: andimiller/killmail-router:0.10
+        image: andimiller/killmail-router:0.18
         imagePullPolicy: Always
         name: killmail-router
         args:
         - "run"
         - "/config.yml"
+        - "andi-local-test"
         resources:
           requests:
             memory: "512Mi"
