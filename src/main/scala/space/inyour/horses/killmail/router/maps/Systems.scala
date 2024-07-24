@@ -1,6 +1,7 @@
 package space.inyour.horses.killmail.router.maps
 
 import space.inyour.horses.killmail.router.enrichers.Enricher
+import space.inyour.horses.killmail.router.schema.Schema
 import io.circe.{Codec, Json, JsonNumber, JsonObject}
 import net.andimiller.hedgehogs.Node
 import net.andimiller.hedgehogs.circe.*
@@ -26,29 +27,45 @@ object Systems {
   def wormholeClassEnricher(nodes: Vector[Node[Int, System]]): Enricher = {
     val lookup: Map[Int, Int] = nodes.map(n => n.id -> n.data.wormhole_class).toMap
 
-    (j: Json) => {
+    new Enricher:
+      override def apply(j: Json): Json = {
+        lazy val folder: Json.Folder[Json] = new Json.Folder[Json] {
+          def onArray(value: Vector[Json]): Json =
+            Json.arr(value.map(_.foldWith(folder))*)
 
-      lazy val folder: Json.Folder[Json] = new Json.Folder[Json] {
-        def onArray(value: Vector[Json]): Json =
-          Json.arr(value.map(_.foldWith(folder))*)
-        def onBoolean(value: Boolean): Json    =
-          Json.fromBoolean(value)
-        def onNull: Json                       = Json.Null
-        def onNumber(value: JsonNumber): Json  =
-          Json.fromJsonNumber(value)
-        def onObject(value: JsonObject): Json  = {
-          val hasSolarSystemID = value("solar_system_id").isDefined
-          val wormholeClass    = value("solar_system_id").flatMap(_.as[Int].toOption).flatMap(lookup.get).map(Json.fromInt)
-          if (hasSolarSystemID)
-            value.add("wormhole_class", wormholeClass.getOrElse(Json.Null)).mapValues(_.foldWith(folder)).toJson
-          else
-            value.mapValues(_.foldWith(folder)).toJson
+          def onBoolean(value: Boolean): Json =
+            Json.fromBoolean(value)
+
+          def onNull: Json = Json.Null
+
+          def onNumber(value: JsonNumber): Json =
+            Json.fromJsonNumber(value)
+
+          def onObject(value: JsonObject): Json = {
+            val hasSolarSystemID = value("solar_system_id").isDefined
+            val wormholeClass    = value("solar_system_id").flatMap(_.as[Int].toOption).flatMap(lookup.get).map(Json.fromInt)
+            if (hasSolarSystemID)
+              value.add("wormhole_class", wormholeClass.getOrElse(Json.Null)).mapValues(_.foldWith(folder)).toJson
+            else
+              value.mapValues(_.foldWith(folder)).toJson
+          }
+
+          def onString(value: String): Json =
+            Json.fromString(value)
         }
-        def onString(value: String): Json      =
-          Json.fromString(value)
+
+        j.foldWith(folder)
       }
 
-      j.foldWith(folder)
-    }
+      override def schema: Schema = Schema.SObject(
+        Map(
+          "killmail" -> Schema.SObject(
+            Map(
+              "wormhole_class" -> Schema.SInt
+            )
+          )
+        )
+      )
+
   }
 }

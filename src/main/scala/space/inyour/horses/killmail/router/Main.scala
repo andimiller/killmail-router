@@ -1,7 +1,7 @@
 package space.inyour.horses.killmail.router
 
 import cats.{Parallel, Semigroup}
-import cats.data.NonEmptyList
+import cats.data.{NonEmptyList, Validated}
 import cats.effect.*
 import cats.implicits.*
 import fs2.io.file.{Files, Path}
@@ -19,33 +19,26 @@ import space.inyour.horses.killmail.router.redisq.RedisQ
 import space.inyour.horses.killmail.router.types.{Capitals, Citadels, RigSize}
 import space.inyour.horses.killmail.router.maps.Systems
 import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
+import space.inyour.horses.killmail.router.schema.Schema
+import space.inyour.horses.killmail.router.template.Template
 import siggy.*
 
 import scala.concurrent.duration.*
 
 object Main extends IOApp {
 
-  def resources[F[_]: Concurrent: Async: Network: LoggerFactory] =
+  def resources[F[_]: Parallel: Concurrent: Async: Files: Network: LoggerFactory](staticConfig: StaticConfig) =
     for
-      tls    <- TLSContext.Builder.forAsync[F].insecureResource
-      client <- EmberClientBuilder
-                  .default[F]
-                  .withTLSContext(tls)
-                  .build
-      retry   = Retry.create[F](RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), RetryPolicy.defaultRetriable[F]))(client)
-    yield retry
-
-  def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](
-      staticConfig: StaticConfig,
-      queueID: String
-  ): F[Unit] =
-    resources.use { client =>
-      val webhooks = DiscordWebhooks.create(client)
-      val redisq   = RedisQ.create(client, queueID)
-      val engine   = RulesEngine.fromStaticConfig(webhooks, staticConfig)
-
-      for
-        siggyEnricher <- staticConfig.siggy
+      tls           <- TLSContext.Builder.forAsync[F].insecureResource
+      client        <- EmberClientBuilder
+                         .default[F]
+                         .withTLSContext(tls)
+                         .build
+      retry          = Retry.create[F](RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), RetryPolicy.defaultRetriable[F]))(client)
+      webhooks       = DiscordWebhooks.create(retry)
+      engine         = RulesEngine.fromStaticConfig(webhooks, staticConfig)
+      siggyEnricher <- Resource.eval(
+                         staticConfig.siggy
                            .traverse { siggyConfig =>
                              val siggyClient = Siggy.create[F](client, siggyConfig.id, siggyConfig.secret)
                              siggyConfig.systems
@@ -55,7 +48,9 @@ object Main extends IOApp {
                                .map(_.reduceOption(Semigroup[EnricherF[F]].combine))
                            }
                            .map(_.flatten)
-        pureEnrichers <-
+                       )
+      pureEnrichers <-
+        Resource.eval(
           NonEmptyList
             .of(
               Systems.load[F](Path("./systems.json")).map(Systems.wormholeClassEnricher),
@@ -66,24 +61,67 @@ object Main extends IOApp {
             )
             .sequence
             .map(_.reduce[Enricher])
-        enricher       = siggyEnricher.fold(pureEnrichers.liftF[F])(_ combine pureEnrichers.liftF[F])
-        _             <- staticConfig.routes.traverse { route =>
-                           webhooks.activate(
-                             route.webhook,
-                             WebhookPayload(
-                               show"""Starting up with the following filter:
-                  |
-                  |```lisp
-                  |${route.filter.pretty}
-                  |```
-                  |""".stripMargin,
-                               Some(route.name)
-                             )
-                           )
-                         }
-        _             <- redisq.stream.repeat.evalMap(enricher).through(engine).compile.drain
-      yield ()
+        )
+      enricher       = siggyEnricher.fold(pureEnrichers.liftF[F])(_ combine pureEnrichers.liftF[F])
+    yield (retry, enricher, webhooks, engine)
+
+  def validate[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](staticConfig: StaticConfig): F[ExitCode] = {
+    resources(staticConfig).use { case (_, enricher, _, _) =>
+      val logger     = LoggerFactory[F].getLoggerFromName("Validator")
+      val fullSchema = enricher.schema |+| Schema.zkillPayload
+      for codes <- staticConfig.routes
+                     .traverse { route =>
+                       for
+                         f <- route.filter.schema.validate(fullSchema).toEither match {
+                                case Left(errors) =>
+                                  errors
+                                    .traverse { error =>
+                                      logger.error(show"${route.name} filter - $error")
+                                    }
+                                    .as(ExitCode.Error)
+                                case Right(_)     =>
+                                  logger.info(show"${route.name} filter is valid").as(ExitCode.Success)
+                              }
+                         t <- route.template.getOrElse(Template.default).toSchema.validate(fullSchema).toEither match {
+                                case Left(errors) =>
+                                  errors
+                                    .traverse { error =>
+                                      logger.error(show"${route.name} template - $error")
+                                    }
+                                    .as(ExitCode.Error)
+                                case Right(_)     =>
+                                  logger.info(show"${route.name} template is valid").as(ExitCode.Success)
+                              }
+                       yield List(f, t).maxBy(_.code)
+                     }
+      yield codes.maxBy(_.code)
     }
+  }
+
+  def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](
+      staticConfig: StaticConfig,
+      queueID: String
+  ): F[Unit] =
+    validate[F](staticConfig) *>
+      resources(staticConfig).use { case (client, enricher, webhooks, engine) =>
+        val redisq = RedisQ.create(client, queueID)
+
+        staticConfig.routes.traverse { route =>
+          webhooks.activate(
+            route.webhook,
+            WebhookPayload(
+              show"""Starting up with the following filter:
+                    |
+                    |```lisp
+                    |${route.filter.pretty}
+                    |```
+                    |""".stripMargin,
+              Some(route.name)
+            )
+          )
+        } *>
+          redisq.stream.repeat.evalMap(enricher).through(engine).compile.drain
+      }
 
   def loadConfig[F[_]: Async: Files](path: Path): F[StaticConfig] =
     for
@@ -111,6 +149,12 @@ object Main extends IOApp {
                 p    = cfg.pretty
                 _   <- IO.println(p.asJson.asYaml.spaces2)
               yield ExitCode.Success
+            case CLI.Validate(configFile, loglevel)     =>
+              for
+                cfg                    <- loadConfig[IO](configFile)
+                given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
+                code                   <- validate[IO](cfg)
+              yield code
         }.attemptT.leftSemiflatMap { e =>
           new ConsoleLoggerFactory[IO](LogLevel.Warn)
             .getLoggerFromClass(getClass[Main.type])

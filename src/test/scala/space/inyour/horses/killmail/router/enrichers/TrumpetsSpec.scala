@@ -1,5 +1,6 @@
 package space.inyour.horses.killmail.router.enrichers
 
+import cats.implicits.*
 import cats.effect.*
 import fs2.io.file.{Files, Path}
 import io.circe.Json
@@ -42,6 +43,10 @@ class TrumpetsSpec extends CatsEffectSuite {
                   output.head.hcursor.downField("trumpets").focus,
                   Some(Json.fromString(""))
                 )
+      _       = assertEquals(
+                  Trumpets.schema.validate(output.head).as(()),
+                  ().validNel
+                )
     } yield ()
   }
 
@@ -54,6 +59,10 @@ class TrumpetsSpec extends CatsEffectSuite {
       _       = assertEquals(
                   output.head.hcursor.downField("trumpets").focus,
                   Some(Json.fromString(Trumpets.trumpet * 2))
+                )
+      _       = assertEquals(
+                  Trumpets.schema.validate(output.head).as(()),
+                  ().validNel
                 )
     } yield ()
   }

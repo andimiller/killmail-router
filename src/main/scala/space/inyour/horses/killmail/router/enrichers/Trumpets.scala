@@ -1,7 +1,9 @@
-package space.inyour.horses.killmail.router.enrichers
+package space.inyour.horses.killmail.router
+package enrichers
 
 import io.circe.Json
 import io.circe.syntax.*
+import schema.Schema
 
 object Trumpets extends Enricher {
   val trumpet: String               = "\uD83C\uDFBA"
@@ -13,4 +15,10 @@ object Trumpets extends Enricher {
     val trumpets     = trumpet * trumpetCount
     j.withObject(_.add("trumpets", Json.fromString(trumpets)).asJson)
   }
+
+  override def schema: Schema = Schema.SObject(
+    Map(
+      "trumpets" -> Schema.SString
+    )
+  )
 }

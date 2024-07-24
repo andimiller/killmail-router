@@ -1,5 +1,6 @@
 package space.inyour.horses.killmail.router.types
 
+import cats.implicits.*
 import cats.effect.*
 import fs2.io.file.{Files, Path}
 import io.circe.Json
@@ -55,6 +56,10 @@ class CapitalsSpec extends CatsEffectSuite {
       _         = assertEquals(
                     output.head.hcursor.downField("killmail").downField("attackers").downN(0).downField("tech_type").focus,
                     Some(Json.fromInt(1))
+                  )
+      _         = assertEquals(
+                    enricher.schema.validate(output.head).as(()),
+                    ().validNel
                   )
     } yield ()
   }

@@ -14,6 +14,7 @@ import io.circe.{ACursor, Json, JsonNumber}
 import spire.algebra.Bool
 import net.andimiller.cats.parse.interpolator.*
 import space.inyour.horses.killmail.router.filters.PathOperation.MapArrayPath
+import space.inyour.horses.killmail.router.schema.Schema
 import scala.collection.immutable.ListMap
 
 package object filters:
@@ -117,6 +118,7 @@ package object filters:
 
     def resolve: Expr             = Expr.resolveReferences(this).value
     def run(input: Json): Boolean = Expr.run(this)(input).value
+    def schema: Schema            = Expr.toSchema(resolve)
 
     // pure
     case Pure(result: Boolean)
@@ -295,6 +297,28 @@ package object filters:
               }
         }
         .focus
+
+    def pathSchema(cursor: List[PathOperation], schema: Schema): Schema = cursor match {
+      case Nil            => schema
+      case (head :: tail) =>
+        head match
+          case PathOperation.DownField(name)       => Schema.SObject(Map(name -> pathSchema(tail, schema)))
+          case PathOperation.DownIndex(_)          => Schema.SArray(pathSchema(tail, schema))
+          case PathOperation.MapArrayPath(subpath) => Schema.SArray(pathSchema(tail ++ subpath, schema))
+    }
+
+    def toSchema(expr: Expr, cursor: List[PathOperation] = List.empty): Schema = expr match
+      case Expr.Apply(path, expr)         => toSchema(expr, (cursor ++ path))
+      case Expr.Equals(path, value)       => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
+      case Expr.GreaterThan(path, _)      => pathSchema(cursor ++ path, Schema.SInt)
+      case Expr.LessThan(path, _)         => pathSchema(cursor ++ path, Schema.SInt)
+      case Expr.Contains(path, value)     => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
+      case Expr.ContainedIn(path, values) => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(values.head))
+      case Expr.Exists(path, expr)        => toSchema(expr, cursor ++ path.appended(PathOperation.DownIndex(0)))
+      case Expr.Not(expr)                 => toSchema(expr, cursor)
+      case Expr.And(left, right)          => toSchema(left, cursor) |+| toSchema(right, cursor)
+      case Expr.Or(left, right)           => toSchema(left, cursor) |+| toSchema(right, cursor)
+      case _                              => Schema.SNull
 
     def resolveReferences(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty): Eval[Expr] = expr match
       case Expr.Reference(name)          =>

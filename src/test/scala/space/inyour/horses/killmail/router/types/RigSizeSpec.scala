@@ -1,5 +1,6 @@
 package space.inyour.horses.killmail.router.types
 
+import cats.implicits.*
 import cats.effect.*
 import fs2.io.file.{Files, Path}
 import io.circe.Json
@@ -53,6 +54,10 @@ class RigSizeSpec extends CatsEffectSuite {
                       .get
                       .map(_.hcursor.downField("rig_size").focus.get),
                     Vector("L", "XL", "XL").map(Json.fromString)
+                  )
+      _         = assertEquals(
+                    enricher.schema.validate(output.head).as(()),
+                    ().validNel
                   )
     } yield ()
   }

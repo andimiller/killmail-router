@@ -14,6 +14,10 @@ enum CLI:
   case Format(
       configFile: Path
   )
+  case Validate(
+      configFile: Path,
+      loglevel: LogLevel
+  )
 
 object CLI {
   given Argument[Path]     = Argument[String].map(Path(_))
@@ -33,9 +37,16 @@ object CLI {
     Opts.argument[Path]("config.yml").map(CLI.Format.apply)
   )
 
+  val validate: Command[CLI.Validate] = Command("validate", "validate the config file", true)(
+    (
+      Opts.argument[Path]("config.yml"),
+      Opts.env[LogLevel]("LOGLEVEL", "level to run the logger at").withDefault(LogLevel.Info)
+    ).mapN(CLI.Validate.apply)
+  )
+
   val command: Command[CLI] =
     Command("router", "killmail router", true)(
-      Opts.subcommand(run).orElse(Opts.subcommand(format))
+      Opts.subcommand(run).orElse(Opts.subcommand(format)).orElse(Opts.subcommand(validate))
     )
 
 }

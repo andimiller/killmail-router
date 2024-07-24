@@ -1,5 +1,6 @@
 package space.inyour.horses.killmail.router.types
 
+import cats.implicits.*
 import cats.effect.*
 import fs2.io.file.{Files, Path}
 import io.circe.Json
@@ -53,6 +54,10 @@ class CitadelsSpec extends CatsEffectSuite {
                       .get
                       .map(_.hcursor.downField("is_citadel").focus.get),
                     Vector(true, true, false).map(Json.fromBoolean)
+                  )
+      _         = assertEquals(
+                    enricher.schema.validate(output.head).as(()),
+                    ().validNel
                   )
     } yield ()
   }

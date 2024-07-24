@@ -66,6 +66,10 @@ class SiggySpec extends CatsEffectSuite {
       combined   = enricher1 combine enricher2
       result    <- combined(Json.obj("nothing" := "useful"))
       _          = assertEquals(result, Json.obj("nothing" := "useful"))
+      _          = assertEquals(
+                     enricher1.schema.validate(result).as(()),
+                     ().validNel
+                   )
       result2   <- combined(Json.obj("killmail" := Json.obj("solar_system_id" := 30000142L)))
       _          = assertEquals(
                      result2,
@@ -73,6 +77,10 @@ class SiggySpec extends CatsEffectSuite {
                        "chain_distance" := Json.obj("1234" := Json.Null, "31002233" := 2),
                        "killmail"       := Json.obj("solar_system_id" := 30000142L)
                      )
+                   )
+      _          = assertEquals(
+                     enricher2.schema.validate(result2).as(()),
+                     ().validNel
                    )
     yield ()
 

@@ -7,6 +7,8 @@ import fs2.io.file.{Files, Path}
 import io.circe.syntax.*
 import io.circe.{Codec, Json, JsonNumber, JsonObject}
 import space.inyour.horses.killmail.router.enrichers.Enricher
+import space.inyour.horses.killmail.router.schema.Schema
+import space.inyour.horses.killmail.router.schema.Schema.*
 
 object Citadels {
   case class Citadel(typeName: String, typeID: Int) derives Codec.AsObject
@@ -23,28 +25,57 @@ object Citadels {
   def citadelEnricher(nodes: Vector[Citadel]): Enricher = {
     val citadels: Set[Int] = nodes.map(_.typeID).toSet
 
-    (j: Json) => {
-      lazy val folder: Json.Folder[Json] = new Json.Folder[Json] {
-        def onArray(value: Vector[Json]): Json =
-          Json.arr(value.map(_.foldWith(folder))*)
-        def onBoolean(value: Boolean): Json    =
-          Json.fromBoolean(value)
-        def onNull: Json                       = Json.Null
-        def onNumber(value: JsonNumber): Json  =
-          Json.fromJsonNumber(value)
-        def onObject(value: JsonObject): Json  = {
-          val hasShipTypeId = value("ship_type_id").isDefined
-          val isCitadel     = value("ship_type_id").flatMap(_.as[Int].toOption).filter(citadels.contains).as(true).getOrElse(false)
-          if (hasShipTypeId)
-            value.add("is_citadel", Json.fromBoolean(isCitadel)).mapValues(_.foldWith(folder)).toJson
-          else
-            value.mapValues(_.foldWith(folder)).toJson
+    new Enricher:
+      override def apply(j: Json): Json = {
+        lazy val folder: Json.Folder[Json] = new Json.Folder[Json] {
+          def onArray(value: Vector[Json]): Json =
+            Json.arr(value.map(_.foldWith(folder))*)
+
+          def onBoolean(value: Boolean): Json =
+            Json.fromBoolean(value)
+
+          def onNull: Json = Json.Null
+
+          def onNumber(value: JsonNumber): Json =
+            Json.fromJsonNumber(value)
+
+          def onObject(value: JsonObject): Json = {
+            val hasShipTypeId = value("ship_type_id").isDefined
+            val isCitadel     = value("ship_type_id").flatMap(_.as[Int].toOption).filter(citadels.contains).as(true).getOrElse(false)
+            if (hasShipTypeId)
+              value.add("is_citadel", Json.fromBoolean(isCitadel)).mapValues(_.foldWith(folder)).toJson
+            else
+              value.mapValues(_.foldWith(folder)).toJson
+          }
+
+          def onString(value: String): Json =
+            Json.fromString(value)
         }
-        def onString(value: String): Json      =
-          Json.fromString(value)
+
+        j.foldWith(folder)
       }
 
-      j.foldWith(folder)
-    }
+      override def schema: Schema =
+        SObject(
+          Map(
+            "killmail" -> SObject(
+              Map(
+                "attackers" -> SArray(
+                  SObject(
+                    Map(
+                      "is_citadel" -> SBool
+                    )
+                  )
+                ),
+                "victim"    -> SObject(
+                  Map(
+                    "is_citadel" -> SBool
+                  )
+                )
+              )
+            )
+          )
+        )
+
   }
 }

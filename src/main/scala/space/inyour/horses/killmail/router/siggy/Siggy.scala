@@ -34,6 +34,8 @@ import scalacache.{cachingF, caffeine, Entry}
 import scala.concurrent.duration.*
 import cats.data.NonEmptyList
 import com.github.benmanes.caffeine.cache.Caffeine
+import space.inyour.horses.killmail.router.schema.Schema
+import space.inyour.horses.killmail.router.schema.Schema.*
 
 import java.time.ZoneOffset
 import javax.crypto.Mac
@@ -119,6 +121,19 @@ object SiggyEnricher {
                   )
                 )
           }
+
+        override def schema: Schema = Schema.SObject(
+          Map(
+            "chain_distance" -> Schema.SMap(
+              Schema.SAnyOf(
+                NonEmptyList.of(
+                  Schema.SInt,
+                  Schema.SNull
+                )
+              )
+            )
+          )
+        )
       }
     }
 

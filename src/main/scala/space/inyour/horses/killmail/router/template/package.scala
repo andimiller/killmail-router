@@ -7,6 +7,8 @@ import cats.parse.Parser
 import io.circe.*
 import io.circe.syntax.*
 import cats.Show
+import space.inyour.horses.killmail.router.schema.Schema
+import space.inyour.horses.killmail.router.filters.Expr
 
 package object template {
 
@@ -43,6 +45,12 @@ package object template {
         .compile
         .toVector
     )
+    def toSchema: Schema              = exprs
+      .collect { case TemplateExpr.Variable(path) =>
+        Expr.pathSchema(path, Schema.SAny)
+      }
+      .reduceOption(_ |+| _)
+      .getOrElse(Schema.SObject(Map()))
 
   enum TemplateExpr:
     case Literal(s: String)
