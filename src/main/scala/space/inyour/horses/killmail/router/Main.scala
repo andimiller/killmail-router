@@ -34,13 +34,16 @@ object Main extends IOApp {
                          .default[F]
                          .withTLSContext(tls)
                          .build
-      retry          = Retry.create[F](RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), RetryPolicy.defaultRetriable[F]))(client)
+      retry          =
+        Retry.create[F](
+          RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), { case (_, resp) => RetryPolicy.isErrorOrRetriableStatus[F](resp) })
+        )(client)
       webhooks       = DiscordWebhooks.create(retry)
       engine         = RulesEngine.fromStaticConfig(webhooks, staticConfig)
       siggyEnricher <- Resource.eval(
                          staticConfig.siggy
                            .traverse { siggyConfig =>
-                             val siggyClient = Siggy.create[F](client, siggyConfig.id, siggyConfig.secret)
+                             val siggyClient = Siggy.create[F](retry, siggyConfig.id, siggyConfig.secret)
                              siggyConfig.systems
                                .traverse { system =>
                                  SiggyEnricher.forSystem(siggyClient)(siggyConfig.chain, system, 1.minute)
@@ -100,26 +103,32 @@ object Main extends IOApp {
 
   def program[F[_]: Concurrent: Parallel: Async: Clock: Network: Files: LoggerFactory](
       staticConfig: StaticConfig,
-      queueID: String
+      queueID: String,
+      loglevel: LogLevel
   ): F[Unit] =
     validate[F](staticConfig) *>
       resources(staticConfig).use { case (client, enricher, webhooks, engine) =>
         val redisq = RedisQ.create(client, queueID)
 
-        staticConfig.routes.traverse { route =>
-          webhooks.activate(
-            route.webhook,
-            WebhookPayload(
-              show"""Starting up with the following filter:
-                    |
-                    |```lisp
-                    |${route.filter.pretty}
-                    |```
-                    |""".stripMargin,
-              Some(route.name)
-            )
-          )
-        } *>
+        val announceStartup: F[Unit] =
+          if (loglevel <= LogLevel.Debug)
+            staticConfig.routes.traverse { route =>
+              webhooks.activate(
+                route.webhook,
+                WebhookPayload(
+                  show"""Starting up with the following filter:
+                        |
+                        |```lisp
+                        |${route.filter.pretty}
+                        |```
+                        |""".stripMargin,
+                  Some(route.name)
+                )
+              )
+            }.void
+          else ().pure[F]
+
+        announceStartup *>
           redisq.stream.repeat.evalMap(enricher).through(engine).compile.drain
       }
 
@@ -141,7 +150,7 @@ object Main extends IOApp {
               for
                 staticConfig           <- loadConfig[IO](configFile)
                 given LoggerFactory[IO] = new ConsoleLoggerFactory[IO](loglevel)
-                _                      <- program[IO](staticConfig, queueID)
+                _                      <- program[IO](staticConfig, queueID, loglevel)
               yield ExitCode.Success
             case CLI.Format(configFile)                 =>
               for
