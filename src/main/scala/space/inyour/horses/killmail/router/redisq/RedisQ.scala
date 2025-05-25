@@ -20,7 +20,7 @@ object RedisQ {
       Stream
         .eval(
           client
-            .expect[Json](uri"https://redisq.zkillboard.com/listen.php".withQueryParam("queueID", queueID))
+            .expect[Json](uri"https://zkillredisq.stream/listen.php".withQueryParam("queueID", queueID))
         )
         .mapFilter { json =>
           json.hcursor.downField("package").as[Json].toOption
