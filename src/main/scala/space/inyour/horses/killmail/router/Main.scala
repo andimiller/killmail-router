@@ -22,6 +22,7 @@ import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
 import space.inyour.horses.killmail.router.schema.Schema
 import space.inyour.horses.killmail.router.template.Template
 import siggy.*
+import space.inyour.horses.killmail.router.esi.EsiHydrator
 
 import scala.concurrent.duration.*
 
@@ -109,7 +110,8 @@ object Main extends IOApp {
   ): F[Unit] =
     validate[F](staticConfig) *>
       resources(staticConfig).use { case (client, enricher, webhooks, engine) =>
-        val redisq = RedisQ.create(client, queueID)
+        val redisq      = RedisQ.create(client, queueID)
+        val esiHydrator = new EsiHydrator[F](client)
 
         val announceStartup: F[Unit] =
           if (loglevel <= LogLevel.Debug)
@@ -130,7 +132,7 @@ object Main extends IOApp {
           else ().pure[F]
 
         announceStartup *>
-          redisq.stream.repeat.evalMap(enricher).through(engine).compile.drain
+          redisq.stream.repeat.evalMap(esiHydrator).evalMap(enricher).through(engine).compile.drain
       }
 
   def loadConfig[F[_]: Async: Files](path: Path): F[StaticConfig] =
