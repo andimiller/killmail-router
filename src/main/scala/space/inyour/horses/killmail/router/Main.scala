@@ -9,6 +9,7 @@ import fs2.io.net.Network
 import fs2.io.net.tls.TLSContext
 import org.http4s.client.middleware.{FollowRedirect, Retry, RetryPolicy}
 import org.http4s.ember.client.EmberClientBuilder
+import org.http4s.Status.TooManyRequests
 import org.typelevel.log4cats.LoggerFactory
 import io.circe.syntax.*
 import io.circe.yaml.syntax.*
@@ -37,7 +38,10 @@ object Main extends IOApp {
                          .build
       retry          =
         Retry.create[F](
-          RetryPolicy(RetryPolicy.exponentialBackoff(10.minutes, 10), { case (_, resp) => RetryPolicy.isErrorOrRetriableStatus[F](resp) })
+          RetryPolicy(
+            RetryPolicy.exponentialBackoff(10.minutes, 10),
+            { case (_, resp) => RetryPolicy.isErrorOrStatus[F](resp, RetryPolicy.RetriableStatuses + TooManyRequests) }
+          )
         )(client)
       followRedirect = FollowRedirect(5)(retry)
       webhooks       = DiscordWebhooks.create(retry)
