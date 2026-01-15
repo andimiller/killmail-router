@@ -40,10 +40,10 @@ class SystemsSpec extends CatsEffectSuite {
       whEnricher = Systems.wormholeClassEnricher(systems)
       output    <- fakeRedisQ(Path("./src/test/resources/payload1.json")).stream
                      .map(whEnricher)
-                     .map(_.hcursor.downField("killmail").focus.get.withObject(_.filterKeys(_ == "wormhole_class").toJson))
+                     .map(_.hcursor.downField("killmail").focus.get.withObject(_.filterKeys(Set("wormhole_class", "region_id", "region_name")).toJson))
                      .compile
                      .toVector
-      _          = assertEquals(output, Vector(Json.obj("wormhole_class" := 9)))
+      _          = assertEquals(output, Vector(Json.obj("wormhole_class" := 9, "region_id" := 10000061, "region_name" := "Tenerifis")))
     } yield ()
   }
 

@@ -17,7 +17,7 @@ import org.typelevel.log4cats.extras.LogLevel
 import space.inyour.horses.killmail.router.enrichers.{Enricher, EnricherF, Trumpets}
 import space.inyour.horses.killmail.router.formatters.WebhookPayload
 import space.inyour.horses.killmail.router.redisq.RedisQ
-import space.inyour.horses.killmail.router.types.{Capitals, Citadels, RigSize}
+import space.inyour.horses.killmail.router.types.{Capitals, Citadels, RigSize, Supercapitals}
 import space.inyour.horses.killmail.router.maps.Systems
 import space.inyour.horses.killmail.router.webhook.DiscordWebhooks
 import space.inyour.horses.killmail.router.schema.Schema
@@ -64,6 +64,7 @@ object Main extends IOApp {
             .of(
               Systems.load[F](Path("./systems.json")).map(Systems.wormholeClassEnricher),
               Capitals.load[F](Path("./capitals.json")).map(Capitals.capitalShipEnricher),
+              Supercapitals.load[F](Path("./supercapitals.json")).map(Supercapitals.supercapitalShipEnricher),
               Citadels.load[F](Path("./citadels.json")).map(Citadels.citadelEnricher),
               RigSize.load[F](Path("./rigsizes.json")).map(RigSize.rigSizeEnricher),
               Trumpets.pure[F]

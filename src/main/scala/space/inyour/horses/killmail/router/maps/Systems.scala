@@ -13,11 +13,11 @@ import fs2.io.file.Path
 import io.circe.syntax.*
 
 object Systems {
-  case class System(name: String, wormhole_class: Int) derives Codec.AsObject
+  case class System(name: String, wormhole_class: Option[Int], region_id: Int, region_name: String) derives Codec.AsObject
 
   def load[F[_]: Files: Sync](p: Path): F[Vector[Node[Int, System]]] = {
     val stream = for {
-      line <- Files[F].readAll(p).through(fs2.text.utf8.decode).through(fs2.text.lines)
+      line <- Files[F].readAll(p).through(fs2.text.utf8.decode).through(fs2.text.lines).filter(_.nonEmpty)
       json <- fs2.Stream.eval(Sync[F].fromEither(io.circe.jawn.parse(line)))
       edge <- fs2.Stream.eval(Sync[F].fromEither(json.as[Node[Int, System]]))
     } yield edge
@@ -25,7 +25,7 @@ object Systems {
   }
 
   def wormholeClassEnricher(nodes: Vector[Node[Int, System]]): Enricher = {
-    val lookup: Map[Int, Int] = nodes.map(n => n.id -> n.data.wormhole_class).toMap
+    val lookup: Map[Int, System] = nodes.map(n => n.id -> n.data).toMap
 
     new Enricher:
       override def apply(j: Json): Json = {
@@ -43,9 +43,14 @@ object Systems {
 
           def onObject(value: JsonObject): Json = {
             val hasSolarSystemID = value("solar_system_id").isDefined
-            val wormholeClass    = value("solar_system_id").flatMap(_.as[Int].toOption).flatMap(lookup.get).map(Json.fromInt)
+            val system           = value("solar_system_id").flatMap(_.as[Int].toOption).flatMap(lookup.get)
             if (hasSolarSystemID)
-              value.add("wormhole_class", wormholeClass.getOrElse(Json.Null)).mapValues(_.foldWith(folder)).toJson
+              value
+                .add("wormhole_class", system.flatMap(_.wormhole_class).map(Json.fromInt).getOrElse(Json.Null))
+                .add("region_id", system.map(s => Json.fromInt(s.region_id)).getOrElse(Json.Null))
+                .add("region_name", system.map(s => Json.fromString(s.region_name)).getOrElse(Json.Null))
+                .mapValues(_.foldWith(folder))
+                .toJson
             else
               value.mapValues(_.foldWith(folder)).toJson
           }
@@ -61,7 +66,9 @@ object Systems {
         Map(
           "killmail" -> Schema.SObject(
             Map(
-              "wormhole_class" -> Schema.SInt
+              "wormhole_class" -> Schema.SInt,
+              "region_id"      -> Schema.SInt,
+              "region_name"    -> Schema.SString
             )
           )
         )

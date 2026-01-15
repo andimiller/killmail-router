@@ -16,6 +16,7 @@ COPY --from=build /usr/lib64/libs2n.so /usr/lib/libs2n.so
 COPY --from=build /usr/lib64/libs2n.a /usr/lib/libs2n.a
 COPY systems.json /systems.json
 COPY capitals.json /capitals.json
+COPY supercapitals.json /supercapitals.json
 COPY citadels.json /citadels.json
 COPY rigsizes.json /rigsizes.json
 WORKDIR /

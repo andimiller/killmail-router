@@ -1,6 +1,6 @@
 import scala.scalanative.build._
 
-ThisBuild / version := "0.24"
+ThisBuild / version := "0.25"
 
 ThisBuild / scalaVersion := "3.4.2"
 
@@ -43,6 +43,7 @@ lazy val root = (project in file("."))
     dockerExecCommand := Seq("podman"),
     Docker / mappings ++= List(
       "capitals.json",
+      "supercapitals.json",
       "citadels.json",
       "rigsizes.json",
       "systems.json"
