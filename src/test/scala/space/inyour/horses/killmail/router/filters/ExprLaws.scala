@@ -272,4 +272,92 @@ class ExprLaws extends DisciplineSuite with ExprInstances with ScalaCheckSuite {
     )
   }
 
+  test("KillmailInvolved should match when victim matches") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      """(killmail-involved root.killmail (== root.corporation_id 123))"""
+    ): @unchecked
+
+    assertEquals(
+      expr.run(
+        Json.obj(
+          "killmail" := Json.obj(
+            "victim"    := Json.obj("corporation_id" := 123),
+            "attackers" := Json.arr()
+          )
+        )
+      ),
+      true
+    )
+  }
+
+  test("KillmailInvolved should match when attacker matches") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      """(killmail-involved root.killmail (== root.corporation_id 456))"""
+    ): @unchecked
+
+    assertEquals(
+      expr.run(
+        Json.obj(
+          "killmail" := Json.obj(
+            "victim"    := Json.obj("corporation_id" := 123),
+            "attackers" := Json.arr(
+              Json.obj("corporation_id" := 456)
+            )
+          )
+        )
+      ),
+      true
+    )
+  }
+
+  test("KillmailInvolved should not match when neither matches") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      """(killmail-involved root.killmail (== root.corporation_id 789))"""
+    ): @unchecked
+
+    assertEquals(
+      expr.run(
+        Json.obj(
+          "killmail" := Json.obj(
+            "victim"    := Json.obj("corporation_id" := 123),
+            "attackers" := Json.arr(
+              Json.obj("corporation_id" := 456)
+            )
+          )
+        )
+      ),
+      false
+    )
+  }
+
+  test("KillmailInvolved should work with let bindings") {
+    val Right(expr) = Expr.codec.parser.parseAll(
+      """(let [(my-corp (== root.corporation_id 123))] (killmail-involved root.killmail my-corp))"""
+    ): @unchecked
+
+    assertEquals(
+      expr.run(
+        Json.obj(
+          "killmail" := Json.obj(
+            "victim"    := Json.obj("corporation_id" := 123),
+            "attackers" := Json.arr()
+          )
+        )
+      ),
+      true
+    )
+
+    assertEquals(
+      expr.run(
+        Json.obj(
+          "killmail" := Json.obj(
+            "victim"    := Json.obj("corporation_id" := 456),
+            "attackers" := Json.arr(Json.obj("corporation_id" := 123))
+          )
+        )
+      ),
+      true
+    )
+  }
+
 }

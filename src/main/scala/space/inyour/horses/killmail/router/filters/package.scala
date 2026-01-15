@@ -56,37 +56,43 @@ package object filters:
       }
 
       def show(indent: Int, t: Expr): String = indentString(indent)(t match
-        case Expr.Pure(result)                         => result.toString
-        case Expr.Reference(result)                    => result
-        case a @ Expr.Apply(path, expr) if a.isSimple  => show"(apply $path $expr)"
-        case Expr.Apply(path, expr)                    =>
+        case Expr.Pure(result)                                   => result.toString
+        case Expr.Reference(result)                              => result
+        case a @ Expr.Apply(path, expr) if a.isSimple            => show"(apply $path $expr)"
+        case Expr.Apply(path, expr)                              =>
           show"""(apply
                 |  $path
                 |${show(2, expr)}
                 |)
                 |""".stripMargin
-        case e @ Expr.Exists(path, expr) if e.isSimple => show"(exists $path $expr)"
-        case Expr.Exists(path, expr)                   => show"""(exists
+        case e @ Expr.Exists(path, expr) if e.isSimple           => show"(exists $path $expr)"
+        case Expr.Exists(path, expr)                             => show"""(exists
                                                                |  $path
                                                                |${show(2, expr)}
                                                                |)
                                                                |""".stripMargin
-        case n @ Expr.Not(expr) if n.isSimple          => show"(not $expr)"
-        case Expr.Not(expr)                            => show"""(not
+        case e @ Expr.KillmailInvolved(path, expr) if e.isSimple => show"(killmail-involved $path $expr)"
+        case Expr.KillmailInvolved(path, expr)                   => show"""(killmail-involved
+                                                                          |  $path
+                                                                          |${show(2, expr)}
+                                                                          |)
+                                                                          |""".stripMargin
+        case n @ Expr.Not(expr) if n.isSimple                    => show"(not $expr)"
+        case Expr.Not(expr)                                      => show"""(not
                                                                 |${show(2, expr)}
                                                                 |)
                                                                 |""".stripMargin
-        case Expr.Equals(path, value)                  => show"(== $path $value)"
-        case Expr.GreaterThan(path, value)             => show"(> $path $value)"
-        case Expr.LessThan(path, value)                => show"(< $path $value)"
-        case Expr.Contains(path, value)                => show"(contains $path ${value.noSpaces})"
-        case Expr.ContainedIn(path, values)            => show"(contained-in $path ${values.asJson.noSpaces})"
-        case Expr.And(left, right)                     => show"""(and
+        case Expr.Equals(path, value)                            => show"(== $path $value)"
+        case Expr.GreaterThan(path, value)                       => show"(> $path $value)"
+        case Expr.LessThan(path, value)                          => show"(< $path $value)"
+        case Expr.Contains(path, value)                          => show"(contains $path ${value.noSpaces})"
+        case Expr.ContainedIn(path, values)                      => show"(contained-in $path ${values.asJson.noSpaces})"
+        case Expr.And(left, right)                               => show"""(and
                                             |${show(2, left)}
                                             |${show(2, right)}
                                             |)
                                             |""".stripMargin
-        case Expr.Or(left, right)                      => show"""(or
+        case Expr.Or(left, right)                                => show"""(or
                                            |${show(2, left)}
                                            |${show(2, right)}
                                            |)
@@ -113,6 +119,7 @@ package object filters:
       case Apply(_, e)             => e.isSimple
       case Not(e)                  => e.isSimple
       case Exists(_, e)            => e.isSimple
+      case KillmailInvolved(_, e)  => e.isSimple
       case _: Let | _: And | _: Or => false // these are always multiline
       case _                       => true
 
@@ -133,6 +140,10 @@ package object filters:
         path: List[PathOperation],
         expr: Expr
     ) // expects the path to point at an array, checks if any items in that array have this expression evaluate to true
+    case KillmailInvolved(
+        path: List[PathOperation],
+        expr: Expr
+    ) // checks if victim matches OR any attacker matches the expression
     // boolean algebra
     case Not(expr: Expr)
     case And(left: Expr, right: Expr)
@@ -185,19 +196,20 @@ package object filters:
 
     given Show[Expr] with
       def show(t: Expr): String = t match
-        case Expr.Pure(result)              => result.toString
-        case Expr.Reference(name)           => name
-        case Expr.Apply(path, expr)         => show"(apply $path $expr)"
-        case Expr.Equals(path, value)       => show"(== $path $value)"
-        case Expr.GreaterThan(path, value)  => show"(> $path $value)"
-        case Expr.LessThan(path, value)     => show"(< $path $value)"
-        case Expr.Contains(path, value)     => show"(contains $path ${value.noSpaces})"
-        case Expr.ContainedIn(path, values) => show"(contained-in $path ${values.asJson.noSpaces})"
-        case Expr.Not(expr)                 => show"(not $expr)"
-        case Expr.And(left, right)          => show"(and $left $right)"
-        case Expr.Or(left, right)           => show"(or $left $right)"
-        case Expr.Exists(path, expr)        => show"(exists $path $expr)"
-        case Expr.Let(bindings, expr)       => show"(let $bindings $expr)"
+        case Expr.Pure(result)                 => result.toString
+        case Expr.Reference(name)              => name
+        case Expr.Apply(path, expr)            => show"(apply $path $expr)"
+        case Expr.Equals(path, value)          => show"(== $path $value)"
+        case Expr.GreaterThan(path, value)     => show"(> $path $value)"
+        case Expr.LessThan(path, value)        => show"(< $path $value)"
+        case Expr.Contains(path, value)        => show"(contains $path ${value.noSpaces})"
+        case Expr.ContainedIn(path, values)    => show"(contained-in $path ${values.asJson.noSpaces})"
+        case Expr.Not(expr)                    => show"(not $expr)"
+        case Expr.And(left, right)             => show"(and $left $right)"
+        case Expr.Or(left, right)              => show"(or $left $right)"
+        case Expr.Exists(path, expr)           => show"(exists $path $expr)"
+        case Expr.KillmailInvolved(path, expr) => show"(killmail-involved $path $expr)"
+        case Expr.Let(bindings, expr)          => show"(let $bindings $expr)"
 
     private inline def whitespace: Parser[Unit]   = Parser.charsWhile(_.isWhitespace).void
     private inline def whitespace0: Parser0[Unit] = Parser.charsWhile0(_.isWhitespace).void
@@ -219,6 +231,7 @@ package object filters:
             p"(< $pathParser $int)".map(Expr.LessThan.apply),
             p"(contains $pathParser $jsonParser)".map(Expr.Contains.apply),
             p"(contained-in $pathParser $jsonArrParser)".map(Expr.ContainedIn.apply),
+            p"(killmail-involved $pathParser $recurse)".map(Expr.KillmailInvolved.apply),
             pm"(not$whitespace$recurse$whitespace0)".map { (_, e, _) => Expr.Not(e) },
             for
               _ <- p"(and"
@@ -308,44 +321,51 @@ package object filters:
     }
 
     def toSchema(expr: Expr, cursor: List[PathOperation] = List.empty): Schema = expr match
-      case Expr.Apply(path, expr)         => toSchema(expr, (cursor ++ path))
-      case Expr.Equals(path, value)       => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
-      case Expr.GreaterThan(path, _)      => pathSchema(cursor ++ path, Schema.SInt)
-      case Expr.LessThan(path, _)         => pathSchema(cursor ++ path, Schema.SInt)
-      case Expr.Contains(path, value)     => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
-      case Expr.ContainedIn(path, values) => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(values.head))
-      case Expr.Exists(path, expr)        => toSchema(expr, cursor ++ path.appended(PathOperation.DownIndex(0)))
-      case Expr.Not(expr)                 => toSchema(expr, cursor)
-      case Expr.And(left, right)          => toSchema(left, cursor) |+| toSchema(right, cursor)
-      case Expr.Or(left, right)           => toSchema(left, cursor) |+| toSchema(right, cursor)
-      case _                              => Schema.SNull
+      case Expr.Apply(path, expr)            => toSchema(expr, (cursor ++ path))
+      case Expr.Equals(path, value)          => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
+      case Expr.GreaterThan(path, _)         => pathSchema(cursor ++ path, Schema.SInt)
+      case Expr.LessThan(path, _)            => pathSchema(cursor ++ path, Schema.SInt)
+      case Expr.Contains(path, value)        => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(value))
+      case Expr.ContainedIn(path, values)    => pathSchema(cursor ++ path, Schema.deriveSchemaForJson(values.head))
+      case Expr.Exists(path, expr)           => toSchema(expr, cursor ++ path.appended(PathOperation.DownIndex(0)))
+      case Expr.KillmailInvolved(path, expr) =>
+        toSchema(expr, cursor ++ path :+ PathOperation.DownField("victim")) |+|
+          toSchema(expr, cursor ++ path :+ PathOperation.DownField("attackers") :+ PathOperation.DownIndex(0))
+      case Expr.Not(expr)                    => toSchema(expr, cursor)
+      case Expr.And(left, right)             => toSchema(left, cursor) |+| toSchema(right, cursor)
+      case Expr.Or(left, right)              => toSchema(left, cursor) |+| toSchema(right, cursor)
+      case _                                 => Schema.SNull
 
     def resolveReferences(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty): Eval[Expr] = expr match
-      case Expr.Reference(name)          =>
+      case Expr.Reference(name)              =>
         bindings.get(name) match
           case Some(e) => Eval.now(e)
           case None    => throw new RuntimeException(s"Unable to find binding for $name")
-      case Expr.Apply(path, expr)        =>
+      case Expr.Apply(path, expr)            =>
         resolveReferences(expr, bindings).map { e =>
           Expr.Apply(path, e)
         }
-      case Expr.Exists(path, expr)       =>
+      case Expr.Exists(path, expr)           =>
         resolveReferences(expr, bindings).map { e =>
           Expr.Exists(path, e)
         }
-      case Expr.Not(expr)                =>
+      case Expr.KillmailInvolved(path, expr) =>
+        resolveReferences(expr, bindings).map { e =>
+          Expr.KillmailInvolved(path, e)
+        }
+      case Expr.Not(expr)                    =>
         resolveReferences(expr, bindings).map { e =>
           Expr.Not(e)
         }
-      case Expr.And(left, right)         =>
+      case Expr.And(left, right)             =>
         (resolveReferences(left, bindings), resolveReferences(right, bindings)).mapN { case (l, r) =>
           Expr.And(l, r)
         }
-      case Expr.Or(left, right)          =>
+      case Expr.Or(left, right)              =>
         (resolveReferences(left, bindings), resolveReferences(right, bindings)).mapN { case (l, r) =>
           Expr.Or(l, r)
         }
-      case Expr.Let(extraBindings, main) => // if we cross a let border, continue bindings top down
+      case Expr.Let(extraBindings, main)     => // if we cross a let border, continue bindings top down
         for
           resolvedBindings <- extraBindings.toList.foldLeftM(bindings) { case (bs, (name, e)) =>
                                 resolveReferences(e, bs).map { re =>
@@ -354,30 +374,30 @@ package object filters:
                               }
           resolvedMain     <- resolveReferences(main, resolvedBindings)
         yield resolvedMain
-      case e                             => Eval.now(e)
+      case e                                 => Eval.now(e)
 
     // runner
     def run(expr: Expr, bindings: ListMap[String, Expr] = ListMap.empty)(input: Json): Eval[Boolean] = expr match
-      case Expr.Pure(result)              => Eval.now(result)
-      case Expr.Apply(path, e)            =>
+      case Expr.Pure(result)                 => Eval.now(result)
+      case Expr.Apply(path, e)               =>
         Eval.later {
           evaluatePath(path)(input).fold(false) { focus =>
             run(e, bindings)(focus).value
           }
         }
-      case Expr.Equals(path, value)       =>
+      case Expr.Equals(path, value)          =>
         Eval.now {
           evaluatePath(path)(input).getOrElse(Json.Null) == value
         }
-      case Expr.GreaterThan(path, value)  =>
+      case Expr.GreaterThan(path, value)     =>
         Eval.now {
           evaluatePath(path)(input).flatMap(_.asNumber).fold(false)(_.toDouble > value.toDouble)
         }
-      case Expr.LessThan(path, value)     =>
+      case Expr.LessThan(path, value)        =>
         Eval.now {
           evaluatePath(path)(input).flatMap(_.asNumber).fold(false)(_.toDouble < value.toDouble)
         }
-      case Expr.Contains(path, value)     =>
+      case Expr.Contains(path, value)        =>
         Eval.now {
           evaluatePath(path)(input)
             .flatMap { j =>
@@ -391,26 +411,26 @@ package object filters:
             }
             .getOrElse(false)
         }
-      case Expr.ContainedIn(path, values) =>
+      case Expr.ContainedIn(path, values)    =>
         Eval.now {
           evaluatePath(path)(input).exists { j =>
             values.contains(j)
           }
         }
-      case Expr.Not(expr)                 => {
+      case Expr.Not(expr)                    => {
         run(expr, bindings)(input).map(!_)
       }
-      case Expr.And(left, right)          =>
+      case Expr.And(left, right)             =>
         for
           l <- run(left, bindings)(input)
           r <- run(right, bindings)(input)
         yield l && r
-      case Expr.Or(left, right)           =>
+      case Expr.Or(left, right)              =>
         for
           l <- run(left, bindings)(input)
           r <- run(right, bindings)(input)
         yield l || r
-      case Expr.Exists(path, expr)        =>
+      case Expr.Exists(path, expr)           =>
         Eval.later {
           evaluatePath(path)(input).flatMap(_.asArray) match
             case Some(values) =>
@@ -420,9 +440,21 @@ package object filters:
             case None         =>
               false
         }
-      case Expr.Reference(name)           =>
+      case Expr.KillmailInvolved(path, expr) =>
+        Eval.later {
+          val victimPath      = path :+ PathOperation.DownField("victim")
+          val attackersPath   = path :+ PathOperation.DownField("attackers")
+          val victimMatches   = evaluatePath(victimPath)(input).fold(false) { focus =>
+            run(expr, bindings)(focus).value
+          }
+          val attackerMatches = evaluatePath(attackersPath)(input).flatMap(_.asArray) match
+            case Some(values) => values.exists(v => run(expr, bindings)(v).value)
+            case None         => false
+          victimMatches || attackerMatches
+        }
+      case Expr.Reference(name)              =>
         bindings.get(name) match
           case Some(e) => run(e, bindings)(input)
           case None    => throw new RuntimeException(s"Unable to find binding for $name")
-      case Expr.Let(extraBindings, expr)  =>
+      case Expr.Let(extraBindings, expr)     =>
         run(expr, bindings ++ extraBindings)(input)
