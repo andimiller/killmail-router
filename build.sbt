@@ -1,6 +1,6 @@
 import scala.scalanative.build._
 
-ThisBuild / version := "0.25"
+ThisBuild / version := "0.26"
 
 ThisBuild / scalaVersion := "3.4.2"
 

@@ -34,8 +34,8 @@ object Supercapitals {
           def onNumber(value: JsonNumber): Json  =
             Json.fromJsonNumber(value)
           def onObject(value: JsonObject): Json  = {
-            val hasShipTypeId   = value("ship_type_id").isDefined
-            val isSupercapital  = value("ship_type_id").flatMap(_.as[Int].toOption).filter(supercapitals.contains).as(true).getOrElse(false)
+            val hasShipTypeId  = value("ship_type_id").isDefined
+            val isSupercapital = value("ship_type_id").flatMap(_.as[Int].toOption).filter(supercapitals.contains).as(true).getOrElse(false)
 
             if (hasShipTypeId)
               value
