@@ -441,17 +441,14 @@ package object filters:
               false
         }
       case Expr.KillmailInvolved(path, expr) =>
-        Eval.later {
-          val victimPath      = path :+ PathOperation.DownField("victim")
-          val attackersPath   = path :+ PathOperation.DownField("attackers")
-          val victimMatches   = evaluatePath(victimPath)(input).fold(false) { focus =>
-            run(expr, bindings)(focus).value
-          }
-          val attackerMatches = evaluatePath(attackersPath)(input).flatMap(_.asArray) match
-            case Some(values) => values.exists(v => run(expr, bindings)(v).value)
-            case None         => false
-          victimMatches || attackerMatches
-        }
+        // Desugar to: (or (apply <path>.victim <expr>) (exists <path>.attackers <expr>))
+        val victimPath    = path :+ PathOperation.DownField("victim")
+        val attackersPath = path :+ PathOperation.DownField("attackers")
+        val desugared     = Expr.Or(
+          Expr.Apply(victimPath, expr),
+          Expr.Exists(attackersPath, expr)
+        )
+        run(desugared, bindings)(input)
       case Expr.Reference(name)              =>
         bindings.get(name) match
           case Some(e) => run(e, bindings)(input)
