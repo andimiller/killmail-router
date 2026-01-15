@@ -50,30 +50,10 @@
 {"typeID": 33687, "typeName": "Rorqual ORE Development Edition", "techType": 1}
 {"typeID": 34328, "typeName": "Bowhead", "techType": 1}
 {"typeID": 35819, "typeName": "Amarr Navy Archon", "techType": 1}
-{"typeID": 36848, "typeName": "Burner Antero", "techType": 1}
-{"typeID": 37461, "typeName": "Angel Dreadnought", "techType": 1}
-{"typeID": 37462, "typeName": "Domination Titan", "techType": 1}
-{"typeID": 37463, "typeName": "Blood Dreadnought", "techType": 1}
-{"typeID": 37464, "typeName": "Dark Blood Titan", "techType": 1}
-{"typeID": 37465, "typeName": "Guristas Dreadnought", "techType": 1}
-{"typeID": 37466, "typeName": "Dread Guristas Titan", "techType": 1}
-{"typeID": 37467, "typeName": "Sansha's Dreadnought", "techType": 1}
-{"typeID": 37468, "typeName": "Serpentis Dreadnought", "techType": 1}
-{"typeID": 37470, "typeName": "Infested Carrier", "techType": 1}
-{"typeID": 37471, "typeName": "Sentient Infested Supercarrier", "techType": 1}
 {"typeID": 37604, "typeName": "Apostle", "techType": 1}
 {"typeID": 37605, "typeName": "Minokawa", "techType": 1}
 {"typeID": 37606, "typeName": "Lif", "techType": 1}
 {"typeID": 37607, "typeName": "Ninazu", "techType": 1}
-{"typeID": 40637, "typeName": "Shadow Serpentis Titan", "techType": 1}
-{"typeID": 40671, "typeName": "True Sansha's Supercarrier", "techType": 1}
-{"typeID": 40729, "typeName": "Kazue's Caiman", "techType": 1}
-{"typeID": 41396, "typeName": "Domination Dreadnought", "techType": 1}
-{"typeID": 41397, "typeName": "Dark Blood Dreadnought", "techType": 1}
-{"typeID": 41398, "typeName": "Dread Guristas Dreadnought", "techType": 1}
-{"typeID": 41399, "typeName": "True Sansha's Dreadnought", "techType": 1}
-{"typeID": 41400, "typeName": "Shadow Serpentis Dreadnought", "techType": 1}
-{"typeID": 41401, "typeName": "Sentient Infested Carrier", "techType": 1}
 {"typeID": 42124, "typeName": "Vehement", "techType": 4}
 {"typeID": 42125, "typeName": "Vendetta", "techType": 4}
 {"typeID": 42126, "typeName": "Vanquisher", "techType": 4}
@@ -86,11 +66,6 @@
 {"typeID": 42847, "typeName": "Caldari Minokawa", "techType": 1}
 {"typeID": 42848, "typeName": "Gallente Ninazu", "techType": 1}
 {"typeID": 42849, "typeName": "Minmatar Lif", "techType": 1}
-{"typeID": 45470, "typeName": "\u2666 Chemosh", "techType": 1}
-{"typeID": 45471, "typeName": "\u2666 Molok", "techType": 1}
-{"typeID": 45472, "typeName": "\u2666 Molok", "techType": 1}
-{"typeID": 45473, "typeName": "\u2666 Dagon", "techType": 1}
-{"typeID": 45474, "typeName": "\u2666 Chemosh", "techType": 1}
 {"typeID": 45645, "typeName": "Loggerhead", "techType": 4}
 {"typeID": 45647, "typeName": "Caiman", "techType": 4}
 {"typeID": 45649, "typeName": "Komodo", "techType": 4}
@@ -99,12 +74,3 @@
 {"typeID": 73787, "typeName": "Naglfar Fleet Issue", "techType": 4}
 {"typeID": 73793, "typeName": "Phoenix Navy Issue", "techType": 4}
 {"typeID": 79589, "typeName": "ORE Rorqual", "techType": 1}
-{"typeID": 52329, "typeName": "Empress Jamyl's Avatar", "techType": 1}
-{"typeID": 52701, "typeName": "Liminal Zirnitra", "techType": 1}
-{"typeID": 52815, "typeName": "TestDreadFriendly", "techType": 1}
-{"typeID": 52907, "typeName": "Zirnitra", "techType": 1}
-{"typeID": 53390, "typeName": "Liminal Zirnitra", "techType": 1}
-{"typeID": 60942, "typeName": "Starwight Rakshasa", "techType": 1}
-{"typeID": 60943, "typeName": "Moonwight Rakshasa", "techType": 1}
-{"typeID": 61292, "typeName": "Darkwight Rakshasa", "techType": 1}
-{"typeID": 64346, "typeName": "\u2666 Officer Chemosh", "techType": 1}
